@@ -1,0 +1,24 @@
+---
+interface Props {
+  alt?: string;
+}
+
+const { alt = "Foto do produto ainda não disponível" } = Astro.props;
+---
+
+<img
+  class="placeholder"
+  src="/images/placeholders/product-placeholder.svg"
+  {alt}
+  width="800"
+  height="960"
+  loading="lazy"
+/>
+
+<style>
+  .placeholder {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>

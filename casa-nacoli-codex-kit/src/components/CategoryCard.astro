@@ -1,0 +1,155 @@
+---
+import { Image } from "astro:assets";
+import { ArrowUpRight } from "@lucide/astro";
+import type { ResolvedProductImage } from "../data/assets";
+import { siteConfig } from "../data/catalog";
+import type { Category } from "../types/domain";
+import { createWhatsAppUrl } from "../utils/whatsapp";
+import PlaceholderImage from "./PlaceholderImage.astro";
+
+interface Props {
+  category: Category;
+  image?: ResolvedProductImage;
+  index: number;
+  tone: "sky" | "sage" | "honey" | "terracotta";
+}
+
+const { category, image, index, tone } = Astro.props;
+const message = `Olá! Vim pelo site da Casa Nacoli e gostaria de conhecer as opções de ${category.name}. Página: ${siteConfig.brand.domain}/#categorias`;
+const href = createWhatsAppUrl(siteConfig.contact.whatsappNumber, message);
+---
+
+<article class:list={["category-card", `tone-${tone}`]}>
+  <div class="category-image">
+    {
+      image ? (
+        <Image
+          src={image.src}
+          alt={image.alt}
+          widths={[360, 560, 760]}
+          sizes="(min-width: 768px) 30vw, 92vw"
+          loading="lazy"
+        />
+      ) : (
+        <PlaceholderImage />
+      )
+    }
+  </div>
+  <div class="category-content">
+    <p class="category-number">0{index}</p>
+    <h3>{category.name}</h3>
+    <p>{category.description}</p>
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      data-analytics-event="whatsapp_click"
+      data-analytics-context={`categoria_${category.id}`}
+    >
+      Ver opções pelo WhatsApp
+      <ArrowUpRight size={17} aria-hidden="true" />
+    </a>
+  </div>
+</article>
+
+<style>
+  .category-card {
+    display: grid;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid rgb(73 66 56 / 0.14);
+    border-radius: var(--radius-card);
+    background: var(--color-paper);
+  }
+
+  .category-image {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--color-cream);
+  }
+
+  .category-image :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 260ms ease;
+  }
+
+  .category-card:hover .category-image :global(img) {
+    transform: scale(1.025);
+  }
+
+  .category-content {
+    position: relative;
+    padding: 1.4rem;
+  }
+
+  .category-number {
+    position: absolute;
+    top: 1.4rem;
+    right: 1.4rem;
+    margin: 0;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+  }
+
+  h3 {
+    max-width: calc(100% - 2.5rem);
+    margin-bottom: 0.7rem;
+    font-size: 1.65rem;
+  }
+
+  .category-content > p:not(.category-number) {
+    margin-bottom: 1.1rem;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    border-radius: 0.2rem;
+    font-size: 0.875rem;
+    font-weight: 750;
+  }
+
+  .tone-sky .category-content {
+    background: color-mix(in srgb, var(--color-sky) 48%, white);
+  }
+
+  .tone-sage .category-content {
+    background: color-mix(in srgb, var(--color-sage) 36%, white);
+  }
+
+  .tone-honey .category-content {
+    background: color-mix(in srgb, var(--color-honey) 38%, white);
+  }
+
+  .tone-terracotta .category-content {
+    background: color-mix(in srgb, var(--color-terracotta) 28%, white);
+  }
+
+  @media (min-width: 48rem) {
+    .category-card:nth-child(1),
+    .category-card:nth-child(4) {
+      grid-column: span 2;
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+
+    .category-card:nth-child(1) .category-image,
+    .category-card:nth-child(4) .category-image {
+      aspect-ratio: auto;
+      min-height: 21rem;
+    }
+
+    .category-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 1.8rem;
+    }
+  }
+</style>

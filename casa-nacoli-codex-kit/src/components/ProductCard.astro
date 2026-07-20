@@ -1,0 +1,136 @@
+---
+import { Image } from "astro:assets";
+import { ArrowRight } from "@lucide/astro";
+import { getProductImages } from "../data/assets";
+import { getCategory, getPublicPrice, siteConfig } from "../data/catalog";
+import type { Product } from "../types/domain";
+import { buildWhatsAppMessage, createWhatsAppUrl } from "../utils/whatsapp";
+import PlaceholderImage from "./PlaceholderImage.astro";
+
+interface Props {
+  product: Product;
+  priority?: boolean;
+}
+
+const { product, priority = false } = Astro.props;
+const image = getProductImages(product).at(0);
+const category = getCategory(product.categoryId);
+const message = buildWhatsAppMessage({
+  product: product.name,
+  pageUrl: `${siteConfig.brand.domain}/#destaques`,
+});
+const href = createWhatsAppUrl(siteConfig.contact.whatsappNumber, message);
+---
+
+<article class="product-card">
+  <div class="product-image">
+    {
+      image ? (
+        <Image
+          src={image.src}
+          alt={image.alt}
+          widths={[360, 560, 760]}
+          sizes="(min-width: 1024px) 31vw, (min-width: 640px) 47vw, 92vw"
+          loading={priority ? "eager" : "lazy"}
+        />
+      ) : (
+        <PlaceholderImage />
+      )
+    }
+  </div>
+  <div class="product-content">
+    <p class="product-category">{category?.name}</p>
+    <h3>{product.name}</h3>
+    <p class="product-summary">{product.summary}</p>
+    <div class="product-footer">
+      <p class="product-price">{getPublicPrice(product)}</p>
+      <a
+        href={href}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={`Falar sobre ${product.name} pelo WhatsApp`}
+        data-analytics-event="whatsapp_click"
+        data-analytics-context={`produto_${product.slug}`}
+      >
+        Falar sobre o produto
+        <ArrowRight size={17} aria-hidden="true" />
+      </a>
+    </div>
+  </div>
+</article>
+
+<style>
+  .product-card {
+    min-width: 0;
+  }
+
+  .product-image {
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    border-radius: var(--radius-card);
+    background: var(--color-paper);
+  }
+
+  .product-image :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 260ms ease;
+  }
+
+  .product-card:hover .product-image :global(img) {
+    transform: scale(1.02);
+  }
+
+  .product-content {
+    padding: 1.2rem 0.25rem 0;
+  }
+
+  .product-category {
+    margin-bottom: 0.45rem;
+    color: var(--color-terracotta);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    margin-bottom: 0.6rem;
+    font-size: 1.6rem;
+  }
+
+  .product-summary {
+    margin-bottom: 1rem;
+    font-size: 0.9375rem;
+  }
+
+  .product-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.55rem;
+  }
+
+  .product-price {
+    margin: 0;
+    font-weight: 800;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    border-radius: 0.2rem;
+    font-size: 0.875rem;
+    font-weight: 750;
+  }
+
+  @media (min-width: 75rem) {
+    .product-footer {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+</style>
