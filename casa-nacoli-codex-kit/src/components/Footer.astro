@@ -1,0 +1,145 @@
+---
+import { AtSign, Clock3, Mail, MapPin } from "@lucide/astro";
+import { siteConfig } from "../data/catalog";
+---
+
+<footer class="site-footer">
+  <div class="site-container footer-grid">
+    <div class="footer-intro">
+      <p class="footer-brand">Casa Nacoli</p>
+      <p>{siteConfig.brand.tagline}</p>
+    </div>
+
+    <nav aria-label="Navegação do rodapé">
+      <p class="footer-title">Navegue</p>
+      <a href="/#categorias">O que fazemos</a>
+      <a href="/#destaques">Produtos em destaque</a>
+      <a href="/#empresas">Para empresas</a>
+      <a href="/#como-pedir">Como pedir</a>
+    </nav>
+
+    <div>
+      <p class="footer-title">Fale com a gente</p>
+      <a href={`mailto:${siteConfig.contact.email}`}>
+        <Mail size={17} aria-hidden="true" />
+        {siteConfig.contact.email}
+      </a>
+      <a href={siteConfig.links.instagram} target="_blank" rel="noreferrer">
+        <AtSign size={17} aria-hidden="true" />
+        {siteConfig.contact.instagram}
+      </a>
+      <p>
+        <MapPin size={17} aria-hidden="true" />
+        {siteConfig.contact.address}
+      </p>
+    </div>
+
+    <div>
+      <p class="footer-title">Atendimento</p>
+      {
+        siteConfig.contact.businessHours.map((hours) => (
+          <p>
+            <Clock3 size={17} aria-hidden="true" />
+            <span>
+              {hours.label}:{" "}
+              {hours.closed ? "fechado" : `${hours.opens}–${hours.closes}`}
+            </span>
+          </p>
+        ))
+      }
+    </div>
+  </div>
+
+  <div class="site-container footer-bottom">
+    <p>© {new Date().getFullYear()} Casa Nacoli.</p>
+    <p>
+      Gráfica artesanal independente em {siteConfig.contact.city}, {
+        siteConfig.contact.state
+      }.
+    </p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid rgb(255 255 255 / 0.12);
+    padding-block: 3.5rem 1.5rem;
+    color: rgb(255 255 255 / 0.82);
+    background: var(--color-espresso);
+  }
+
+  .footer-grid {
+    display: grid;
+    gap: 2.5rem;
+  }
+
+  .footer-intro {
+    max-width: 20rem;
+  }
+
+  .footer-brand {
+    margin-bottom: 0.6rem;
+    color: white;
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 600;
+  }
+
+  .footer-title {
+    margin-bottom: 0.8rem;
+    color: var(--color-honey);
+    font-size: 0.8125rem;
+    font-weight: 750;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  nav,
+  .footer-grid > div:not(.footer-intro) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  a,
+  .footer-grid p {
+    margin-bottom: 0;
+  }
+
+  a,
+  .footer-grid > div:not(.footer-intro) p {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 0.55rem;
+  }
+
+  a {
+    border-radius: 0.2rem;
+  }
+
+  .footer-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-top: 3rem;
+    border-top: 1px solid rgb(255 255 255 / 0.14);
+    padding-top: 1.25rem;
+    font-size: 0.8125rem;
+  }
+
+  .footer-bottom p {
+    margin: 0;
+  }
+
+  @media (min-width: 48rem) {
+    .footer-grid {
+      grid-template-columns: 1.2fr repeat(3, 1fr);
+    }
+
+    .footer-bottom {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+</style>

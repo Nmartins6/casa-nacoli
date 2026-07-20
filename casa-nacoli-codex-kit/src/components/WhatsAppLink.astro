@@ -1,0 +1,81 @@
+---
+import { MessageCircle } from "@lucide/astro";
+import { siteConfig } from "../data/catalog";
+import { buildWhatsAppMessage, createWhatsAppUrl } from "../utils/whatsapp";
+
+interface Props {
+  label?: string;
+  message?: string;
+  variant?: "primary" | "secondary";
+  floating?: boolean;
+  context?: string;
+}
+
+const {
+  label = "Pedir pelo WhatsApp",
+  message = buildWhatsAppMessage({ pageUrl: siteConfig.brand.domain }),
+  variant = "primary",
+  floating = false,
+  context = "geral",
+} = Astro.props;
+
+const href = createWhatsAppUrl(siteConfig.contact.whatsappNumber, message);
+---
+
+<a
+  class:list={[
+    floating ? "whatsapp-floating" : "button",
+    !floating && `button-${variant}`,
+  ]}
+  href={href}
+  target="_blank"
+  rel="noreferrer"
+  aria-label={floating ? `${label} (abre em nova aba)` : undefined}
+  data-analytics-event="whatsapp_click"
+  data-analytics-context={context}
+>
+  <MessageCircle
+    size={floating ? 25 : 19}
+    stroke-width={2}
+    aria-hidden="true"
+  />
+  {floating ? <span class="floating-label">Conversar</span> : label}
+</a>
+
+<style>
+  .whatsapp-floating {
+    position: fixed;
+    z-index: 40;
+    right: 1rem;
+    bottom: max(1rem, env(safe-area-inset-bottom));
+    display: inline-flex;
+    min-height: 3.5rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: 1px solid rgb(255 255 255 / 0.24);
+    border-radius: 999px;
+    padding: 0.8rem 1rem;
+    color: white;
+    background: var(--color-espresso);
+    box-shadow: 0 10px 28px rgb(73 66 56 / 0.2);
+    font-size: 0.875rem;
+    font-weight: 750;
+    text-decoration: none;
+    transition:
+      background-color 180ms ease,
+      transform 180ms ease;
+  }
+
+  .whatsapp-floating:hover {
+    transform: translateY(-2px);
+    background: #332f29;
+  }
+
+  @media (min-width: 48rem) {
+    .whatsapp-floating {
+      right: 2rem;
+      bottom: 2rem;
+    }
+  }
+</style>
