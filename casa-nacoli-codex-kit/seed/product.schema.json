@@ -1,0 +1,156 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://casanacoli.com.br/schemas/product.schema.json",
+  "title": "Casa Nacoli Product",
+  "type": "object",
+  "required": [
+    "id",
+    "slug",
+    "name",
+    "categoryId",
+    "subcategoryId",
+    "status",
+    "summary",
+    "description",
+    "pricing",
+    "images",
+    "cta",
+    "seo"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 3
+    },
+    "categoryId": {
+      "type": "string"
+    },
+    "subcategoryId": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "active",
+        "archived"
+      ]
+    },
+    "featured": {
+      "type": "boolean"
+    },
+    "sortOrder": {
+      "type": "integer"
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 20,
+      "maxLength": 180
+    },
+    "description": {
+      "type": "string",
+      "minLength": 30
+    },
+    "pricing": {
+      "type": "object",
+      "required": [
+        "kind",
+        "currency",
+        "display"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "fixed",
+            "starting_at",
+            "variants",
+            "tiered",
+            "quote",
+            "matrix_quote"
+          ]
+        },
+        "currency": {
+          "const": "BRL"
+        },
+        "amount": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "display": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "variants": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "volumeDiscountRules": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "src",
+          "alt"
+        ],
+        "properties": {
+          "src": {
+            "type": "string"
+          },
+          "alt": {
+            "type": "string"
+          },
+          "width": {
+            "type": "integer"
+          },
+          "height": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "keywords": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "cta": {
+      "type": "object",
+      "required": [
+        "label",
+        "messageTemplate"
+      ]
+    },
+    "seo": {
+      "type": "object",
+      "required": [
+        "title",
+        "description"
+      ]
+    },
+    "needsPriceConfirmation": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,1 @@
+Faça uma auditoria completa de UX mobile, copy, acessibilidade, SEO, dados estruturados, imagens e performance. Corrija problemas encontrados. Rode todos os checks, Playwright, axe e Lighthouse em páginas representativas. Documente resultados e exceções.

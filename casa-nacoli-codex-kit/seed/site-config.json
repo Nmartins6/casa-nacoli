@@ -1,0 +1,77 @@
+{
+  "brand": {
+    "name": "Casa Nacoli",
+    "tagline": "Personalizados e gráfica com cuidado em cada detalhe.",
+    "domain": "https://casanacoli.com.br",
+    "language": "pt-BR",
+    "locale": "pt_BR"
+  },
+  "contact": {
+    "whatsappNumber": "+555199795488",
+    "whatsappDisplay": "(51) 99979-5488",
+    "instagram": "@casa_nacoli",
+    "email": "casanacoli@gmail.com",
+    "city": "Lajeado",
+    "state": "RS",
+    "address": "Lajeado / RS",
+    "businessHours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "label": "Segunda a sexta",
+        "opens": "08:00",
+        "closes": "18:00",
+        "closed": false
+      },
+      {
+        "days": [
+          "Saturday"
+        ],
+        "label": "Sábado",
+        "opens": "08:00",
+        "closes": "12:00",
+        "closed": false
+      },
+      {
+        "days": [
+          "Sunday"
+        ],
+        "label": "Domingo",
+        "opens": null,
+        "closes": null,
+        "closed": true
+      }
+    ]
+  },
+  "links": {
+    "googleBusinessProfile": "https://share.google/znZZ1CM5roYjiLsoM",
+    "instagram": "https://www.instagram.com/casa_nacoli/",
+    "whatsapp": "https://wa.me/5551999795488"
+  },
+  "seo": {
+    "defaultTitle": "Casa Nacoli | Gráfica artesanal independente",
+    "titleTemplate": "%s | Casa Nacoli",
+    "defaultDescription": "Produtos personalizados, vestuário, brindes corporativos e serviços gráficos com atendimento próximo e cuidado em cada detalhe.",
+    "defaultOgImage": "/images/og/casa-nacoli.jpg"
+  },
+  "analytics": {
+    "provider": "none",
+    "measurementId": "",
+    "events": [
+      "whatsapp_click",
+      "product_view",
+      "catalog_search",
+      "category_view"
+    ]
+  },
+  "businessRules": {
+    "pricesMayChange": true,
+    "quoteRequiredForCustomDetails": true,
+    "publishUnconfirmedPrices": false
+  }
+}

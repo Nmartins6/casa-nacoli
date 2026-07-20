@@ -1,0 +1,106 @@
+[
+  {
+    "id": "personalizados",
+    "name": "Personalizados",
+    "slug": "personalizados",
+    "description": "Presentes e peças feitas para contar uma história, celebrar uma data ou transformar uma ideia em algo único.",
+    "subcategories": [
+      {
+        "id": "canecas",
+        "name": "Canecas"
+      },
+      {
+        "id": "mdf",
+        "name": "MDF"
+      },
+      {
+        "id": "outros-personalizados",
+        "name": "Outros personalizados"
+      }
+    ],
+    "sortOrder": 10
+  },
+  {
+    "id": "vestuario",
+    "name": "Vestuário",
+    "slug": "vestuario",
+    "description": "Peças personalizadas para uso individual, equipes, eventos, empresas e grupos.",
+    "subcategories": [
+      {
+        "id": "camisetas",
+        "name": "Camisetas"
+      },
+      {
+        "id": "moletons",
+        "name": "Moletons"
+      },
+      {
+        "id": "bones",
+        "name": "Bonés"
+      },
+      {
+        "id": "meias",
+        "name": "Meias"
+      },
+      {
+        "id": "cuecas",
+        "name": "Cuecas"
+      }
+    ],
+    "sortOrder": 20
+  },
+  {
+    "id": "brindes-corporativos",
+    "name": "Brindes corporativos",
+    "slug": "brindes-corporativos",
+    "description": "Soluções personalizadas para empresas, eventos, ações promocionais e presentes para equipes ou clientes.",
+    "subcategories": [
+      {
+        "id": "ecobags",
+        "name": "Ecobags"
+      },
+      {
+        "id": "utilitarios",
+        "name": "Utilitários"
+      }
+    ],
+    "sortOrder": 30
+  },
+  {
+    "id": "grafica",
+    "name": "Gráfica e impressões",
+    "slug": "grafica-e-impressoes",
+    "description": "Materiais gráficos para divulgação, organização, acabamento e apresentação da sua marca ou projeto.",
+    "subcategories": [
+      {
+        "id": "cartoes",
+        "name": "Cartões de visita"
+      },
+      {
+        "id": "panfletos",
+        "name": "Panfletos"
+      },
+      {
+        "id": "acabamentos",
+        "name": "Acabamentos"
+      },
+      {
+        "id": "impressoes",
+        "name": "Impressões"
+      },
+      {
+        "id": "adesivos",
+        "name": "Adesivos"
+      },
+      {
+        "id": "dtf",
+        "name": "DTF"
+      },
+      {
+        "id": "tags-etiquetas",
+        "name": "Tags e etiquetas"
+      }
+    ],
+    "sortOrder": 40
+  }
+]

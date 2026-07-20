@@ -1,0 +1,1 @@
+Inspecione `incoming-assets/`. Crie inventário, associe arquivos apenas quando houver confiança, organize em `src/assets/brand` e `src/assets/products/<slug>`, preserve os originais, defina alt texts e registre arquivos sem correspondência. Não altere a arte das fotos nem invente imagens.

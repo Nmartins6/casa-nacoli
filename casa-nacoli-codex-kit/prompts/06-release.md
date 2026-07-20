@@ -1,0 +1,1 @@
+Prepare a primeira versão publicável. Confirme que dados comerciais obrigatórios estão preenchidos, revise o diff, atualize README, gere instruções de deploy estático e Search Console, execute CI localmente e organize commits finais. Não faça push ou deploy sem autorização explícita.

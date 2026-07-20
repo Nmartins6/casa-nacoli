@@ -1,0 +1,234 @@
+[
+  {
+    "id": "review-01",
+    "stars": 5,
+    "name": "Maria Teresa Petry",
+    "comment": "Quero agradecer pelo carinho e gentileza no atendimento. Trabalho incrível, muitas encomendas estão por vim🫶🏻",
+    "source": "Google",
+    "verifiedCopy": true
+  },
+  {
+    "id": "review-02",
+    "stars": 5,
+    "name": "Arlete Horst",
+    "comment": "Super recomendo!!!!! Pontualidade na entrega combinada, e os produtos maravilhosos, do jeitinho que pedi!!!!",
+    "source": "Google",
+    "verifiedCopy": true
+  },
+  {
+    "id": "review-03",
+    "stars": 5,
+    "name": "Patricia noll",
+    "comment": "Atendimento e trabalho impecável.",
+    "source": "Google",
+    "verifiedCopy": true
+  },
+  {
+    "id": "review-04",
+    "stars": 5,
+    "name": "Maria Eduarda Vieira",
+    "comment": "Foram muito atenciosos e ágeis! O trabalho ficou lindo e do jeitinho que pedi. Obrigada! 🤍",
+    "source": "Google",
+    "verifiedCopy": true
+  },
+  {
+    "id": "review-05",
+    "stars": 5,
+    "name": "Emerson Pacheco",
+    "comment": "Ótima qualidade do produto",
+    "source": "Google",
+    "verifiedCopy": true
+  },
+  {
+    "id": "review-06",
+    "stars": 5,
+    "name": "Sadi Martins",
+    "comment": "Trabalho top com ótima qualidade e atendimento excelente ! Super indicado !!",
+    "source": "Google",
+    "verifiedCopy": true
+  },
+  {
+    "id": "review-07",
+    "stars": 5,
+    "name": "Gabriel",
+    "comment": "Produtos de qualidade.",
+    "source": "Google",
+    "verifiedCopy": true
+  },
+  {
+    "id": "review-08",
+    "stars": 5,
+    "name": "Taina Ataya",
+    "comment": "Excelente! Do Atendimento a entrega dos produtos, tudo perfeito!",
+    "source": "Google",
+    "verifiedCopy": true
+  },
+  {
+    "id": "review-09",
+    "stars": 5,
+    "name": "William Robalo",
+    "comment": "Essa caneca mágica é surreal, simples assim. Surpreende, chama atenção e não passa despercebida. Excelente trabalho, sucesso e parabéns.",
+    "source": "Google",
+    "verifiedCopy": true
+  },
+  {
+    "id": "review-10",
+    "stars": 5,
+    "name": "Joanna Pereira",
+    "comment": "A Casa Nacoli atendeu uma demanda minha super urgente num momento de muita dor. Com muito cuidado e prestatividade.",
+    "source": "Google",
+    "verifiedCopy": true
+  },
+  {
+    "id": "review-11",
+    "stars": 5,
+    "name": "Tatiani Soares Pizio",
+    "comment": "Produto superou as expectativas, entrega rápida. Super recomendo!",
+    "source": "Google",
+    "verifiedCopy": true
+  },
+  {
+    "id": "review-12",
+    "stars": 5,
+    "name": "Filipe Pereira",
+    "comment": "Pessoas competentes e muito criativas parabéns pelo excelente trabalho! Super indico",
+    "source": "Google",
+    "verifiedCopy": true
+  },
+  {
+    "id": "review-13",
+    "stars": 5,
+    "name": "William Polako",
+    "comment": "Top",
+    "source": "Google",
+    "verifiedCopy": true
+  },
+  {
+    "id": "review-14",
+    "stars": 5,
+    "name": "Lilia Maria Caldas Ataya",
+    "comment": "Maravilhosa ❤️",
+    "source": "Google",
+    "verifiedCopy": true
+  },
+  {
+    "id": "review-15",
+    "stars": 5,
+    "name": "Nádia Cristine",
+    "comment": "Trabalho simplesmente incrível, Impecável nota 10 👏👏👏",
+    "source": "Google",
+    "verifiedCopy": true
+  },
+  {
+    "id": "review-16",
+    "stars": 5,
+    "name": "renata da silva cardoso",
+    "comment": "Excelente atendimento, assim como os produtos de alta qualidade. Super recomendo! ❤️❤️",
+    "source": "Google",
+    "verifiedCopy": true
+  },
+  {
+    "id": "review-17",
+    "stars": 5,
+    "name": "Márcio Ataya",
+    "comment": "Excelente atendimento, entrega muito rápida, e produtos em uma qualidade impecável!!",
+    "source": "Google",
+    "verifiedCopy": true
+  },
+  {
+    "id": "review-18",
+    "stars": 5,
+    "name": "Erick Ataya",
+    "comment": "produtos de ótima qualidade e feitos com muito carinho!!",
+    "source": "Google",
+    "verifiedCopy": true
+  },
+  {
+    "id": "review-19",
+    "stars": 5,
+    "name": "Kanandra Araujo",
+    "comment": "Perfeito, recebi atenção, fui ouvida e auxiliada nas minhas duvidas, qualidade do produto e agilidade sem igual. Minha preferida desde o primeiro pedido!!!!",
+    "source": "Google",
+    "verifiedCopy": true
+  },
+  {
+    "id": "review-20",
+    "stars": 5,
+    "name": "Anna Scienza",
+    "comment": "Trabalho perfeito 😍😊",
+    "source": "Google",
+    "verifiedCopy": true
+  },
+  {
+    "id": "review-21",
+    "stars": 5,
+    "name": "Larissa Ataya",
+    "comment": "Tudo sempre com muito cuidado e capricho, tanto a produção quanto a entrega! Recomendo de olhos fechados!!",
+    "source": "Google",
+    "verifiedCopy": true
+  },
+  {
+    "id": "review-22",
+    "stars": 5,
+    "name": "Yasmin Pereira",
+    "comment": "Amo Casa Nacoli, atendimento super rápido e com muito carinho, encomenda ficou pronta rapidinho e a qualidade é maravilhosa!",
+    "source": "Google",
+    "verifiedCopy": true
+  },
+  {
+    "id": "review-23",
+    "stars": 5,
+    "name": "Mariana Pereira",
+    "comment": "Sempre tive ótimas experiências e fui muito bem atendida, sempre muito atenciosos com as minhas solicitações e sai muitíssimo satisfeita com todas as encomendas que já fiz.",
+    "source": "Google",
+    "verifiedCopy": true
+  },
+  {
+    "id": "review-24",
+    "stars": 5,
+    "name": "Ingrid Mariotto",
+    "comment": "Ótimo atendimento, cumpriram prazo estabelecido.",
+    "source": "Google",
+    "verifiedCopy": true
+  },
+  {
+    "id": "review-25",
+    "stars": 5,
+    "name": "Rafaela Ataya",
+    "comment": "Trabalho impecável, riqueza nos detalhes. Atendimento rápido e com agilidade, entrega eficiente e dentro do prazo combinado.",
+    "source": "Google",
+    "verifiedCopy": true
+  },
+  {
+    "id": "review-26",
+    "stars": 5,
+    "name": "Barbara Lange",
+    "comment": "Trabalho e atendimento excelentes, muito amor e dedicação em cada pedido!! Super recomendo!!",
+    "source": "Google",
+    "verifiedCopy": true
+  },
+  {
+    "id": "review-27",
+    "stars": 5,
+    "name": "Rebeca Santos",
+    "comment": "Trabalho impecável, desde o atendimento até a entrega! Afeto em cada detalhe! Sou fã!",
+    "source": "Google",
+    "verifiedCopy": true
+  },
+  {
+    "id": "review-28",
+    "stars": 5,
+    "name": "Larissa Luzzani",
+    "comment": "Trabalho incrível. Detalhes impecáveis, obrigada pelo atendimento!! Tudo perfeito 💛",
+    "source": "Google",
+    "verifiedCopy": true
+  },
+  {
+    "id": "review-29",
+    "stars": 5,
+    "name": "gabriela borges",
+    "comment": "Trabalho maravilhoso,super caprichado, amei a experiência,.",
+    "source": "Google",
+    "verifiedCopy": true
+  }
+]

@@ -1,0 +1,1 @@
+Implemente o design system, tokens, tipografia, layout base, header, navegação mobile, footer, SEOHead, JsonLd, componentes de botão, container, breadcrumbs e placeholder. Use logo real quando disponível. Valide contraste, teclado, movimento reduzido e responsividade. Execute checks e faça commits pequenos.

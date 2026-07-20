@@ -1,0 +1,1 @@
+Leia todo o kit de especificação. Inicialize o Git e crie o projeto Astro com pnpm, TypeScript estrito e Tailwind CSS 4. Configure lint, format, typecheck, testes, Playwright, sitemap e CI. Não implemente páginas finais ainda. Crie o plano da etapa, execute os checks e faça commits pequenos.

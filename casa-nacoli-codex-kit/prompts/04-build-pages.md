@@ -1,0 +1,1 @@
+Implemente a camada validada de catálogo, home, catálogo, categorias, páginas de produto, sobre, empresas, como pedir, contato, privacidade e 404. Adicione busca sem acento, filtros, mensagens de WhatsApp, avaliações e links internos. Não publique dados marcados como pendentes.
