@@ -1,0 +1,17 @@
+.astro/
+dist/
+node_modules/
+incoming-assets/
+seed/
+scripts/
+.agents/
+prompts/
+AGENTS.md
+CODEX_MASTER_PROMPT.md
+PLANS.md
+START_HERE.md
+docs/*.md
+playwright-report/
+test-results/
+coverage/
+pnpm-lock.yaml
