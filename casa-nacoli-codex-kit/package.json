@@ -1,9 +1,36 @@
 {
-  "name": "casa-nacoli-codex-kit",
+  "name": "casa-nacoli",
   "private": true,
   "type": "module",
+  "version": "0.1.0",
   "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "typecheck": "astro check",
     "validate:seed": "node scripts/validate-seed.mjs"
   },
-  "packageManager": "pnpm@latest"
+  "packageManager": "pnpm@11.13.0",
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.3",
+    "@lucide/astro": "^1.25.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "7.1.3",
+    "tailwindcss": "^4.3.3",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "@axe-core/playwright": "^4.12.1",
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.61.1",
+    "eslint": "^10.7.0",
+    "eslint-plugin-astro": "^3.0.1",
+    "prettier": "^3.9.5",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "typescript": "5.9.3",
+    "typescript-eslint": "^8.64.0",
+    "vitest": "^4.1.10"
+  }
 }
