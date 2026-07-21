@@ -82,6 +82,85 @@ export function getCategory(categoryId: string): Category | undefined {
   return categories.find(({ id }) => id === categoryId);
 }
 
+export function getCategoryBySlug(slug: string): Category | undefined {
+  return categories.find((category) => category.slug === slug);
+}
+
+export function getProductBySlug(slug: string): Product | undefined {
+  return activeProducts.find((product) => product.slug === slug);
+}
+
+export function getProductsByCategory(categoryId: string): Product[] {
+  return activeProducts.filter((product) => product.categoryId === categoryId);
+}
+
+export function getSubcategoryName(product: Product): string | undefined {
+  return getCategory(product.categoryId)?.subcategories.find(
+    (subcategory) => subcategory.id === product.subcategoryId,
+  )?.name;
+}
+
+export function normalizeSearchTerm(value: string): string {
+  return value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLocaleLowerCase("pt-BR")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+}
+
+export function getProductSearchText(product: Product): string {
+  const category = getCategory(product.categoryId);
+  const subcategory = getSubcategoryName(product);
+
+  return normalizeSearchTerm(
+    [
+      product.name,
+      product.summary,
+      product.description,
+      category?.name,
+      subcategory,
+      ...product.keywords,
+      ...product.variants.map((variant) => variant.name),
+    ]
+      .filter(Boolean)
+      .join(" "),
+  );
+}
+
+export function filterProducts(
+  catalogProducts: Product[],
+  options: { query?: string; categoryId?: string } = {},
+): Product[] {
+  const query = normalizeSearchTerm(options.query ?? "");
+
+  return catalogProducts.filter((product) => {
+    const matchesCategory =
+      !options.categoryId || product.categoryId === options.categoryId;
+    const matchesQuery =
+      !query || getProductSearchText(product).includes(query);
+
+    return matchesCategory && matchesQuery;
+  });
+}
+
+export function getRelatedProducts(product: Product, limit = 3): Product[] {
+  return activeProducts
+    .filter(
+      (candidate) =>
+        candidate.id !== product.id &&
+        candidate.categoryId === product.categoryId,
+    )
+    .sort((a, b) => {
+      const aSameSubcategory =
+        a.subcategoryId === product.subcategoryId ? 0 : 1;
+      const bSameSubcategory =
+        b.subcategoryId === product.subcategoryId ? 0 : 1;
+      return aSameSubcategory - bSameSubcategory || a.sortOrder - b.sortOrder;
+    })
+    .slice(0, limit);
+}
+
 export function getPublicPrice(product: Product): string {
   if (
     product.needsPriceConfirmation &&
@@ -91,4 +170,23 @@ export function getPublicPrice(product: Product): string {
   }
 
   return product.pricing.display;
+}
+
+export function getLowestPublicPrice(product: Product): number | undefined {
+  if (
+    product.needsPriceConfirmation &&
+    !siteConfig.businessRules.publishUnconfirmedPrices
+  ) {
+    return undefined;
+  }
+
+  if (product.pricing.amount !== undefined && product.pricing.amount !== null) {
+    return product.pricing.amount;
+  }
+
+  const variantPrices = product.variants
+    .map((variant) => variant.price)
+    .filter((price): price is number => typeof price === "number");
+
+  return variantPrices.length > 0 ? Math.min(...variantPrices) : undefined;
 }
