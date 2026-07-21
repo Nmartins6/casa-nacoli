@@ -27,6 +27,32 @@
   line-height: 1.6;
   text-rendering: optimizeLegibility;
   --header-height: 5rem;
+  --color-primary-hover: color-mix(
+    in srgb,
+    var(--color-terracotta-ink) 78%,
+    black
+  );
+  --color-card-border: color-mix(
+    in srgb,
+    var(--color-espresso) 16%,
+    transparent
+  );
+  --color-card-border-hover: color-mix(
+    in srgb,
+    var(--color-terracotta-ink) 58%,
+    transparent
+  );
+  --color-card-surface: color-mix(
+    in srgb,
+    var(--color-paper) 86%,
+    var(--color-cream)
+  );
+  --shadow-card-hover: 0 14px 30px rgb(73 66 56 / 0.12);
+  --motion-duration-fast: 180ms;
+  --motion-duration-card: 240ms;
+  --motion-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --motion-card-lift: -3px;
+  --motion-image-scale: 1.02;
 }
 
 * {
@@ -149,10 +175,10 @@ p {
   text-align: center;
   text-decoration: none;
   transition:
-    color 180ms ease,
-    background-color 180ms ease,
-    border-color 180ms ease,
-    transform 180ms ease;
+    color var(--motion-duration-fast) var(--motion-ease-standard),
+    background-color var(--motion-duration-fast) var(--motion-ease-standard),
+    border-color var(--motion-duration-fast) var(--motion-ease-standard),
+    transform var(--motion-duration-fast) var(--motion-ease-standard);
 }
 
 .button:hover {
@@ -165,7 +191,7 @@ p {
 }
 
 .button-primary:hover {
-  background: #713b24;
+  background: var(--color-primary-hover);
 }
 
 .button-secondary {

@@ -104,3 +104,11 @@ Escala recomendada:
 - nada deve bloquear a interação;
 - desativar ou reduzir animações com `prefers-reduced-motion`;
 - não usar carrossel automático de avaliações ou produtos.
+
+Tokens semânticos centralizam os estados de interação: `--color-card-border`,
+`--color-card-border-hover`, `--color-card-surface`, `--shadow-card-hover`,
+`--motion-duration-fast`, `--motion-duration-card`,
+`--motion-ease-standard`, `--motion-card-lift` e `--motion-image-scale`.
+Cards de produto usam elevação de no máximo 3 px e zoom de imagem de 1.02
+somente em dispositivos com hover preciso. Foco por teclado reforça borda e
+sombra sem ocultar o contorno de foco do link.
