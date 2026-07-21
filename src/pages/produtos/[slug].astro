@@ -1,0 +1,366 @@
+---
+import { Check, FileImage, MessagesSquare, PackageCheck } from "@lucide/astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import PriceDisplay from "../../components/PriceDisplay.astro";
+import ProductCard from "../../components/ProductCard.astro";
+import ProductGallery from "../../components/ProductGallery.astro";
+import ProductQuoteForm from "../../components/ProductQuoteForm.astro";
+import VariantDetails from "../../components/VariantDetails.astro";
+import { getProductImages } from "../../data/assets";
+import {
+  activeProducts,
+  getCategory,
+  getRelatedProducts,
+  getSubcategoryName,
+  siteConfig,
+} from "../../data/catalog";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import type { Product } from "../../types/domain";
+
+export function getStaticPaths() {
+  return activeProducts.map((product) => ({
+    params: { slug: product.slug },
+    props: { product },
+  }));
+}
+
+interface Props {
+  product: Product;
+}
+
+const { product } = Astro.props;
+const category = getCategory(product.categoryId);
+if (!category) throw new Error(`Categoria não encontrada para ${product.id}`);
+const subcategory = getSubcategoryName(product);
+const images = getProductImages(product);
+const relatedProducts = getRelatedProducts(product);
+const pageUrl = `${siteConfig.brand.domain}/produtos/${product.slug}`;
+---
+
+<BaseLayout title={product.seo.title} description={product.seo.description}>
+  <article data-page-view="product_view" data-page-context={product.slug}>
+    <section class="product-hero">
+      <div class="site-container">
+        <Breadcrumbs
+          items={[
+            { label: "Início", href: "/" },
+            { label: "Produtos", href: "/produtos" },
+            { label: category.name, href: `/categorias/${category.slug}` },
+            { label: product.name },
+          ]}
+        />
+
+        <div class="product-hero-grid">
+          <ProductGallery {images} productName={product.name} />
+
+          <div class="product-summary">
+            <a class="product-category" href={`/categorias/${category.slug}`}>
+              {category.name}{subcategory ? ` · ${subcategory}` : ""}
+            </a>
+            <h1>{product.name}</h1>
+            <p class="product-lead">{product.summary}</p>
+            <PriceDisplay {product} />
+            <ProductQuoteForm {product} {pageUrl} />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-information">
+      <div class="site-container product-information-grid">
+        <div>
+          <p class="eyebrow">Sobre este produto</p>
+          <h2>O que considerar antes do orçamento</h2>
+          <p>{product.description}</p>
+          <div class="personalization-note">
+            <FileImage size={22} aria-hidden="true" />
+            <div>
+              <h3>
+                {
+                  product.personalization.available
+                    ? "Personalização"
+                    : "Informações para o serviço"
+                }
+              </h3>
+              <p>{product.personalization.notes}</p>
+            </div>
+          </div>
+        </div>
+
+        <aside aria-labelledby="use-title">
+          <p class="eyebrow" id="use-title">Termos relacionados</p>
+          <ul class="tag-list">
+            {product.keywords.map((keyword) => <li>{keyword}</li>)}
+          </ul>
+          {
+            product.personalization.customerCanSendArtwork && (
+              <p class="confirmed-detail">
+                <Check size={17} aria-hidden="true" /> Você pode enviar sua arte
+                ou referência.
+              </p>
+            )
+          }
+          {
+            product.personalization.designSupport && (
+              <p class="confirmed-detail">
+                <Check size={17} aria-hidden="true" /> O atendimento ajuda a
+                conferir a ideia.
+              </p>
+            )
+          }
+        </aside>
+      </div>
+    </section>
+
+    <div class="site-container">
+      <VariantDetails {product} />
+    </div>
+
+    <section class="order-process" aria-labelledby="order-title">
+      <div class="site-container">
+        <div class="section-heading">
+          <p class="eyebrow">Como pedir</p>
+          <h2 class="section-title" id="order-title">
+            Três informações ajudam a começar.
+          </h2>
+        </div>
+        <ol>
+          <li>
+            <MessagesSquare size={25} aria-hidden="true" />
+            <h3>Escolha a opção</h3>
+            <p>Indique o modelo ou diga que ainda precisa de orientação.</p>
+          </li>
+          <li>
+            <PackageCheck size={25} aria-hidden="true" />
+            <h3>Informe a quantidade</h3>
+            <p>Esse dado ajuda a conferir valores e condições aplicáveis.</p>
+          </li>
+          <li>
+            <FileImage size={25} aria-hidden="true" />
+            <h3>Compartilhe a ideia</h3>
+            <p>Envie textos, fotos, referências ou o arquivo que já possui.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    {
+      relatedProducts.length > 0 && (
+        <section
+          class="section related-products"
+          aria-labelledby="related-title"
+        >
+          <div class="site-container">
+            <div class="section-heading">
+              <p class="eyebrow">Continue explorando</p>
+              <h2 class="section-title" id="related-title">
+                Outros produtos de {category.name.toLocaleLowerCase("pt-BR")}
+              </h2>
+            </div>
+            <div class="related-grid">
+              {relatedProducts.map((related) => (
+                <ProductCard product={related} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )
+    }
+  </article>
+</BaseLayout>
+
+<style>
+  .product-hero {
+    padding-block: 2rem clamp(3.5rem, 8vw, 6rem);
+    background: var(--color-cream);
+  }
+
+  .product-hero-grid {
+    display: grid;
+    align-items: start;
+    gap: 2rem;
+  }
+
+  .product-category {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+    border-radius: 0.2rem;
+    color: var(--color-terracotta-ink);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  h1 {
+    max-width: 16ch;
+    margin-bottom: 1rem;
+    font-size: clamp(2.7rem, 9vw, 4.75rem);
+  }
+
+  .product-lead {
+    max-width: 38rem;
+    margin-bottom: 1.25rem;
+    font-size: clamp(1rem, 2.3vw, 1.15rem);
+  }
+
+  .product-information {
+    padding-block: clamp(3.5rem, 8vw, 6rem);
+    background: color-mix(in srgb, var(--color-sky) 32%, white);
+  }
+
+  .product-information-grid {
+    display: grid;
+    gap: 2.5rem;
+  }
+
+  .product-information h2 {
+    max-width: 15ch;
+    margin-bottom: 1rem;
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+
+  .product-information-grid > div > p:not(.eyebrow) {
+    max-width: 43rem;
+  }
+
+  .personalization-note {
+    display: flex;
+    gap: 0.8rem;
+    max-width: 43rem;
+    margin-top: 1.5rem;
+    border-top: 1px solid rgb(73 66 56 / 0.18);
+    padding-top: 1rem;
+  }
+
+  .personalization-note > svg {
+    flex: none;
+    margin-top: 0.15rem;
+    color: var(--color-sage-ink);
+  }
+
+  .personalization-note h3 {
+    margin-bottom: 0.3rem;
+    font-size: 1.15rem;
+  }
+
+  .personalization-note p {
+    margin: 0;
+    font-size: 0.875rem;
+  }
+
+  .product-information aside {
+    border-radius: var(--radius-card);
+    padding: 1.25rem;
+    background: rgb(255 255 255 / 0.62);
+  }
+
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin: 0 0 1.5rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .tag-list li {
+    border: 1px solid rgb(73 66 56 / 0.2);
+    border-radius: 999px;
+    padding: 0.35rem 0.65rem;
+    background: var(--color-paper);
+    font-size: 0.75rem;
+  }
+
+  .confirmed-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.45rem;
+    margin-bottom: 0.55rem;
+    font-size: 0.875rem;
+  }
+
+  .confirmed-detail svg {
+    flex: none;
+    margin-top: 0.2rem;
+    color: var(--color-sage-ink);
+  }
+
+  .order-process {
+    padding-block: clamp(3.5rem, 8vw, 6rem);
+    color: rgb(255 255 255 / 0.82);
+    background: var(--color-espresso);
+  }
+
+  .order-process .eyebrow {
+    color: var(--color-honey);
+  }
+
+  .order-process .section-title,
+  .order-process h3 {
+    color: white;
+  }
+
+  .order-process ol {
+    display: grid;
+    gap: 1px;
+    margin: 0;
+    padding: 0;
+    background: rgb(255 255 255 / 0.14);
+    list-style: none;
+  }
+
+  .order-process li {
+    padding: 1.5rem;
+    background: var(--color-espresso);
+  }
+
+  .order-process li > svg {
+    margin-bottom: 1rem;
+    color: var(--color-honey);
+  }
+
+  .order-process h3 {
+    margin-bottom: 0.45rem;
+    font-size: 1.35rem;
+  }
+
+  .order-process li p {
+    margin: 0;
+    font-size: 0.875rem;
+  }
+
+  .related-products {
+    background: var(--color-paper);
+  }
+
+  .related-grid {
+    display: grid;
+    gap: 2.75rem 1.25rem;
+  }
+
+  @media (min-width: 40rem) {
+    .order-process ol,
+    .related-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 56rem) {
+    .product-hero-grid {
+      grid-template-columns: minmax(0, 1.02fr) minmax(20rem, 0.98fr);
+      gap: clamp(2rem, 5vw, 5rem);
+    }
+
+    .product-summary {
+      position: sticky;
+      top: calc(var(--header-height) + 1.5rem);
+    }
+
+    .product-information-grid {
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: clamp(2rem, 7vw, 6rem);
+    }
+  }
+</style>
