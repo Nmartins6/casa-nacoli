@@ -3,20 +3,27 @@ import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import WhatsAppLink from "../components/WhatsAppLink.astro";
 import { siteConfig } from "../data/catalog";
+import type { StructuredData } from "../utils/structured-data";
 import "../styles/global.css";
 
 interface Props {
   title?: string;
   description?: string;
   image?: string;
+  imageAlt?: string;
   noindex?: boolean;
+  ogType?: "website" | "product";
+  structuredData?: StructuredData[];
 }
 
 const {
   title = siteConfig.seo.defaultTitle,
   description = siteConfig.seo.defaultDescription,
   image = siteConfig.seo.defaultOgImage,
+  imageAlt = "Logo da Casa Nacoli",
   noindex = false,
+  ogType = "website",
+  structuredData = [],
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, siteConfig.brand.domain);
@@ -49,14 +56,14 @@ const organization = {
     <link rel="icon" type="image/jpeg" href="/favicon.jpeg" />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
 
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:locale" content={siteConfig.brand.locale} />
     <meta property="og:site_name" content={siteConfig.brand.name} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={socialImage} />
-    <meta property="og:image:alt" content="Logo da Casa Nacoli" />
+    <meta property="og:image:alt" content={imageAlt} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
@@ -68,6 +75,15 @@ const organization = {
       type="application/ld+json"
       set:html={JSON.stringify(organization)}
     />
+    {
+      structuredData.map((data) => (
+        <script
+          is:inline
+          type="application/ld+json"
+          set:html={JSON.stringify(data)}
+        />
+      ))
+    }
   </head>
   <body>
     <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>

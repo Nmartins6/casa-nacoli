@@ -14,6 +14,10 @@ import {
   reviews,
   validateCatalogReferences,
 } from "../../src/data/catalog";
+import {
+  buildBreadcrumbStructuredData,
+  buildProductStructuredData,
+} from "../../src/utils/structured-data";
 
 describe("catálogo", () => {
   it("carrega e relaciona todo o seed sem erros", () => {
@@ -76,5 +80,61 @@ describe("catálogo", () => {
     expect(filterProducts(products, { query: "produto inexistente" })).toEqual(
       [],
     );
+  });
+
+  it("gera dados estruturados somente com preços confirmados", () => {
+    const category = categories.find(({ id }) => id === "personalizados")!;
+    const pricedProduct = products.find(
+      ({ slug }) => slug === "canecas-personalizadas",
+    )!;
+    const pendingProduct = products.find(
+      ({ slug }) => slug === "lixo-car-personalizado",
+    )!;
+
+    const pricedData = buildProductStructuredData({
+      product: pricedProduct,
+      category,
+      domain: "https://casanacoli.com.br",
+      publishUnconfirmedPrices: false,
+    });
+    const pendingData = buildProductStructuredData({
+      product: pendingProduct,
+      category: categories.find(({ id }) => id === "brindes-corporativos")!,
+      domain: "https://casanacoli.com.br",
+      publishUnconfirmedPrices: false,
+    });
+
+    expect(pricedData.offers).toMatchObject({
+      "@type": "AggregateOffer",
+      lowPrice: 25,
+      highPrice: 59.9,
+      offerCount: 6,
+    });
+    expect(pendingData).not.toHaveProperty("offers");
+  });
+
+  it("gera breadcrumbs absolutos na ordem da interface", () => {
+    const data = buildBreadcrumbStructuredData(
+      [
+        { name: "Início", path: "/" },
+        { name: "Produtos", path: "/produtos" },
+      ],
+      "https://casanacoli.com.br",
+    );
+
+    expect(data.itemListElement).toEqual([
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Início",
+        item: "https://casanacoli.com.br/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Produtos",
+        item: "https://casanacoli.com.br/produtos",
+      },
+    ]);
   });
 });

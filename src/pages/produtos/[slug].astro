@@ -16,6 +16,10 @@ import {
 } from "../../data/catalog";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import type { Product } from "../../types/domain";
+import {
+  buildBreadcrumbStructuredData,
+  buildProductStructuredData,
+} from "../../utils/structured-data";
 
 export function getStaticPaths() {
   return activeProducts.map((product) => ({
@@ -35,9 +39,39 @@ const subcategory = getSubcategoryName(product);
 const images = getProductImages(product);
 const relatedProducts = getRelatedProducts(product);
 const pageUrl = `${siteConfig.brand.domain}/produtos/${product.slug}`;
+const socialImage = images.at(0);
+const image = socialImage?.src.src ?? siteConfig.seo.defaultOgImage;
+const imageAlt = socialImage?.alt ?? `Imagem de ${product.name}`;
+const structuredData = [
+  buildBreadcrumbStructuredData(
+    [
+      { name: "Início", path: "/" },
+      { name: "Produtos", path: "/produtos" },
+      { name: category.name, path: `/categorias/${category.slug}` },
+      { name: product.name, path: `/produtos/${product.slug}` },
+    ],
+    siteConfig.brand.domain,
+  ),
+  buildProductStructuredData({
+    product,
+    category,
+    domain: siteConfig.brand.domain,
+    imageUrls: images.map(
+      ({ src }) => new URL(src.src, siteConfig.brand.domain).href,
+    ),
+    publishUnconfirmedPrices: siteConfig.businessRules.publishUnconfirmedPrices,
+  }),
+];
 ---
 
-<BaseLayout title={product.seo.title} description={product.seo.description}>
+<BaseLayout
+  title={product.seo.title}
+  description={product.seo.description}
+  {image}
+  {imageAlt}
+  ogType="product"
+  {structuredData}
+>
   <article data-page-view="product_view" data-page-context={product.slug}>
     <section class="product-hero">
       <div class="site-container">

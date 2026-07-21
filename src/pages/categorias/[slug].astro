@@ -13,6 +13,7 @@ import {
 } from "../../data/catalog";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import type { Category } from "../../types/domain";
+import { buildBreadcrumbStructuredData } from "../../utils/structured-data";
 import { buildWhatsAppMessage } from "../../utils/whatsapp";
 
 export function getStaticPaths() {
@@ -44,9 +45,19 @@ const toneByCategory: Record<string, string> = {
   grafica: "sky",
 };
 const tone = toneByCategory[category.id] ?? "sky";
+const structuredData = [
+  buildBreadcrumbStructuredData(
+    [
+      { name: "Início", path: "/" },
+      { name: "Produtos", path: "/produtos" },
+      { name: category.name, path: `/categorias/${category.slug}` },
+    ],
+    siteConfig.brand.domain,
+  ),
+];
 ---
 
-<BaseLayout {title} {description}>
+<BaseLayout {title} {description} {structuredData}>
   <article data-page-view="category_view" data-page-context={category.id}>
     <header class:list={["category-hero", `tone-${tone}`]}>
       <div class="site-container category-hero-grid">
