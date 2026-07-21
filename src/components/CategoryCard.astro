@@ -16,7 +16,7 @@ const { category, image, index, tone } = Astro.props;
 const href = `/categorias/${category.slug}`;
 ---
 
-<article class:list={["category-card", `tone-${tone}`]}>
+<article class:list={["category-card", `tone-${tone}`]} data-reveal>
   <div class="category-image">
     {
       image ? (
@@ -68,10 +68,6 @@ const href = `/categorias/${category.slug}`;
     height: 100%;
     object-fit: cover;
     transition: transform 260ms ease;
-  }
-
-  .category-card:hover .category-image :global(img) {
-    transform: scale(1.025);
   }
 
   .category-content {
@@ -126,6 +122,12 @@ const href = `/categorias/${category.slug}`;
     background: color-mix(in srgb, var(--color-terracotta) 28%, white);
   }
 
+  @media (hover: hover) and (pointer: fine) {
+    .category-card:hover .category-image :global(img) {
+      transform: scale(var(--motion-image-scale));
+    }
+  }
+
   @media (min-width: 48rem) {
     .category-card:nth-child(1),
     .category-card:nth-child(4) {
@@ -145,6 +147,12 @@ const href = `/categorias/${category.slug}`;
       align-items: flex-start;
       justify-content: center;
       padding: 1.8rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .category-image :global(img) {
+      transform: none !important;
     }
   }
 </style>

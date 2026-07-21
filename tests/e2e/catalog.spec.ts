@@ -182,6 +182,14 @@ test("catálogo e páginas representativas não têm violações axe sérias", a
     "/produtos/placa-mdf-15x20",
   ]) {
     await page.goto(path);
+    await expect(
+      page.locator("[data-reveal].is-revealed").first(),
+    ).toBeVisible();
+    await page.evaluate(async () => {
+      await Promise.all(
+        document.getAnimations().map((animation) => animation.finished),
+      );
+    });
     const results = await new AxeBuilder({ page }).analyze();
     const relevantViolations = results.violations.filter(({ impact }) =>
       ["critical", "serious"].includes(impact ?? ""),

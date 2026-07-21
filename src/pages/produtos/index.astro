@@ -32,13 +32,19 @@ const structuredData = [
       <Breadcrumbs
         items={[{ label: "Início", href: "/" }, { label: "Produtos" }]}
       />
-      <p class="eyebrow">Catálogo Casa Nacoli</p>
-      <h1>Encontre o ponto de partida para o seu pedido.</h1>
-      <p>
-        São {activeProducts.length} opções entre personalizados, vestuário, brindes
-        e serviços gráficos. Pesquise pelo que precisa ou comece por uma categoria.
-      </p>
-      <nav class="category-shortcuts" aria-label="Categorias do catálogo">
+      <div data-reveal>
+        <p class="eyebrow">Catálogo Casa Nacoli</p>
+        <h1>Encontre o ponto de partida para o seu pedido.</h1>
+        <p>
+          São {activeProducts.length} opções entre personalizados, vestuário, brindes
+          e serviços gráficos. Pesquise pelo que precisa ou comece por uma categoria.
+        </p>
+      </div>
+      <nav
+        class="category-shortcuts"
+        aria-label="Categorias do catálogo"
+        data-reveal
+      >
         {
           categories.map((category, index) => (
             <a
@@ -56,7 +62,7 @@ const structuredData = [
 
   <section class="section catalog-section" aria-labelledby="catalog-title">
     <div class="site-container">
-      <div class="section-heading">
+      <div class="section-heading" data-reveal>
         <p class="eyebrow">Todas as opções</p>
         <h2 class="section-title" id="catalog-title">Produtos e serviços</h2>
         <p class="section-intro">
@@ -70,7 +76,7 @@ const structuredData = [
   </section>
 
   <section class="catalog-cta">
-    <div class="site-container catalog-cta-inner">
+    <div class="site-container catalog-cta-inner" data-reveal>
       <MessageCircleMore size={34} aria-hidden="true" />
       <div>
         <p class="eyebrow">Não encontrou exatamente o que imaginou?</p>

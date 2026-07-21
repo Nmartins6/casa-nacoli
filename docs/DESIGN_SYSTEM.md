@@ -108,7 +108,14 @@ Escala recomendada:
 Tokens semânticos centralizam os estados de interação: `--color-card-border`,
 `--color-card-border-hover`, `--color-card-surface`, `--shadow-card-hover`,
 `--motion-duration-fast`, `--motion-duration-card`,
-`--motion-ease-standard`, `--motion-card-lift` e `--motion-image-scale`.
+`--motion-duration-reveal`, `--motion-ease-standard`, `--motion-ease-reveal`,
+`--motion-card-lift`, `--motion-image-scale`, `--motion-reveal-distance` e
+`--motion-stagger-step`.
 Cards de produto usam elevação de no máximo 3 px e zoom de imagem de 1.02
 somente em dispositivos com hover preciso. Foco por teclado reforça borda e
 sombra sem ocultar o contorno de foco do link.
+
+Entradas de seção usam opacidade e deslocamento vertical de 12 px por 520 ms.
+O atraso cresce em passos de 45 ms, limitado aos cinco primeiros itens de cada
+grupo. O conteúdo permanece visível sem JavaScript, e `prefers-reduced-motion`
+remove entrada, deslocamento e zoom.

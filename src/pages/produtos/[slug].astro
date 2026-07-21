@@ -84,10 +84,12 @@ const structuredData = [
           ]}
         />
 
-        <div class="product-hero-grid">
-          <ProductGallery {images} productName={product.name} />
+        <div class="product-hero-grid" data-reveal-group>
+          <div data-reveal>
+            <ProductGallery {images} productName={product.name} />
+          </div>
 
-          <div class="product-summary">
+          <div class="product-summary" data-reveal>
             <a class="product-category" href={`/categorias/${category.slug}`}>
               {category.name}{subcategory ? ` · ${subcategory}` : ""}
             </a>
@@ -101,8 +103,8 @@ const structuredData = [
     </section>
 
     <section class="product-information">
-      <div class="site-container product-information-grid">
-        <div>
+      <div class="site-container product-information-grid" data-reveal-group>
+        <div data-reveal>
           <p class="eyebrow">Sobre este produto</p>
           <h2>O que considerar antes do orçamento</h2>
           <p>{product.description}</p>
@@ -121,7 +123,7 @@ const structuredData = [
           </div>
         </div>
 
-        <aside aria-labelledby="use-title">
+        <aside aria-labelledby="use-title" data-reveal>
           <p class="eyebrow" id="use-title">Termos relacionados</p>
           <ul class="tag-list">
             {product.keywords.map((keyword) => <li>{keyword}</li>)}
@@ -152,24 +154,24 @@ const structuredData = [
 
     <section class="order-process" aria-labelledby="order-title">
       <div class="site-container">
-        <div class="section-heading">
+        <div class="section-heading" data-reveal>
           <p class="eyebrow">Como pedir</p>
           <h2 class="section-title" id="order-title">
             Três informações ajudam a começar.
           </h2>
         </div>
-        <ol>
-          <li>
+        <ol data-reveal-group>
+          <li data-reveal>
             <MessagesSquare size={25} aria-hidden="true" />
             <h3>Escolha a opção</h3>
             <p>Indique o modelo ou diga que ainda precisa de orientação.</p>
           </li>
-          <li>
+          <li data-reveal>
             <PackageCheck size={25} aria-hidden="true" />
             <h3>Informe a quantidade</h3>
             <p>Esse dado ajuda a conferir valores e condições aplicáveis.</p>
           </li>
-          <li>
+          <li data-reveal>
             <FileImage size={25} aria-hidden="true" />
             <h3>Compartilhe a ideia</h3>
             <p>Envie textos, fotos, referências ou o arquivo que já possui.</p>
@@ -185,13 +187,13 @@ const structuredData = [
           aria-labelledby="related-title"
         >
           <div class="site-container">
-            <div class="section-heading">
+            <div class="section-heading" data-reveal>
               <p class="eyebrow">Continue explorando</p>
               <h2 class="section-title" id="related-title">
                 Outros produtos de {category.name.toLocaleLowerCase("pt-BR")}
               </h2>
             </div>
-            <div class="related-grid">
+            <div class="related-grid" data-reveal-group>
               {relatedProducts.map((related) => (
                 <ProductCard product={related} />
               ))}

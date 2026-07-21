@@ -54,8 +54,8 @@ const homeFeaturedProducts = [canecas, camisetas, ecobag, cartoes];
 
 <BaseLayout>
   <section class="hero">
-    <div class="site-container hero-grid">
-      <div class="hero-copy">
+    <div class="site-container hero-grid" data-reveal-group>
+      <div class="hero-copy" data-reveal>
         <p class="eyebrow">Personalizados e gráfica em Lajeado</p>
         <h1>Sua ideia, feita com cuidado.</h1>
         <p class="hero-intro">
@@ -77,6 +77,7 @@ const homeFeaturedProducts = [canecas, camisetas, ecobag, cartoes];
       <div
         class="hero-gallery"
         aria-label="Exemplos de produtos da Casa Nacoli"
+        data-reveal
       >
         {
           homeImages.canecas && (
@@ -128,7 +129,7 @@ const homeFeaturedProducts = [canecas, camisetas, ecobag, cartoes];
 
   <section class="section categories-section" id="categorias">
     <div class="site-container">
-      <div class="section-heading">
+      <div class="section-heading" data-reveal>
         <p class="eyebrow">Um ponto de partida simples</p>
         <h2 class="section-title">O que você quer criar?</h2>
         <p class="section-intro">
@@ -136,7 +137,7 @@ const homeFeaturedProducts = [canecas, camisetas, ecobag, cartoes];
           a ideia e a Casa Nacoli ajuda a organizar o pedido.
         </p>
       </div>
-      <div class="category-grid">
+      <div class="category-grid" data-reveal-group>
         {
           categories.map((category, index) => (
             <CategoryCard
@@ -153,7 +154,7 @@ const homeFeaturedProducts = [canecas, camisetas, ecobag, cartoes];
 
   <section class="section featured-section" id="destaques">
     <div class="site-container">
-      <div class="featured-heading">
+      <div class="featured-heading" data-reveal>
         <div class="section-heading">
           <p class="eyebrow">Para conhecer de perto</p>
           <h2 class="section-title">Produtos em destaque</h2>
@@ -166,14 +167,14 @@ const homeFeaturedProducts = [canecas, camisetas, ecobag, cartoes];
           O valor final pode variar conforme arte, modelo e quantidade.
         </p>
       </div>
-      <div class="product-grid">
+      <div class="product-grid" data-reveal-group>
         {
           homeFeaturedProducts.map((product, index) => (
             <ProductCard product={product} priority={index === 0} />
           ))
         }
       </div>
-      <div class="featured-action">
+      <div class="featured-action" data-reveal>
         <a class="button button-secondary" href="/produtos">
           Ver todos os produtos
           <ArrowRight size={18} aria-hidden="true" />
@@ -183,8 +184,8 @@ const homeFeaturedProducts = [canecas, camisetas, ecobag, cartoes];
   </section>
 
   <section class="section custom-section" id="personalizados">
-    <div class="site-container custom-grid">
-      <div class="custom-copy">
+    <div class="site-container custom-grid" data-reveal-group>
+      <div class="custom-copy" data-reveal>
         <Sparkles size={28} aria-hidden="true" />
         <p class="eyebrow">Pedidos personalizados</p>
         <h2 class="section-title">
@@ -216,7 +217,7 @@ const homeFeaturedProducts = [canecas, camisetas, ecobag, cartoes];
       </div>
       {
         homeImages.quebraCabeca && (
-          <div class="custom-image">
+          <div class="custom-image" data-reveal>
             <Image
               src={homeImages.quebraCabeca.src}
               alt={homeImages.quebraCabeca.alt}
@@ -231,10 +232,10 @@ const homeFeaturedProducts = [canecas, camisetas, ecobag, cartoes];
   </section>
 
   <section class="section business-section" id="empresas">
-    <div class="site-container business-grid">
+    <div class="site-container business-grid" data-reveal-group>
       {
         homeImages.ecobag && (
-          <div class="business-image">
+          <div class="business-image" data-reveal>
             <Image
               src={homeImages.ecobag.src}
               alt={homeImages.ecobag.alt}
@@ -245,7 +246,7 @@ const homeFeaturedProducts = [canecas, camisetas, ecobag, cartoes];
           </div>
         )
       }
-      <div class="business-copy">
+      <div class="business-copy" data-reveal>
         <Building2 size={30} aria-hidden="true" />
         <p class="eyebrow">Para empresas</p>
         <h2 class="section-title">
@@ -273,27 +274,27 @@ const homeFeaturedProducts = [canecas, camisetas, ecobag, cartoes];
 
   <section class="section process-section" id="como-pedir">
     <div class="site-container">
-      <div class="section-heading">
+      <div class="section-heading" data-reveal>
         <p class="eyebrow">Como pedir</p>
         <h2 class="section-title">Da ideia à produção, sem complicar.</h2>
       </div>
-      <ol class="process-list">
-        <li>
+      <ol class="process-list" data-reveal-group>
+        <li data-reveal>
           <span>1</span>
           <h3>Conte sua ideia</h3>
           <p>Diga o produto, a ocasião ou o objetivo do pedido.</p>
         </li>
-        <li>
+        <li data-reveal>
           <span>2</span>
           <h3>Envie os detalhes</h3>
           <p>Compartilhe quantidade, referências, textos, fotos ou arquivo.</p>
         </li>
-        <li>
+        <li data-reveal>
           <span>3</span>
           <h3>Alinhe o orçamento</h3>
           <p>Modelo, arte e viabilidade são confirmados no atendimento.</p>
         </li>
-        <li>
+        <li data-reveal>
           <span>4</span>
           <h3>Siga para a produção</h3>
           <p>Com os detalhes combinados, o pedido pode ser produzido.</p>
@@ -304,7 +305,7 @@ const homeFeaturedProducts = [canecas, camisetas, ecobag, cartoes];
 
   <section class="section reviews-section" id="avaliacoes">
     <div class="site-container">
-      <div class="reviews-heading">
+      <div class="reviews-heading" data-reveal>
         <div class="section-heading">
           <p class="eyebrow">Atendimento visto por quem pediu</p>
           <h2 class="section-title">Avaliações reais</h2>
@@ -319,7 +320,7 @@ const homeFeaturedProducts = [canecas, camisetas, ecobag, cartoes];
           rel="noreferrer">Ver perfil no Google</a
         >
       </div>
-      <div class="review-grid">
+      <div class="review-grid" data-reveal-group>
         {selectedReviews.map((review) => <ReviewCard {review} />)}
       </div>
     </div>
@@ -359,7 +360,7 @@ const homeFeaturedProducts = [canecas, camisetas, ecobag, cartoes];
   </section>
 
   <section class="final-cta">
-    <div class="site-container final-cta-inner">
+    <div class="site-container final-cta-inner" data-reveal>
       <MessageCircleMore size={36} aria-hidden="true" />
       <div>
         <p class="eyebrow">Vamos conversar?</p>

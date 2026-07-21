@@ -50,9 +50,13 @@
   --shadow-card-hover: 0 14px 30px rgb(73 66 56 / 0.12);
   --motion-duration-fast: 180ms;
   --motion-duration-card: 240ms;
+  --motion-duration-reveal: 520ms;
   --motion-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --motion-ease-reveal: cubic-bezier(0.22, 1, 0.36, 1);
   --motion-card-lift: -3px;
   --motion-image-scale: 1.02;
+  --motion-reveal-distance: 12px;
+  --motion-stagger-step: 45ms;
 }
 
 * {
@@ -205,6 +209,24 @@ p {
   background: rgb(255 255 255 / 0.42);
 }
 
+[data-reveal].is-revealed {
+  animation: reveal-in var(--motion-duration-reveal) var(--motion-ease-reveal)
+    both;
+  animation-delay: calc(var(--reveal-order, 0) * var(--motion-stagger-step));
+}
+
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    translate: 0 var(--motion-reveal-distance);
+  }
+
+  to {
+    opacity: 1;
+    translate: none;
+  }
+}
+
 .skip-link {
   position: fixed;
   z-index: 100;
@@ -236,6 +258,12 @@ p {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  [data-reveal].is-revealed {
+    animation: none !important;
+    opacity: 1 !important;
+    translate: none !important;
+  }
+
   *,
   *::before,
   *::after {

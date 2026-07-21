@@ -73,6 +73,12 @@ test("não cria overflow horizontal nos viewports-alvo", async ({
 
 test("não apresenta violações axe críticas ou sérias", async ({ page }) => {
   await page.goto("/");
+  await expect(page.locator("[data-reveal].is-revealed").first()).toBeVisible();
+  await page.evaluate(async () => {
+    await Promise.all(
+      document.getAnimations().map((animation) => animation.finished),
+    );
+  });
   const results = await new AxeBuilder({ page }).analyze();
   const relevantViolations = results.violations.filter(({ impact }) =>
     ["critical", "serious"].includes(impact ?? ""),
