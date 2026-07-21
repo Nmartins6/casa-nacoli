@@ -2,10 +2,10 @@
 import { Image } from "astro:assets";
 import { ArrowRight } from "@lucide/astro";
 import { getProductImages } from "../data/assets";
-import { getCategory, getPublicPrice, siteConfig } from "../data/catalog";
+import { getCategory } from "../data/catalog";
 import type { Product } from "../types/domain";
-import { buildWhatsAppMessage, createWhatsAppUrl } from "../utils/whatsapp";
 import PlaceholderImage from "./PlaceholderImage.astro";
+import PriceDisplay from "./PriceDisplay.astro";
 
 interface Props {
   product: Product;
@@ -15,15 +15,16 @@ interface Props {
 const { product, priority = false } = Astro.props;
 const image = getProductImages(product).at(0);
 const category = getCategory(product.categoryId);
-const message = buildWhatsAppMessage({
-  product: product.name,
-  pageUrl: `${siteConfig.brand.domain}/#destaques`,
-});
-const href = createWhatsAppUrl(siteConfig.links.whatsapp, message);
+const productHref = `/produtos/${product.slug}`;
+const categoryHref = category ? `/categorias/${category.slug}` : "/produtos";
 ---
 
 <article class="product-card">
-  <div class="product-image">
+  <a
+    class="product-image"
+    href={productHref}
+    aria-label={`Ver ${product.name}`}
+  >
     {
       image ? (
         <Image
@@ -37,22 +38,19 @@ const href = createWhatsAppUrl(siteConfig.links.whatsapp, message);
         <PlaceholderImage />
       )
     }
-  </div>
+  </a>
   <div class="product-content">
-    <p class="product-category">{category?.name}</p>
-    <h3>{product.name}</h3>
+    <a class="product-category" href={categoryHref}>{category?.name}</a>
+    <h3><a href={productHref}>{product.name}</a></h3>
     <p class="product-summary">{product.summary}</p>
     <div class="product-footer">
-      <p class="product-price">{getPublicPrice(product)}</p>
+      <PriceDisplay {product} compact />
       <a
-        href={href}
-        target="_blank"
-        rel="noreferrer"
-        aria-label={`Falar sobre ${product.name} pelo WhatsApp`}
-        data-analytics-event="whatsapp_click"
-        data-analytics-context={`produto_${product.slug}`}
+        class="product-link"
+        href={productHref}
+        aria-label={`Ver detalhes de ${product.name}`}
       >
-        Falar sobre o produto
+        Ver detalhes
         <ArrowRight size={17} aria-hidden="true" />
       </a>
     </div>
@@ -65,6 +63,7 @@ const href = createWhatsAppUrl(siteConfig.links.whatsapp, message);
   }
 
   .product-image {
+    display: block;
     aspect-ratio: 4 / 5;
     overflow: hidden;
     border-radius: var(--radius-card);
@@ -87,17 +86,24 @@ const href = createWhatsAppUrl(siteConfig.links.whatsapp, message);
   }
 
   .product-category {
+    display: inline-block;
     margin-bottom: 0.45rem;
     color: var(--color-terracotta-ink);
     font-size: 0.75rem;
     font-weight: 800;
     letter-spacing: 0.09em;
     text-transform: uppercase;
+    text-decoration: none;
   }
 
   h3 {
     margin-bottom: 0.6rem;
     font-size: 1.6rem;
+  }
+
+  h3 a {
+    border-radius: 0.2rem;
+    text-decoration: none;
   }
 
   .product-summary {
@@ -112,12 +118,7 @@ const href = createWhatsAppUrl(siteConfig.links.whatsapp, message);
     gap: 0.55rem;
   }
 
-  .product-price {
-    margin: 0;
-    font-weight: 800;
-  }
-
-  a {
+  .product-link {
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;

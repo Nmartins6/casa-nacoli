@@ -1,0 +1,67 @@
+---
+import { ChevronRight } from "@lucide/astro";
+
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<nav class="breadcrumbs" aria-label="Navegação estrutural">
+  <ol>
+    {
+      items.map((item, index) => {
+        const isCurrent = index === items.length - 1;
+        return (
+          <li>
+            {index > 0 && <ChevronRight size={14} aria-hidden="true" />}
+            {item.href && !isCurrent ? (
+              <a href={item.href}>{item.label}</a>
+            ) : (
+              <span aria-current={isCurrent ? "page" : undefined}>
+                {item.label}
+              </span>
+            )}
+          </li>
+        );
+      })
+    }
+  </ol>
+</nav>
+
+<style>
+  .breadcrumbs {
+    margin-bottom: 1.5rem;
+    font-size: 0.8125rem;
+  }
+
+  ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  a,
+  span {
+    border-radius: 0.2rem;
+  }
+
+  span[aria-current="page"] {
+    color: rgb(73 66 56 / 0.72);
+  }
+</style>

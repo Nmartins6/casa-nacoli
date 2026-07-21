@@ -3,6 +3,7 @@ import productsJson from "../../seed/products.json";
 import reviewsJson from "../../seed/reviews.json";
 import siteConfigJson from "../../seed/site-config.json";
 import type { Category, Product, Review, SiteConfig } from "../types/domain";
+import { normalizeSearchTerm } from "../utils/search";
 import {
   categorySchema,
   productSchema,
@@ -100,14 +101,7 @@ export function getSubcategoryName(product: Product): string | undefined {
   )?.name;
 }
 
-export function normalizeSearchTerm(value: string): string {
-  return value
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLocaleLowerCase("pt-BR")
-    .replace(/[^a-z0-9]+/g, " ")
-    .trim();
-}
+export { normalizeSearchTerm };
 
 export function getProductSearchText(product: Product): string {
   const category = getCategory(product.categoryId);

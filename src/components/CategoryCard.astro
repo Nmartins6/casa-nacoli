@@ -2,9 +2,7 @@
 import { Image } from "astro:assets";
 import { ArrowUpRight } from "@lucide/astro";
 import type { ResolvedProductImage } from "../data/assets";
-import { siteConfig } from "../data/catalog";
 import type { Category } from "../types/domain";
-import { createWhatsAppUrl } from "../utils/whatsapp";
 import PlaceholderImage from "./PlaceholderImage.astro";
 
 interface Props {
@@ -15,8 +13,7 @@ interface Props {
 }
 
 const { category, image, index, tone } = Astro.props;
-const message = `Olá! Vim pelo site da Casa Nacoli e gostaria de conhecer as opções de ${category.name}. Página: ${siteConfig.brand.domain}/#categorias`;
-const href = createWhatsAppUrl(siteConfig.links.whatsapp, message);
+const href = `/categorias/${category.slug}`;
 ---
 
 <article class:list={["category-card", `tone-${tone}`]}>
@@ -41,12 +38,10 @@ const href = createWhatsAppUrl(siteConfig.links.whatsapp, message);
     <p>{category.description}</p>
     <a
       href={href}
-      target="_blank"
-      rel="noreferrer"
-      data-analytics-event="whatsapp_click"
-      data-analytics-context={`categoria_${category.id}`}
+      data-analytics-event="category_view"
+      data-analytics-context={category.id}
     >
-      Ver opções pelo WhatsApp
+      Ver produtos
       <ArrowUpRight size={17} aria-hidden="true" />
     </a>
   </div>

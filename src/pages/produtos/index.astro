@@ -1,0 +1,172 @@
+---
+import { ArrowRight, MessageCircleMore } from "@lucide/astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import CatalogBrowser from "../../components/CatalogBrowser.astro";
+import WhatsAppLink from "../../components/WhatsAppLink.astro";
+import { activeProducts, categories, siteConfig } from "../../data/catalog";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { buildWhatsAppMessage } from "../../utils/whatsapp";
+
+const title = "Produtos personalizados e serviços gráficos | Casa Nacoli";
+const description =
+  "Explore os produtos personalizados, vestuário, brindes corporativos e serviços gráficos da Casa Nacoli.";
+const customMessage = buildWhatsAppMessage({
+  details: "Quero ajuda para encontrar ou montar um produto personalizado",
+  pageUrl: `${siteConfig.brand.domain}/produtos`,
+});
+---
+
+<BaseLayout {title} {description}>
+  <header class="catalog-hero">
+    <div class="site-container">
+      <Breadcrumbs
+        items={[{ label: "Início", href: "/" }, { label: "Produtos" }]}
+      />
+      <p class="eyebrow">Catálogo Casa Nacoli</p>
+      <h1>Encontre o ponto de partida para o seu pedido.</h1>
+      <p>
+        São {activeProducts.length} opções entre personalizados, vestuário, brindes
+        e serviços gráficos. Pesquise pelo que precisa ou comece por uma categoria.
+      </p>
+      <nav class="category-shortcuts" aria-label="Categorias do catálogo">
+        {
+          categories.map((category, index) => (
+            <a
+              class={`tone-${index + 1}`}
+              href={`/categorias/${category.slug}`}
+            >
+              <span>{category.name}</span>
+              <ArrowRight size={17} aria-hidden="true" />
+            </a>
+          ))
+        }
+      </nav>
+    </div>
+  </header>
+
+  <section class="section catalog-section" aria-labelledby="catalog-title">
+    <div class="site-container">
+      <div class="section-heading">
+        <p class="eyebrow">Todas as opções</p>
+        <h2 class="section-title" id="catalog-title">Produtos e serviços</h2>
+        <p class="section-intro">
+          Os valores publicados são referências confirmadas. Quando o pedido
+          depende de material, formato ou quantidade, a página indica que é
+          necessário consultar.
+        </p>
+      </div>
+      <CatalogBrowser products={activeProducts} {categories} />
+    </div>
+  </section>
+
+  <section class="catalog-cta">
+    <div class="site-container catalog-cta-inner">
+      <MessageCircleMore size={34} aria-hidden="true" />
+      <div>
+        <p class="eyebrow">Não encontrou exatamente o que imaginou?</p>
+        <h2>Conte a ideia antes de escolher.</h2>
+        <p>
+          A Casa Nacoli ajuda a identificar uma opção viável para o seu pedido.
+        </p>
+      </div>
+      <WhatsAppLink
+        label="Enviar minha ideia"
+        message={customMessage}
+        context="catalogo_personalizado"
+      />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .catalog-hero {
+    padding-block: clamp(2.5rem, 7vw, 5.5rem);
+    background: color-mix(in srgb, var(--color-sky) 34%, var(--color-cream));
+  }
+
+  .catalog-hero h1 {
+    max-width: 15ch;
+    margin-bottom: 1rem;
+    font-size: clamp(2.7rem, 9vw, 5rem);
+  }
+
+  .catalog-hero > div > p:not(.eyebrow) {
+    max-width: 44rem;
+    font-size: clamp(1rem, 2.3vw, 1.15rem);
+  }
+
+  .category-shortcuts {
+    display: grid;
+    gap: 0.65rem;
+    margin-top: 2rem;
+  }
+
+  .category-shortcuts a {
+    display: flex;
+    min-height: 3.25rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border: 1px solid rgb(73 66 56 / 0.16);
+    border-radius: 0.75rem;
+    padding: 0.75rem 1rem;
+    font-weight: 750;
+    text-decoration: none;
+  }
+
+  .category-shortcuts a:hover {
+    border-color: var(--color-espresso);
+  }
+
+  .tone-1 {
+    background: color-mix(in srgb, var(--color-terracotta) 24%, white);
+  }
+
+  .tone-2 {
+    background: color-mix(in srgb, var(--color-honey) 35%, white);
+  }
+
+  .tone-3 {
+    background: color-mix(in srgb, var(--color-sage) 35%, white);
+  }
+
+  .tone-4 {
+    background: color-mix(in srgb, var(--color-sky) 58%, white);
+  }
+
+  .catalog-section {
+    background: var(--color-paper);
+  }
+
+  .catalog-cta {
+    padding-block: clamp(3rem, 7vw, 5rem);
+    background: var(--color-honey);
+  }
+
+  .catalog-cta-inner {
+    display: grid;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .catalog-cta h2 {
+    margin-bottom: 0.4rem;
+    font-size: clamp(2rem, 6vw, 3.25rem);
+  }
+
+  .catalog-cta p:last-child {
+    margin: 0;
+  }
+
+  @media (min-width: 40rem) {
+    .category-shortcuts {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .catalog-cta-inner {
+      grid-template-columns: auto 1fr auto;
+    }
+  }
+</style>
