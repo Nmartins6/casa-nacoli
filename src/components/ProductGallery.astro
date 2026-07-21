@@ -127,6 +127,13 @@ const firstImage = preparedImages.at(0);
 </script>
 
 <style>
+  .product-gallery {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
   .gallery-main {
     display: grid;
     aspect-ratio: 4 / 5;
@@ -145,6 +152,7 @@ const firstImage = preparedImages.at(0);
 
   .gallery-thumbnails {
     display: flex;
+    width: 100%;
     max-width: 100%;
     gap: 0.55rem;
     margin-top: 0.75rem;

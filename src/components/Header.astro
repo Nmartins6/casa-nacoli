@@ -129,6 +129,10 @@ const mobileLinks = [
     box-shadow: var(--shadow-soft);
   }
 
+  .mobile-menu:not([open]) nav {
+    display: none;
+  }
+
   .mobile-menu nav > a:not(.button) {
     min-height: 3rem;
     border-radius: 0.5rem;
