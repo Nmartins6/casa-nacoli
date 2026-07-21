@@ -12,9 +12,6 @@ permissions:
 jobs:
   quality:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: casa-nacoli-codex-kit
 
     steps:
       - name: Baixar repositório
@@ -30,7 +27,7 @@ jobs:
         with:
           node-version: 24
           cache: pnpm
-          cache-dependency-path: casa-nacoli-codex-kit/pnpm-lock.yaml
+          cache-dependency-path: pnpm-lock.yaml
 
       - name: Instalar dependências
         run: pnpm install --frozen-lockfile
