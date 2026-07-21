@@ -14,3 +14,10 @@ document.querySelectorAll<HTMLElement>("[data-analytics-event]").forEach((item) 
     trackEvent({ name, context: item.dataset.analyticsContext });
   });
 });
+
+const pageView = document.querySelector<HTMLElement>("[data-page-view]");
+const pageViewName = pageView?.dataset.pageView;
+
+if (pageView && pageViewName) {
+  trackEvent({ name: pageViewName, context: pageView.dataset.pageContext });
+}

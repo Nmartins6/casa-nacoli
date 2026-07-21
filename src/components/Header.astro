@@ -4,12 +4,24 @@ import { Menu } from "@lucide/astro";
 import logo from "../assets/brand/casa-nacoli-logo.jpeg";
 import WhatsAppLink from "./WhatsAppLink.astro";
 
-const links = [
-  { href: "/#categorias", label: "O que fazemos" },
-  { href: "/#destaques", label: "Destaques" },
+const desktopLinks = [
+  { href: "/", label: "Início" },
+  { href: "/produtos", label: "Produtos" },
+  { href: "/produtos#categorias", label: "Categorias" },
   { href: "/#empresas", label: "Para empresas" },
   { href: "/#como-pedir", label: "Como pedir" },
-  { href: "/#avaliacoes", label: "Avaliações" },
+  { href: "/#contato", label: "Contato" },
+];
+
+const mobileLinks = [
+  { href: "/produtos", label: "Todos os produtos" },
+  { href: "/categorias/personalizados", label: "Personalizados" },
+  { href: "/categorias/vestuario", label: "Vestuário" },
+  { href: "/categorias/brindes-corporativos", label: "Brindes corporativos" },
+  { href: "/categorias/grafica-e-impressoes", label: "Gráfica e impressões" },
+  { href: "/#empresas", label: "Para empresas" },
+  { href: "/#como-pedir", label: "Como pedir" },
+  { href: "/#contato", label: "Contato" },
 ];
 ---
 
@@ -26,7 +38,7 @@ const links = [
     </a>
 
     <nav class="desktop-nav" aria-label="Navegação principal">
-      {links.map((link) => <a href={link.href}>{link.label}</a>)}
+      {desktopLinks.map((link) => <a href={link.href}>{link.label}</a>)}
     </nav>
 
     <div class="desktop-action">
@@ -39,7 +51,7 @@ const links = [
         <span>Menu</span>
       </summary>
       <nav aria-label="Navegação mobile">
-        {links.map((link) => <a href={link.href}>{link.label}</a>)}
+        {mobileLinks.map((link) => <a href={link.href}>{link.label}</a>)}
         <WhatsAppLink label="Pedir pelo WhatsApp" context="menu_mobile" />
       </nav>
     </details>

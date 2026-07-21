@@ -70,7 +70,7 @@ a {
 }
 
 :focus-visible {
-  outline: 3px solid var(--color-terracotta);
+  outline: 3px solid var(--color-terracotta-ink);
   outline-offset: 4px;
 }
 
@@ -161,11 +161,11 @@ p {
 
 .button-primary {
   color: white;
-  background: var(--color-espresso);
+  background: var(--color-terracotta-ink);
 }
 
 .button-primary:hover {
-  background: #332f29;
+  background: #713b24;
 }
 
 .button-secondary {

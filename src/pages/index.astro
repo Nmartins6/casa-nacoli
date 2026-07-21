@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import {
-  ArrowDown,
+  ArrowRight,
   Building2,
   Check,
   MessageCircleMore,
@@ -12,13 +12,7 @@ import ProductCard from "../components/ProductCard.astro";
 import ReviewCard from "../components/ReviewCard.astro";
 import WhatsAppLink from "../components/WhatsAppLink.astro";
 import { getProductImages } from "../data/assets";
-import {
-  categories,
-  featuredProducts,
-  products,
-  reviews,
-  siteConfig,
-} from "../data/catalog";
+import { categories, products, reviews, siteConfig } from "../data/catalog";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { buildWhatsAppMessage } from "../utils/whatsapp";
 
@@ -55,6 +49,7 @@ const selectedReviews = ["review-04", "review-09", "review-19"]
 const generalMessage = buildWhatsAppMessage({
   pageUrl: siteConfig.brand.domain,
 });
+const homeFeaturedProducts = [canecas, camisetas, ecobag, cartoes];
 ---
 
 <BaseLayout>
@@ -69,9 +64,9 @@ const generalMessage = buildWhatsAppMessage({
         </p>
         <div class="hero-actions">
           <WhatsAppLink message={generalMessage} context="hero" />
-          <a class="button button-secondary" href="#categorias">
-            Ver o que fazemos
-            <ArrowDown size={18} aria-hidden="true" />
+          <a class="button button-secondary" href="/produtos">
+            Ver catálogo
+            <ArrowRight size={18} aria-hidden="true" />
           </a>
         </div>
         <p class="hero-note">
@@ -173,10 +168,16 @@ const generalMessage = buildWhatsAppMessage({
       </div>
       <div class="product-grid">
         {
-          featuredProducts.map((product, index) => (
+          homeFeaturedProducts.map((product, index) => (
             <ProductCard product={product} priority={index === 0} />
           ))
         }
+      </div>
+      <div class="featured-action">
+        <a class="button button-secondary" href="/produtos">
+          Ver todos os produtos
+          <ArrowRight size={18} aria-hidden="true" />
+        </a>
       </div>
     </div>
   </section>
@@ -505,6 +506,12 @@ const generalMessage = buildWhatsAppMessage({
     gap: 2.5rem 1.25rem;
   }
 
+  .featured-action {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+
   .custom-section {
     padding-block: 0;
     background: var(--color-paper);
@@ -694,9 +701,12 @@ const generalMessage = buildWhatsAppMessage({
 
   @media (min-width: 40rem) {
     .value-grid,
-    .product-grid,
     .review-grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .product-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .category-grid {
@@ -751,6 +761,10 @@ const generalMessage = buildWhatsAppMessage({
     }
 
     .process-list {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .product-grid {
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
   }

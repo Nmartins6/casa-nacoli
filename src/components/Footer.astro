@@ -3,7 +3,7 @@ import { AtSign, Clock3, Mail, MapPin } from "@lucide/astro";
 import { siteConfig } from "../data/catalog";
 ---
 
-<footer class="site-footer">
+<footer class="site-footer" id="contato">
   <div class="site-container footer-grid">
     <div class="footer-intro">
       <p class="footer-brand">Casa Nacoli</p>
@@ -12,8 +12,9 @@ import { siteConfig } from "../data/catalog";
 
     <nav aria-label="Navegação do rodapé">
       <p class="footer-title">Navegue</p>
-      <a href="/#categorias">O que fazemos</a>
-      <a href="/#destaques">Produtos em destaque</a>
+      <a href="/">Início</a>
+      <a href="/produtos">Todos os produtos</a>
+      <a href="/produtos#categorias">Categorias</a>
       <a href="/#empresas">Para empresas</a>
       <a href="/#como-pedir">Como pedir</a>
     </nav>
