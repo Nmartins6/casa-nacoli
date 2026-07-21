@@ -74,8 +74,19 @@ const href = createWhatsAppUrl(siteConfig.links.whatsapp, message);
 
   @media (min-width: 48rem) {
     .whatsapp-floating {
+      width: 3.5rem;
       right: 2rem;
       bottom: 2rem;
+      padding: 0;
+    }
+
+    .whatsapp-floating .floating-label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
     }
   }
 </style>
