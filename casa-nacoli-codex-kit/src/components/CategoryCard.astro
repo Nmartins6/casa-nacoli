@@ -16,7 +16,7 @@ interface Props {
 
 const { category, image, index, tone } = Astro.props;
 const message = `Olá! Vim pelo site da Casa Nacoli e gostaria de conhecer as opções de ${category.name}. Página: ${siteConfig.brand.domain}/#categorias`;
-const href = createWhatsAppUrl(siteConfig.contact.whatsappNumber, message);
+const href = createWhatsAppUrl(siteConfig.links.whatsapp, message);
 ---
 
 <article class:list={["category-card", `tone-${tone}`]}>

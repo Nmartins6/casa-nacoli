@@ -11,7 +11,7 @@ const { review } = Astro.props;
 
 <figure class="review-card">
   <div class="review-top">
-    <div class="stars" aria-label={`${review.stars} de 5 estrelas`}>
+    <div class="stars" role="img" aria-label={`${review.stars} de 5 estrelas`}>
       {
         Array.from({ length: review.stars }, () => (
           <Star size={16} fill="currentColor" aria-hidden="true" />
@@ -67,6 +67,6 @@ const { review } = Astro.props;
   }
 
   figcaption span {
-    color: rgb(73 66 56 / 0.72);
+    color: rgb(73 66 56 / 0.82);
   }
 </style>

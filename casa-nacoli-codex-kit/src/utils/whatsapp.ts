@@ -26,7 +26,11 @@ export function buildWhatsAppMessage({
   return parts.join(" ");
 }
 
-export function createWhatsAppUrl(number: string, message: string): string {
-  const normalizedNumber = number.replace(/\D/g, "");
+export function createWhatsAppUrl(
+  numberOrUrl: string,
+  message: string,
+): string {
+  const urlNumber = numberOrUrl.match(/wa\.me\/(\d+)/)?.[1];
+  const normalizedNumber = urlNumber ?? numberOrUrl.replace(/\D/g, "");
   return `https://wa.me/${normalizedNumber}?text=${encodeURIComponent(message)}`;
 }

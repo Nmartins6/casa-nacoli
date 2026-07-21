@@ -19,7 +19,7 @@ const message = buildWhatsAppMessage({
   product: product.name,
   pageUrl: `${siteConfig.brand.domain}/#destaques`,
 });
-const href = createWhatsAppUrl(siteConfig.contact.whatsappNumber, message);
+const href = createWhatsAppUrl(siteConfig.links.whatsapp, message);
 ---
 
 <article class="product-card">
@@ -88,7 +88,7 @@ const href = createWhatsAppUrl(siteConfig.contact.whatsappNumber, message);
 
   .product-category {
     margin-bottom: 0.45rem;
-    color: var(--color-terracotta);
+    color: var(--color-terracotta-ink);
     font-size: 0.75rem;
     font-weight: 800;
     letter-spacing: 0.09em;

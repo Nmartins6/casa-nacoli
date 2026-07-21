@@ -5,6 +5,7 @@
   --color-sage: #929874;
   --color-honey: #ddb75e;
   --color-terracotta: #c1764b;
+  --color-terracotta-ink: #8f4f2f;
   --color-espresso: #494238;
   --color-cream: #faeede;
   --color-paper: #fffaf4;
@@ -114,7 +115,7 @@ p {
 
 .eyebrow {
   margin-bottom: 0.75rem;
-  color: var(--color-terracotta);
+  color: var(--color-terracotta-ink);
   font-size: 0.8125rem;
   font-weight: 750;
   letter-spacing: 0.12em;
