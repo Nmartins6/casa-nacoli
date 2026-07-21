@@ -16,7 +16,7 @@ test("apresenta o conteúdo essencial e links válidos", async ({ page }) => {
     }),
   ).toBeVisible();
   await expect(page.locator("#categorias article")).toHaveCount(4);
-  await expect(page.locator("#destaques article")).toHaveCount(3);
+  await expect(page.locator("#destaques article")).toHaveCount(4);
   await expect(page.locator("#avaliacoes figure")).toHaveCount(3);
 
   const whatsappLinks = page.locator('a[href^="https://wa.me/"]');
