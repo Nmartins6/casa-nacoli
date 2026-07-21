@@ -1,6 +1,6 @@
 # Casa Nacoli
 
-Fundação do site institucional e catálogo da Casa Nacoli. Nesta etapa, o projeto entrega uma home estática, responsiva e acessível; catálogo completo e páginas individuais ficam para a próxima revisão.
+Site institucional e catálogo da Casa Nacoli. O projeto entrega uma home responsiva, catálogo pesquisável, páginas das quatro categorias e páginas individuais geradas estaticamente para os 27 produtos validados.
 
 ## Stack
 
@@ -59,6 +59,9 @@ src/
 │   └── schemas.ts
 ├── layouts/
 ├── pages/
+│   ├── categorias/[slug].astro
+│   ├── produtos/[slug].astro
+│   └── produtos/index.astro
 ├── scripts/
 ├── styles/
 ├── types/
@@ -76,10 +79,10 @@ Os arquivos em `seed/` são a fonte de verdade comercial. Componentes não cont�
 1. Edite `seed/products.json`, preservando IDs e slugs existentes.
 2. Use uma categoria e subcategoria presentes em `seed/categories.json`.
 3. Para fotos, crie `src/assets/products/<slug>/` e use nomes descritivos iniciados pelo slug.
-4. Preencha alt text no dado quando a futura galeria exigir controle editorial específico.
+4. Valide os textos alternativos gerados e a ordem alfabética das imagens.
 5. Execute `pnpm validate:seed`, `pnpm test` e `pnpm build`.
 
-O carregador em `src/data/assets.ts` encontra arquivos pela pasta do slug. Assim, fotos e produtos podem ser adicionados sem alterar componentes. Nesta etapa, somente produtos marcados como `featured` aparecem na home; as páginas de catálogo serão implementadas posteriormente.
+O carregador em `src/data/assets.ts` encontra arquivos pela pasta do slug. As rotas dinâmicas usam os seeds para gerar as páginas, então categorias, produtos e fotos podem ser adicionados sem criar componentes específicos. O procedimento completo está em [`docs/CATALOG_MAINTENANCE.md`](docs/CATALOG_MAINTENANCE.md).
 
 ## Configuração comercial
 

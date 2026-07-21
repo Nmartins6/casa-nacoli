@@ -77,6 +77,31 @@ Foram importadas 40 fotos cuja associação ao produto do seed foi confirmada po
 
 Os arquivos receberam nomes normalizados no padrão `<slug>-exemplo-<sequência>.webp`. O Astro localiza as imagens pela pasta do slug e gera variantes otimizadas no build; nenhum caminho de foto foi duplicado dentro de componentes.
 
+## Produtos sem imagem confirmada
+
+Dezoito produtos usam o placeholder oficial porque não há associação segura nos arquivos recebidos:
+
+- Adesivo vinil personalizado;
+- Boné personalizado em DTF;
+- Boné sublimado personalizado;
+- Cueca personalizada;
+- DTF em rolo;
+- DTF por arte;
+- Encadernação;
+- Etiquetas personalizadas;
+- Imã de geladeira em MDF 5 cm;
+- Impressões em papel e adesivo;
+- Kits de chaveiros em MDF 5 cm;
+- Kit com 10 imãs de MDF 5 cm;
+- Meia personalizada;
+- Moletons personalizados;
+- Panfletos;
+- Placa de MDF 15 × 20 cm com suporte;
+- Plastificação;
+- Tags personalizadas.
+
+O placeholder fica em `public/images/placeholders/product-placeholder.svg`. Ele é exibido tanto nos cards quanto na página do produto e não deve ser substituído por uma foto apenas semelhante.
+
 ## Não associados nesta etapa
 
 Permanecem apenas em `incoming-assets/`:

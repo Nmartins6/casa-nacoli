@@ -3,9 +3,11 @@
 ## Mapa de páginas
 
 - `/` — Home
-- `/catalogo/` — todos os produtos
-- `/catalogo/[categoria]/` — página de categoria
-- `/produto/[slug]/` — página individual
+- `/produtos` — todos os produtos, busca e filtros
+- `/categorias/[slug]` — página de categoria gerada pelo seed
+- `/produtos/[slug]` — página individual gerada pelo seed
+
+As três famílias acima e a home estão implementadas. As rotas institucionais abaixo permanecem planejadas; nesta etapa, seus conteúdos continuam como seções reais da home, sem links quebrados.
 - `/sobre/` — história, atendimento e forma de trabalho
 - `/empresas/` — uniformes, brindes e materiais gráficos
 - `/como-pedir/` — processo, envio de arte e orçamento
