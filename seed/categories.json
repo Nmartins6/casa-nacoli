@@ -24,7 +24,7 @@
     "id": "vestuario",
     "name": "Vestuário",
     "slug": "vestuario",
-    "description": "Peças personalizadas para uso individual, equipes, eventos, empresas e grupos.",
+    "description": "Peças personalizadas para uso individual, equipes, eventos, empresas e ocasiões especiais.",
     "subcategories": [
       {
         "id": "camisetas",
@@ -51,7 +51,7 @@
   },
   {
     "id": "brindes-corporativos",
-    "name": "Brindes corporativos",
+    "name": "Brindes Corporativos",
     "slug": "brindes-corporativos",
     "description": "Soluções personalizadas para empresas, eventos, ações promocionais e presentes para equipes ou clientes.",
     "subcategories": [
@@ -68,7 +68,7 @@
   },
   {
     "id": "grafica",
-    "name": "Gráfica e impressões",
+    "name": "Impressões Digitais",
     "slug": "grafica-e-impressoes",
     "description": "Materiais gráficos para divulgação, organização, acabamento e apresentação da sua marca ou projeto.",
     "subcategories": [

@@ -12,7 +12,7 @@ test("apresenta o conteúdo essencial e links válidos", async ({ page }) => {
   await expect(
     page.getByRole("heading", {
       level: 1,
-      name: "Sua ideia, feita com cuidado.",
+      name: "Sua ideia, feita com carinho!",
     }),
   ).toBeVisible();
   await expect(page.locator("#categorias article")).toHaveCount(4);

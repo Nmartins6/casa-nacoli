@@ -56,12 +56,9 @@ const homeFeaturedProducts = [canecas, camisetas, ecobag, cartoes];
   <section class="hero">
     <div class="site-container hero-grid" data-reveal-group>
       <div class="hero-copy" data-reveal>
-        <p class="eyebrow">Personalizados e gráfica em Lajeado</p>
-        <h1>Sua ideia, feita com cuidado.</h1>
-        <p class="hero-intro">
-          Personalizados, vestuário, brindes e serviços gráficos para presentes,
-          eventos e empresas.
-        </p>
+        <p class="eyebrow">Papelaria criativa | presentes personalizados</p>
+        <h1>Sua ideia, feita com carinho!</h1>
+        <p class="hero-intro">Estúdio de design e gráfica artesanal.</p>
         <div class="hero-actions">
           <WhatsAppLink message={generalMessage} context="hero" />
           <a class="button button-secondary" href="/produtos">
@@ -69,9 +66,6 @@ const homeFeaturedProducts = [canecas, camisetas, ecobag, cartoes];
             <ArrowRight size={18} aria-hidden="true" />
           </a>
         </div>
-        <p class="hero-note">
-          Conte sua ideia. A gente ajuda a escolher o melhor caminho.
-        </p>
       </div>
 
       <div
@@ -121,9 +115,9 @@ const homeFeaturedProducts = [canecas, camisetas, ecobag, cartoes];
 
   <section class="value-strip" aria-label="Como a Casa Nacoli ajuda">
     <div class="site-container value-grid">
-      <p><span>01</span> Você conta o que precisa.</p>
-      <p><span>02</span> A gente ajuda a definir os detalhes.</p>
-      <p><span>03</span> Você recebe um orçamento claro.</p>
+      <p><span>01</span> Você nos conta o que precisa.</p>
+      <p><span>02</span> A gente te ajuda com os detalhes.</p>
+      <p><span>03</span> Te passamos um orçamento.</p>
     </div>
   </section>
 
@@ -131,10 +125,10 @@ const homeFeaturedProducts = [canecas, camisetas, ecobag, cartoes];
     <div class="site-container">
       <div class="section-heading" data-reveal>
         <p class="eyebrow">Um ponto de partida simples</p>
-        <h2 class="section-title">O que você quer criar?</h2>
+        <h2 class="section-title">Um projeto do seu jeito</h2>
         <p class="section-intro">
           Escolha uma categoria para começar. Se ainda estiver em dúvida, conte
-          a ideia e a Casa Nacoli ajuda a organizar o pedido.
+          a ideia e a gente te ajuda.
         </p>
       </div>
       <div class="category-grid" data-reveal-group>
@@ -143,7 +137,6 @@ const homeFeaturedProducts = [canecas, camisetas, ecobag, cartoes];
             <CategoryCard
               category={category}
               image={categoryImages[index]}
-              index={index + 1}
               tone={categoryTones[index] ?? "sky"}
             />
           ))
@@ -158,10 +151,7 @@ const homeFeaturedProducts = [canecas, camisetas, ecobag, cartoes];
         <div class="section-heading">
           <p class="eyebrow">Para conhecer de perto</p>
           <h2 class="section-title">Produtos em destaque</h2>
-          <p class="section-intro">
-            Valores de referência e fotos reais para você entender as opções
-            antes de chamar.
-          </p>
+          <p class="section-intro">Valores de referência e fotos reais.</p>
         </div>
         <p class="featured-note">
           O valor final pode variar conforme arte, modelo e quantidade.
@@ -192,18 +182,18 @@ const homeFeaturedProducts = [canecas, camisetas, ecobag, cartoes];
           Tem uma ideia e não sabe por onde começar?
         </h2>
         <p>
-          Pode ser uma foto, uma frase, uma referência ou só a ocasião. A Casa
-          Nacoli ajuda a entender o que funciona melhor para o seu pedido.
+          Pode ser uma foto, uma frase, uma referência ou só a ocasião. Nós te
+          ajudamos a entender o que funciona melhor para o seu pedido.
         </p>
         <ul>
           <li>
             <Check size={18} aria-hidden="true" /> Envie o que você já tem.
           </li>
           <li>
-            <Check size={18} aria-hidden="true" /> Tire dúvidas antes de decidir.
+            <Check size={18} aria-hidden="true" /> Tiramos suas dúvidas antes de decidir.
           </li>
           <li>
-            <Check size={18} aria-hidden="true" /> Confirme os detalhes no atendimento.
+            <Check size={18} aria-hidden="true" /> Confirmamos os detalhes no atendimento.
           </li>
         </ul>
         <WhatsAppLink
@@ -250,7 +240,7 @@ const homeFeaturedProducts = [canecas, camisetas, ecobag, cartoes];
         <Building2 size={30} aria-hidden="true" />
         <p class="eyebrow">Para empresas</p>
         <h2 class="section-title">
-          Materiais que ajudam sua marca no dia a dia.
+          Materiais que fazem sua marca sempre presente.
         </h2>
         <p>
           Uniformes, brindes, cartões, etiquetas e impressos podem ser
@@ -261,7 +251,7 @@ const homeFeaturedProducts = [canecas, camisetas, ecobag, cartoes];
           ajuda a fechar as especificações antes do orçamento.
         </p>
         <WhatsAppLink
-          label="Solicitar orçamento para empresa"
+          label="Solicitar orçamento"
           message={buildWhatsAppMessage({
             details: "Gostaria de conversar sobre um pedido para empresa",
             pageUrl: `${siteConfig.brand.domain}/#empresas`,
@@ -275,7 +265,9 @@ const homeFeaturedProducts = [canecas, camisetas, ecobag, cartoes];
   <section class="section process-section" id="como-pedir">
     <div class="site-container">
       <div class="section-heading" data-reveal>
-        <p class="eyebrow">Como pedir</p>
+        <p class="eyebrow">
+          Onde o processo é tão importante quanto o resultado
+        </p>
         <h2 class="section-title">Da ideia à produção, sem complicar.</h2>
       </div>
       <ol class="process-list" data-reveal-group>
@@ -296,7 +288,7 @@ const homeFeaturedProducts = [canecas, camisetas, ecobag, cartoes];
         </li>
         <li data-reveal>
           <span>4</span>
-          <h3>Siga para a produção</h3>
+          <h3>Nós seguimos com a produção</h3>
           <p>Com os detalhes combinados, o pedido pode ser produzido.</p>
         </li>
       </ol>
@@ -307,10 +299,10 @@ const homeFeaturedProducts = [canecas, camisetas, ecobag, cartoes];
     <div class="site-container">
       <div class="reviews-heading" data-reveal>
         <div class="section-heading">
-          <p class="eyebrow">Atendimento visto por quem pediu</p>
+          <p class="eyebrow">Aqui sua opinião importa</p>
           <h2 class="section-title">Avaliações reais</h2>
           <p class="section-intro">
-            Relatos publicados por clientes no Google.
+            Relatos publicados pelos nossos clientes no Google.
           </p>
         </div>
         <a
@@ -329,8 +321,8 @@ const homeFeaturedProducts = [canecas, camisetas, ecobag, cartoes];
   <section class="section faq-section" id="duvidas">
     <div class="site-container faq-grid">
       <div class="section-heading">
-        <p class="eyebrow">Antes de chamar</p>
-        <h2 class="section-title">Dúvidas comuns para começar</h2>
+        <p class="eyebrow">Ficou com alguma dúvida?</p>
+        <h2 class="section-title">Algumas perguntas frequentes</h2>
       </div>
       <div class="faq-list">
         <details>
@@ -351,7 +343,7 @@ const homeFeaturedProducts = [canecas, camisetas, ecobag, cartoes];
         <details>
           <summary>O que devo enviar pelo WhatsApp?</summary>
           <p>
-            Conte qual produto procura, a quantidade e os detalhes que já
+            Conte qual produto procura, a quantidade e os detalhes, se já
             souber. Fotos e referências também ajudam a iniciar a conversa.
           </p>
         </details>
@@ -401,12 +393,6 @@ const homeFeaturedProducts = [canecas, camisetas, ecobag, cartoes];
     gap: 0.75rem;
   }
 
-  .hero-note {
-    max-width: 31rem;
-    margin: 1rem 0 0;
-    font-size: 0.875rem;
-  }
-
   .hero-gallery {
     position: relative;
     min-height: clamp(22rem, 110vw, 35rem);
@@ -415,7 +401,7 @@ const homeFeaturedProducts = [canecas, camisetas, ecobag, cartoes];
   .hero-gallery :global(.hero-image) {
     position: absolute;
     object-fit: cover;
-    border: 5px solid var(--color-paper);
+    border: 5px solid var(--color-terracotta);
     border-radius: 1.25rem;
     box-shadow: var(--shadow-soft);
   }

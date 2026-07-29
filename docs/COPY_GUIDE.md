@@ -24,7 +24,7 @@ Características:
 ## Hero sugerido
 
 **Título:**  
-`Sua ideia, feita com cuidado.`
+`Sua ideia, feita com carinho.`
 
 **Texto:**  
 `Personalizados, vestuário, brindes e serviços gráficos para presentes, eventos e empresas.`

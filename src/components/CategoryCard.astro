@@ -8,11 +8,10 @@ import PlaceholderImage from "./PlaceholderImage.astro";
 interface Props {
   category: Category;
   image?: ResolvedProductImage;
-  index: number;
   tone: "sky" | "sage" | "honey" | "terracotta";
 }
 
-const { category, image, index, tone } = Astro.props;
+const { category, image, tone } = Astro.props;
 const href = `/categorias/${category.slug}`;
 ---
 
@@ -33,7 +32,6 @@ const href = `/categorias/${category.slug}`;
     }
   </div>
   <div class="category-content">
-    <p class="category-number">0{index}</p>
     <h3>{category.name}</h3>
     <p>{category.description}</p>
     <a
@@ -75,23 +73,12 @@ const href = `/categorias/${category.slug}`;
     padding: 1.4rem;
   }
 
-  .category-number {
-    position: absolute;
-    top: 1.4rem;
-    right: 1.4rem;
-    margin: 0;
-    font-size: 0.75rem;
-    font-weight: 800;
-    letter-spacing: 0.1em;
-  }
-
   h3 {
-    max-width: calc(100% - 2.5rem);
     margin-bottom: 0.7rem;
     font-size: 1.65rem;
   }
 
-  .category-content > p:not(.category-number) {
+  .category-content > p {
     margin-bottom: 1.1rem;
     font-size: 0.9375rem;
     line-height: 1.55;
@@ -129,18 +116,6 @@ const href = `/categorias/${category.slug}`;
   }
 
   @media (min-width: 48rem) {
-    .category-card:nth-child(1),
-    .category-card:nth-child(4) {
-      grid-column: span 2;
-      grid-template-columns: 1.1fr 0.9fr;
-    }
-
-    .category-card:nth-child(1) .category-image,
-    .category-card:nth-child(4) .category-image {
-      aspect-ratio: auto;
-      min-height: 21rem;
-    }
-
     .category-content {
       display: flex;
       flex-direction: column;

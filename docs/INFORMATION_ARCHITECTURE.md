@@ -23,7 +23,7 @@ No mobile:
 2. Personalizados
 3. Vestuário
 4. Para empresas
-5. Gráfica e impressões
+5. Impressões digitais
 6. Como pedir
 7. Contato
 

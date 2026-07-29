@@ -120,9 +120,9 @@ h1,
 h2,
 h3 {
   color: var(--color-espresso);
-  font-family: var(--font-display);
-  font-weight: 600;
-  line-height: 1.08;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  line-height: 1;
   text-wrap: balance;
 }
 
@@ -136,7 +136,7 @@ p {
 }
 
 .section {
-  padding-block: clamp(4rem, 9vw, 7.5rem);
+  padding-block: clamp(7.5rem, 9vw, 8rem);
 }
 
 .section-heading {

@@ -2,7 +2,7 @@
   {
     "id": "canecas-personalizadas",
     "slug": "canecas-personalizadas",
-    "name": "Canecas personalizadas",
+    "name": "Canecas Personalizadas",
     "categoryId": "personalizados",
     "subcategoryId": "canecas",
     "status": "active",
@@ -68,7 +68,7 @@
       "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Canecas personalizadas. Quantidade: {quantidade}. Detalhes: {detalhes}"
     },
     "seo": {
-      "title": "Canecas personalizadas | Casa Nacoli",
+      "title": "Canecas Personalizadas | Casa Nacoli",
       "description": "Canecas para presentes, lembranças, datas especiais, empresas e eventos."
     },
     "notes": [],
@@ -824,7 +824,7 @@
   {
     "id": "ecobag-tnt-80g-personalizada",
     "slug": "ecobag-tnt-80g-personalizada",
-    "name": "Ecobag de TNT 80 g personalizada",
+    "name": "Ecobag de TNT 80g Personalizada",
     "categoryId": "brindes-corporativos",
     "subcategoryId": "ecobags",
     "status": "active",
@@ -865,7 +865,7 @@
       "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Ecobag de TNT 80 g personalizada. Quantidade: {quantidade}. Detalhes: {detalhes}"
     },
     "seo": {
-      "title": "Ecobag de TNT 80 g personalizada | Casa Nacoli",
+      "title": "Ecobag de TNT 80g Personalizada | Casa Nacoli",
       "description": "Ecobag leve e personalizada para eventos, ações promocionais, kits e entregas."
     },
     "notes": [],

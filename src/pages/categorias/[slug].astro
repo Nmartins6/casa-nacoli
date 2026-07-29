@@ -187,10 +187,15 @@ const structuredData = [
     gap: 2rem;
   }
 
+  .category-hero-grid > * {
+    min-width: 0;
+  }
+
   h1 {
     max-width: 14ch;
     margin-bottom: 1rem;
-    font-size: clamp(2.8rem, 10vw, 5.25rem);
+    overflow-wrap: break-word;
+    font-size: clamp(2.5rem, 10vw, 5.25rem);
   }
 
   .category-description {

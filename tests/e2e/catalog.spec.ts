@@ -33,7 +33,7 @@ test("lista, pesquisa, filtra e limpa o catálogo", async ({ page }) => {
   expect(new URL(page.url()).searchParams.get("q")).toBe("caneca mágica");
 
   await search.fill("");
-  await page.getByLabel("Brindes corporativos", { exact: true }).check();
+  await page.getByLabel("Brindes Corporativos", { exact: true }).check();
   await expect(page.locator("[data-result-count]")).toHaveText("2");
   await expect(page.locator("[data-catalog-item]:visible")).toHaveCount(2);
   await expect(page).toHaveURL(/categoria=brindes-corporativos/);
@@ -71,14 +71,14 @@ test("categoria mantém hierarquia, produtos e acesso ao filtro", async ({
   await page.goto("/categorias/grafica-e-impressoes");
 
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
-    "Gráfica e impressões",
+    "Impressões Digitais",
   );
   await expect(page.locator(".category-products .product-card")).toHaveCount(
     10,
   );
   await expect(
     page.getByRole("navigation", { name: "Navegação estrutural" }),
-  ).toContainText("InícioProdutosGráfica e impressões");
+  ).toContainText("InícioProdutosImpressões Digitais");
   await expect(
     page.getByRole("link", { name: "Buscar no catálogo" }),
   ).toHaveAttribute("href", "/produtos?categoria=grafica");
@@ -90,7 +90,7 @@ test("galeria, variantes e dados estruturados refletem o produto", async ({
   await page.goto("/produtos/canecas-personalizadas");
 
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
-    "Canecas personalizadas",
+    "Canecas Personalizadas",
   );
   const mainImage = page.locator("[data-gallery-main]");
   const firstAlt = await mainImage.getAttribute("alt");
@@ -108,7 +108,7 @@ test("galeria, variantes e dados estruturados refletem o produto", async ({
     .find((value) => value["@type"] === "Product");
   expect(productSchema).toMatchObject({
     "@type": "Product",
-    name: "Canecas personalizadas",
+    name: "Canecas Personalizadas",
     category: "Personalizados",
   });
   expect(productSchema).toHaveProperty("offers.@type", "AggregateOffer");

@@ -18,7 +18,7 @@ const mobileLinks = [
   { href: "/categorias/personalizados", label: "Personalizados" },
   { href: "/categorias/vestuario", label: "Vestuário" },
   { href: "/categorias/brindes-corporativos", label: "Brindes corporativos" },
-  { href: "/categorias/grafica-e-impressoes", label: "Gráfica e impressões" },
+  { href: "/categorias/grafica-e-impressoes", label: "Impressões digitais" },
   { href: "/#empresas", label: "Para empresas" },
   { href: "/#como-pedir", label: "Como pedir" },
   { href: "/#contato", label: "Contato" },
@@ -48,7 +48,6 @@ const mobileLinks = [
     <details class="mobile-menu" data-mobile-menu>
       <summary aria-label="Abrir navegação">
         <Menu size={24} aria-hidden="true" />
-        <span>Menu</span>
       </summary>
       <nav aria-label="Navegação mobile">
         {mobileLinks.map((link) => <a href={link.href}>{link.label}</a>)}
@@ -65,7 +64,8 @@ const mobileLinks = [
     top: 0;
     height: var(--header-height);
     border-bottom: 1px solid rgb(73 66 56 / 0.12);
-    background: rgb(250 238 222 / 0.96);
+    color: var(--color-cream);
+    background-color: var(--color-sage-ink);
   }
 
   .header-inner {
@@ -84,7 +84,7 @@ const mobileLinks = [
   }
 
   .brand-link img {
-    width: 100%;
+    width: 80%;
     height: auto;
   }
 
@@ -106,10 +106,11 @@ const mobileLinks = [
     align-items: center;
     justify-content: center;
     gap: 0.45rem;
-    border: 1px solid rgb(73 66 56 / 0.3);
+    border: 1px solid var(--color-cream);
     border-radius: 999px;
     font-size: 0.875rem;
     font-weight: 750;
+    color: var(--color-cream);
   }
 
   .mobile-menu summary::-webkit-details-marker {
@@ -125,6 +126,7 @@ const mobileLinks = [
     gap: 0.25rem;
     border-bottom: 1px solid rgb(73 66 56 / 0.15);
     padding: 1rem;
+    color: var(--color-espresso);
     background: var(--color-paper);
     box-shadow: var(--shadow-soft);
   }
