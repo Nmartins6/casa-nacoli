@@ -157,9 +157,11 @@ test("monta a conversa de WhatsApp com os detalhes informados", async ({
   await page.getByLabel(/Detalhes/).fill("Camiseta preta com logo na frente");
 
   const popupPromise = page.waitForEvent("popup");
-  await page
-    .getByRole("button", { name: "Abrir conversa com estes detalhes" })
-    .click();
+  const submitButton = page.getByRole("button", {
+    name: "Abrir conversa com estes detalhes",
+  });
+  await expect(submitButton.locator("[data-whatsapp-icon]")).toBeVisible();
+  await submitButton.click();
   const popup = await popupPromise;
   const url = new URL(popup.url());
   const message = url.searchParams.get("text") ?? "";

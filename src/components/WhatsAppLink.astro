@@ -1,7 +1,7 @@
 ---
-import { MessageCircle } from "@lucide/astro";
 import { siteConfig } from "../data/catalog";
 import { buildWhatsAppMessage, createWhatsAppUrl } from "../utils/whatsapp";
+import WhatsAppIcon from "./WhatsAppIcon.astro";
 
 interface Props {
   label?: string;
@@ -34,11 +34,7 @@ const href = createWhatsAppUrl(siteConfig.links.whatsapp, message);
   data-analytics-event="whatsapp_click"
   data-analytics-context={context}
 >
-  <MessageCircle
-    size={floating ? 25 : 19}
-    stroke-width={2}
-    aria-hidden="true"
-  />
+  <WhatsAppIcon size={floating ? 25 : 19} />
   {floating ? <span class="floating-label">Conversar</span> : label}
 </a>
 

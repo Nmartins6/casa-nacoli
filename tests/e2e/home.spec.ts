@@ -20,7 +20,11 @@ test("apresenta o conteúdo essencial e links válidos", async ({ page }) => {
   await expect(page.locator("#avaliacoes figure")).toHaveCount(3);
 
   const whatsappLinks = page.locator('a[href^="https://wa.me/"]');
-  expect(await whatsappLinks.count()).toBeGreaterThan(0);
+  const whatsappLinkCount = await whatsappLinks.count();
+  expect(whatsappLinkCount).toBeGreaterThan(0);
+  expect(await whatsappLinks.locator("[data-whatsapp-icon]").count()).toBe(
+    whatsappLinkCount,
+  );
   await expect(whatsappLinks.first()).toHaveAttribute(
     "href",
     /wa\.me\/5551999795488\?text=/,
