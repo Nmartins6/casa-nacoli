@@ -25,7 +25,7 @@
         ],
         "label": "Segunda a sexta",
         "opens": "08:00",
-        "closes": "18:00",
+        "closes": "19:00",
         "closed": false
       },
       {
@@ -34,7 +34,7 @@
         ],
         "label": "Sábado",
         "opens": "08:00",
-        "closes": "12:00",
+        "closes": "19:00",
         "closed": false
       },
       {

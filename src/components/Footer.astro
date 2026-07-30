@@ -37,16 +37,18 @@ import { siteConfig } from "../data/catalog";
 
     <div>
       <p class="footer-title">Atendimento</p>
+
       {
-        siteConfig.contact.businessHours.map((hours) => (
-          <p>
-            <Clock3 size={17} aria-hidden="true" />
-            <span>
-              {hours.label}:{" "}
-              {hours.closed ? "fechado" : `${hours.opens}–${hours.closes}`}
-            </span>
-          </p>
-        ))
+        siteConfig.contact.businessHours
+          .filter((hours) => !hours.closed)
+          .map((hours) => (
+            <p>
+              <Clock3 size={17} aria-hidden="true" />
+              <span>
+                {hours.label}: {hours.opens}–{hours.closes}
+              </span>
+            </p>
+          ))
       }
     </div>
   </div>
