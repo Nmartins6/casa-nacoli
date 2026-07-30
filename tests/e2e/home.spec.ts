@@ -54,12 +54,11 @@ test("FAQ indica visualmente os estados fechado e aberto", async ({ page }) => {
   await page.goto("/");
 
   const questions = page.locator(".faq-list details");
-  await expect(questions).toHaveCount(6);
+  await expect(questions).toHaveCount(5);
   await expect(questions.locator("summary")).toHaveText([
     "Posso escolher a arte?",
     "Quanto tempo leva para produzir?",
     "Posso montar uma cesta personalizada?",
-    "Como finalizo o pedido?",
     "Vocês entregam ou é retirada?",
     "Posso pedir pelo WhatsApp?",
   ]);

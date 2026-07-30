@@ -21,17 +21,25 @@ import { siteConfig } from "../data/catalog";
 
     <div>
       <p class="footer-title">Fale com a gente</p>
-      <a href={`mailto:${siteConfig.contact.email}`}>
+      <a
+        class="footer-contact-item"
+        href={`mailto:${siteConfig.contact.email}`}
+      >
         <Mail size={17} aria-hidden="true" />
-        {siteConfig.contact.email}
+        <span>{siteConfig.contact.email}</span>
       </a>
-      <a href={siteConfig.links.instagram} target="_blank" rel="noreferrer">
+      <a
+        class="footer-contact-item"
+        href={siteConfig.links.instagram}
+        target="_blank"
+        rel="noreferrer"
+      >
         <AtSign size={17} aria-hidden="true" />
-        {siteConfig.contact.instagram}
+        <span>{siteConfig.contact.instagram}</span>
       </a>
-      <p>
+      <p class="footer-contact-item">
         <MapPin size={17} aria-hidden="true" />
-        {siteConfig.contact.address}
+        <span>{siteConfig.contact.address}</span>
       </p>
     </div>
 
@@ -42,10 +50,10 @@ import { siteConfig } from "../data/catalog";
         siteConfig.contact.businessHours
           .filter((hours) => !hours.closed)
           .map((hours) => (
-            <p>
+            <p class="footer-contact-item">
               <Clock3 size={17} aria-hidden="true" />
               <span>
-                {hours.label}: {hours.opens}–{hours.closes}
+                {hours.label}: {hours.opens} – {hours.closes}
               </span>
             </p>
           ))
@@ -110,11 +118,14 @@ import { siteConfig } from "../data/catalog";
     margin-bottom: 0;
   }
 
-  a,
-  .footer-grid > div:not(.footer-intro) p {
+  .footer-contact-item {
     display: inline-flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 0.55rem;
+  }
+
+  .footer-contact-item :global(svg) {
+    flex: 0 0 auto;
   }
 
   a {
