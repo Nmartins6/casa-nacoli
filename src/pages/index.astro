@@ -268,7 +268,7 @@ const faqs = [
           Uniformes, brindes, cartões, etiquetas e impressos podem ser
           organizados em um pedido alinhado à sua necessidade e quantidade.
         </p>
-        <p>
+        <p class="business-cta-copy">
           Informe o que precisa, para quando e em qual volume. O atendimento
           ajuda a fechar as especificações antes do orçamento.
         </p>
@@ -578,8 +578,13 @@ const faqs = [
     order: -1;
   }
 
-  .business-copy .button {
-    margin-top: 0.75rem;
+  .business-cta-copy {
+    margin-bottom: 0.75rem;
+  }
+
+  .custom-copy :global(.button),
+  .business-copy :global(.button) {
+    margin-top: 1.25rem;
   }
 
   .process-section {
