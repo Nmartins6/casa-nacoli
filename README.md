@@ -102,4 +102,8 @@ O placeholder oficial está em `public/images/placeholders/product-placeholder.s
 
 O workflow `.github/workflows/quality.yml` executa instalação com lockfile, formatação, lint, tipos, testes, build, Playwright e axe. A meta de acessibilidade é WCAG 2.2 AA.
 
-Não há configuração de deploy nesta etapa.
+## Deploy
+
+O projeto está preparado para deploy estático na Vercel, sem adapter de servidor. A plataforma detecta o Astro e gera a pasta `dist/` com `pnpm build`.
+
+Antes de publicar em produção, faça um Preview Deployment e conclua as confirmações comerciais documentadas, principalmente o número correto do WhatsApp. O passo a passo, as configurações e a estratégia de rollback estão em [`docs/VERCEL_DEPLOYMENT.md`](docs/VERCEL_DEPLOYMENT.md).

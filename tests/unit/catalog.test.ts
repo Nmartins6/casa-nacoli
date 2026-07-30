@@ -94,13 +94,13 @@ describe("catálogo", () => {
     const pricedData = buildProductStructuredData({
       product: pricedProduct,
       category,
-      domain: "https://casanacoli.com.br",
+      domain: "https://www.casanacoli.com.br",
       publishUnconfirmedPrices: false,
     });
     const pendingData = buildProductStructuredData({
       product: pendingProduct,
       category: categories.find(({ id }) => id === "brindes-corporativos")!,
-      domain: "https://casanacoli.com.br",
+      domain: "https://www.casanacoli.com.br",
       publishUnconfirmedPrices: false,
     });
 
@@ -119,7 +119,7 @@ describe("catálogo", () => {
         { name: "Início", path: "/" },
         { name: "Produtos", path: "/produtos" },
       ],
-      "https://casanacoli.com.br",
+      "https://www.casanacoli.com.br",
     );
 
     expect(data.itemListElement).toEqual([
@@ -127,13 +127,13 @@ describe("catálogo", () => {
         "@type": "ListItem",
         position: 1,
         name: "Início",
-        item: "https://casanacoli.com.br/",
+        item: "https://www.casanacoli.com.br/",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Produtos",
-        item: "https://casanacoli.com.br/produtos",
+        item: "https://www.casanacoli.com.br/produtos",
       },
     ]);
   });

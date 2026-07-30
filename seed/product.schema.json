@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://casanacoli.com.br/schemas/product.schema.json",
+  "$id": "https://www.casanacoli.com.br/schemas/product.schema.json",
   "title": "Casa Nacoli Product",
   "type": "object",
   "required": [

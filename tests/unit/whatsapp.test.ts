@@ -11,14 +11,16 @@ describe("WhatsApp", () => {
       variant: "Caneca mágica",
       quantity: 2,
       details: "Usar duas fotos",
-      pageUrl: "https://casanacoli.com.br/#destaques",
+      pageUrl: "https://www.casanacoli.com.br/#destaques",
     });
 
     expect(message).toContain("Produto: Canecas personalizadas.");
     expect(message).toContain("Modelo: Caneca mágica.");
     expect(message).toContain("Quantidade: 2.");
     expect(message).toContain("Detalhes: Usar duas fotos.");
-    expect(message).toContain("Página: https://casanacoli.com.br/#destaques");
+    expect(message).toContain(
+      "Página: https://www.casanacoli.com.br/#destaques",
+    );
   });
 
   it("normaliza o telefone e codifica a mensagem", () => {
