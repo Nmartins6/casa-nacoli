@@ -50,6 +50,24 @@ test("menu mobile funciona por teclado", async ({ page }, testInfo) => {
   await expect(mobileNavigation).toBeHidden();
 });
 
+test("FAQ indica visualmente os estados fechado e aberto", async ({ page }) => {
+  await page.goto("/");
+
+  const question = page.locator(".faq-list details").first();
+  const summary = question.locator("summary");
+  const indicator = () =>
+    summary.evaluate((element) =>
+      getComputedStyle(element, "::after").content.replace(/["']/g, ""),
+    );
+
+  expect(await indicator()).toBe("+");
+  await summary.focus();
+  await page.keyboard.press("Enter");
+
+  await expect(question).toHaveAttribute("open", "");
+  expect(await indicator()).toBe("−");
+});
+
 test("não cria overflow horizontal nos viewports-alvo", async ({
   page,
 }, testInfo) => {

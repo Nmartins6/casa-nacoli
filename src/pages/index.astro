@@ -651,10 +651,39 @@ const homeFeaturedProducts = [canecas, camisetas, ecobag, cartoes];
   }
 
   .faq-list summary {
+    display: grid;
+    min-height: 2.5rem;
     cursor: pointer;
+    list-style: none;
+    align-items: center;
+    grid-template-columns: minmax(0, 1fr) 1.25rem;
+    gap: 1rem;
     font-family: var(--font-display);
     font-size: 1.25rem;
     font-weight: 600;
+  }
+
+  .faq-list summary::after {
+    width: 1.25rem;
+    content: "+";
+    color: var(--color-terracotta-ink);
+    font-family: var(--font-sans);
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1;
+    text-align: center;
+  }
+
+  .faq-list details[open] summary::after {
+    content: "−";
+  }
+
+  .faq-list summary::marker {
+    content: "";
+  }
+
+  .faq-list summary::-webkit-details-marker {
+    display: none;
   }
 
   .faq-list p {
