@@ -1,0 +1,72 @@
+---
+import { Quote, Star } from "@lucide/astro";
+import type { Review } from "../types/domain";
+
+interface Props {
+  review: Review;
+}
+
+const { review } = Astro.props;
+---
+
+<figure class="review-card" data-reveal>
+  <div class="review-top">
+    <div class="stars" role="img" aria-label={`${review.stars} de 5 estrelas`}>
+      {
+        Array.from({ length: review.stars }, () => (
+          <Star size={16} fill="currentColor" aria-hidden="true" />
+        ))
+      }
+    </div>
+    <Quote size={25} aria-hidden="true" />
+  </div>
+  <blockquote>{review.comment}</blockquote>
+  <figcaption>
+    <strong>{review.name}</strong>
+    <span>Avaliação no {review.source}</span>
+  </figcaption>
+</figure>
+
+<style>
+  .review-card {
+    display: flex;
+    min-width: 0;
+    min-height: 100%;
+    flex-direction: column;
+    margin: 0;
+    border-top: 2px solid var(--color-terracotta);
+    padding: 1.5rem 0;
+  }
+
+  .review-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.1rem;
+    color: var(--color-terracotta);
+  }
+
+  .stars {
+    display: flex;
+    gap: 0.2rem;
+    color: #8a601e;
+  }
+
+  blockquote {
+    flex: 1;
+    margin: 0 0 1.4rem;
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    line-height: 1.45;
+  }
+
+  figcaption {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.875rem;
+  }
+
+  figcaption span {
+    color: rgb(73 66 56 / 0.82);
+  }
+</style>

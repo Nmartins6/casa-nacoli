@@ -1,0 +1,32 @@
+---
+import { SearchX } from "@lucide/astro";
+---
+
+<div class="empty-state">
+  <SearchX size={30} aria-hidden="true" />
+  <h2>Nenhum produto encontrado</h2>
+  <p>Tente outro termo ou limpe os filtros para ver todas as opções.</p>
+</div>
+
+<style>
+  .empty-state {
+    max-width: 36rem;
+    margin-inline: auto;
+    padding: 3rem 1.25rem;
+    text-align: center;
+  }
+
+  svg {
+    margin: 0 auto 1rem;
+    color: var(--color-sage-ink);
+  }
+
+  h2 {
+    margin-bottom: 0.6rem;
+    font-size: 1.8rem;
+  }
+
+  p {
+    margin: 0;
+  }
+</style>

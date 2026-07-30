@@ -1,0 +1,317 @@
+---
+import { Image } from "astro:assets";
+import { ArrowRight, Layers } from "@lucide/astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import PlaceholderImage from "../../components/PlaceholderImage.astro";
+import ProductCard from "../../components/ProductCard.astro";
+import WhatsAppLink from "../../components/WhatsAppLink.astro";
+import { getProductImages } from "../../data/assets";
+import {
+  categories,
+  getProductsByCategory,
+  siteConfig,
+} from "../../data/catalog";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import type { Category } from "../../types/domain";
+import { buildBreadcrumbStructuredData } from "../../utils/structured-data";
+import { buildWhatsAppMessage } from "../../utils/whatsapp";
+
+export function getStaticPaths() {
+  return categories.map((category) => ({
+    params: { slug: category.slug },
+    props: { category },
+  }));
+}
+
+interface Props {
+  category: Category;
+}
+
+const { category } = Astro.props;
+const products = getProductsByCategory(category.id);
+const representativeImage = products
+  .flatMap((product) => getProductImages(product))
+  .at(0);
+const title = `${category.name} | Casa Nacoli`;
+const description = `${category.description} Veja ${products.length} opções no catálogo da Casa Nacoli.`;
+const message = buildWhatsAppMessage({
+  details: `Gostaria de conhecer as opções de ${category.name}`,
+  pageUrl: `${siteConfig.brand.domain}/categorias/${category.slug}`,
+});
+const toneByCategory: Record<string, string> = {
+  personalizados: "terracotta",
+  vestuario: "honey",
+  "brindes-corporativos": "sage",
+  grafica: "sky",
+};
+const tone = toneByCategory[category.id] ?? "sky";
+const structuredData = [
+  buildBreadcrumbStructuredData(
+    [
+      { name: "Início", path: "/" },
+      { name: "Produtos", path: "/produtos" },
+      { name: category.name, path: `/categorias/${category.slug}` },
+    ],
+    siteConfig.brand.domain,
+  ),
+];
+---
+
+<BaseLayout {title} {description} {structuredData}>
+  <article data-page-view="category_view" data-page-context={category.id}>
+    <header class:list={["category-hero", `tone-${tone}`]}>
+      <div class="site-container category-hero-grid" data-reveal-group>
+        <div data-reveal>
+          <Breadcrumbs
+            items={[
+              { label: "Início", href: "/" },
+              { label: "Produtos", href: "/produtos" },
+              { label: category.name },
+            ]}
+          />
+          <p class="eyebrow">Categoria</p>
+          <h1>{category.name}</h1>
+          <p class="category-description">{category.description}</p>
+          <p class="category-count">
+            <Layers size={18} aria-hidden="true" />
+            {products.length}
+            {products.length === 1 ? "opção" : "opções"} no catálogo
+          </p>
+        </div>
+        <div class="category-visual" data-reveal>
+          {
+            representativeImage ? (
+              <Image
+                src={representativeImage.src}
+                alt={representativeImage.alt}
+                widths={[480, 720, 960]}
+                sizes="(min-width: 768px) 42vw, 92vw"
+                loading="eager"
+              />
+            ) : (
+              <PlaceholderImage />
+            )
+          }
+        </div>
+      </div>
+    </header>
+
+    <section
+      class="section category-products"
+      aria-labelledby="category-products-title"
+    >
+      <div class="site-container">
+        <div class="category-products-heading" data-reveal>
+          <div class="section-heading">
+            <p class="eyebrow">Explore a categoria</p>
+            <h2 class="section-title" id="category-products-title">
+              Produtos de {category.name.toLocaleLowerCase("pt-BR")}
+            </h2>
+          </div>
+          <a
+            class="button button-secondary"
+            href={`/produtos?categoria=${category.id}`}
+          >
+            Buscar no catálogo
+            <ArrowRight size={17} aria-hidden="true" />
+          </a>
+        </div>
+
+        <ul class="subcategory-list" aria-label="Tipos nesta categoria">
+          {
+            category.subcategories.map((subcategory) => (
+              <li>{subcategory.name}</li>
+            ))
+          }
+        </ul>
+
+        <div class="product-grid" data-reveal-group>
+          {products.map((product) => <ProductCard {product} />)}
+        </div>
+      </div>
+    </section>
+
+    <section class:list={["category-cta", `tone-${tone}`]}>
+      <div class="site-container category-cta-inner" data-reveal>
+        <div>
+          <p class="eyebrow">Precisa alinhar os detalhes?</p>
+          <h2>Converse sobre {category.name.toLocaleLowerCase("pt-BR")}.</h2>
+          <p>
+            Informe a ideia e a quantidade. O atendimento ajuda a identificar a
+            opção adequada antes do orçamento.
+          </p>
+        </div>
+        <WhatsAppLink
+          label="Conversar sobre esta categoria"
+          {message}
+          context={`categoria_${category.id}`}
+        />
+      </div>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .category-hero {
+    padding-block: clamp(2.5rem, 7vw, 5.5rem);
+  }
+
+  .tone-terracotta {
+    background: color-mix(
+      in srgb,
+      var(--color-terracotta) 28%,
+      var(--color-cream)
+    );
+  }
+
+  .tone-honey {
+    background: color-mix(in srgb, var(--color-honey) 38%, var(--color-cream));
+  }
+
+  .tone-sage {
+    background: color-mix(in srgb, var(--color-sage) 34%, var(--color-cream));
+  }
+
+  .tone-sky {
+    background: color-mix(in srgb, var(--color-sky) 52%, var(--color-cream));
+  }
+
+  .category-hero .eyebrow,
+  .category-cta .eyebrow {
+    color: var(--color-espresso);
+  }
+
+  .category-hero-grid {
+    display: grid;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .category-hero-grid > * {
+    min-width: 0;
+  }
+
+  h1 {
+    max-width: 14ch;
+    margin-bottom: 1rem;
+    overflow-wrap: break-word;
+    font-size: clamp(2.5rem, 10vw, 5.25rem);
+  }
+
+  .category-description {
+    max-width: 42rem;
+    font-size: clamp(1rem, 2.3vw, 1.15rem);
+  }
+
+  .category-count {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin: 1.5rem 0 0;
+    font-size: 0.875rem;
+    font-weight: 750;
+  }
+
+  .category-visual {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border: 5px solid var(--color-paper);
+    border-radius: var(--radius-card);
+    background: var(--color-paper);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .category-visual :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .category-products {
+    background: var(--color-paper);
+  }
+
+  .category-products-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .subcategory-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin: -1rem 0 2.5rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .subcategory-list li {
+    border: 1px solid rgb(73 66 56 / 0.18);
+    border-radius: 999px;
+    padding: 0.4rem 0.75rem;
+    background: var(--color-cream);
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  .product-grid {
+    display: grid;
+    gap: 2.75rem 1.25rem;
+  }
+
+  .category-cta {
+    padding-block: clamp(3rem, 7vw, 5rem);
+  }
+
+  .category-cta-inner {
+    display: grid;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .category-cta h2 {
+    margin-bottom: 0.5rem;
+    font-size: clamp(2rem, 6vw, 3.25rem);
+  }
+
+  .category-cta p:last-child {
+    max-width: 42rem;
+    margin: 0;
+  }
+
+  @media (min-width: 40rem) {
+    .product-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .category-hero-grid {
+      grid-template-columns: 1fr 0.9fr;
+      gap: clamp(2rem, 6vw, 5rem);
+    }
+
+    .category-products-heading,
+    .category-cta-inner {
+      grid-template-columns: 1fr auto;
+    }
+
+    .category-products-heading {
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    .category-cta-inner {
+      display: grid;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .product-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+</style>

@@ -1,9 +1,0 @@
-{
-  "name": "casa-nacoli-codex-kit",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "validate:seed": "node scripts/validate-seed.mjs"
-  },
-  "packageManager": "pnpm@latest"
-}

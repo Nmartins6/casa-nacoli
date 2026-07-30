@@ -1,0 +1,65 @@
+---
+import { getPublicPrice } from "../data/catalog";
+import type { Product } from "../types/domain";
+
+interface Props {
+  product: Product;
+  compact?: boolean;
+}
+
+const { product, compact = false } = Astro.props;
+const price = getPublicPrice(product);
+const isQuote = price === "Consultar";
+---
+
+<div
+  class:list={["price-display", isQuote && "is-quote", compact && "compact"]}
+>
+  {
+    !compact && (
+      <p class="price-label">{isQuote ? "Valor" : "Valor de referência"}</p>
+    )
+  }
+  <p class="price-value">{price}</p>
+  {
+    !compact && !isQuote && (
+      <p class="price-note">
+        O valor final pode variar conforme os detalhes do pedido.
+      </p>
+    )
+  }
+</div>
+
+<style>
+  .price-display p {
+    margin: 0;
+  }
+
+  .price-label {
+    margin-bottom: 0.2rem !important;
+    color: var(--color-espresso);
+    font-size: 0.75rem;
+    font-weight: 750;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .price-value {
+    font-size: 1.25rem;
+    font-weight: 850;
+  }
+
+  .is-quote .price-value {
+    color: var(--color-terracotta-ink);
+  }
+
+  .price-note {
+    max-width: 30rem;
+    margin-top: 0.35rem !important;
+    font-size: 0.8125rem;
+  }
+
+  .compact .price-value {
+    font-size: 1rem;
+  }
+</style>

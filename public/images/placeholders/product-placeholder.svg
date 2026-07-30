@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 960" role="img" aria-labelledby="title description">
+  <title id="title">Foto em breve</title>
+  <desc id="description">Espaço reservado para a foto do produto</desc>
+  <rect width="800" height="960" fill="#FAEEDE" />
+  <rect x="72" y="72" width="656" height="816" rx="24" fill="none" stroke="#C1764B" stroke-width="4" />
+  <g fill="none" stroke="#494238" stroke-linecap="round" stroke-linejoin="round" stroke-width="18">
+    <rect x="260" y="290" width="280" height="220" rx="18" />
+    <circle cx="345" cy="370" r="28" />
+    <path d="m282 475 78-74 55 52 42-39 62 61" />
+  </g>
+  <text x="400" y="625" fill="#494238" font-family="system-ui, sans-serif" font-size="38" font-weight="650" text-anchor="middle">Foto em breve</text>
+  <text x="400" y="674" fill="#494238" font-family="system-ui, sans-serif" font-size="22" text-anchor="middle">Casa Nacoli</text>
+</svg>

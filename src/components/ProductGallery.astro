@@ -1,0 +1,195 @@
+---
+import { Image, getImage } from "astro:assets";
+import type { ResolvedProductImage } from "../data/assets";
+import PlaceholderImage from "./PlaceholderImage.astro";
+
+interface Props {
+  images: ResolvedProductImage[];
+  productName: string;
+}
+
+const { images, productName } = Astro.props;
+const preparedImages = await Promise.all(
+  images.map(async (image) => {
+    const optimized = await getImage({
+      src: image.src,
+      widths: [480, 720, 960, 1200],
+      quality: 85,
+    });
+
+    return {
+      alt: image.alt,
+      source: image.src,
+      src: optimized.src,
+      srcset: optimized.srcSet.attribute,
+      width: image.src.width,
+      height: image.src.height,
+    };
+  }),
+);
+const firstImage = preparedImages.at(0);
+---
+
+<div
+  class="product-gallery"
+  data-product-gallery
+  role="group"
+  aria-label={`Galeria de ${productName}`}
+>
+  <div class="gallery-main">
+    {
+      firstImage ? (
+        <img
+          data-gallery-main
+          src={firstImage.src}
+          srcset={firstImage.srcset}
+          sizes="(min-width: 1024px) 48vw, 92vw"
+          alt={firstImage.alt}
+          width={firstImage.width}
+          height={firstImage.height}
+          loading="eager"
+          decoding="async"
+        />
+      ) : (
+        <PlaceholderImage alt={`Foto de ${productName} ainda não disponível`} />
+      )
+    }
+  </div>
+
+  {
+    images.length > 1 && (
+      <div class="gallery-thumbnails" aria-label="Escolher imagem">
+        {preparedImages.map((prepared, index) => {
+          return (
+            <button
+              type="button"
+              data-gallery-thumbnail
+              data-src={prepared.src}
+              data-srcset={prepared.srcset}
+              data-alt={prepared.alt}
+              data-width={prepared.width}
+              data-height={prepared.height}
+              aria-label={`Mostrar imagem ${index + 1} de ${images.length}: ${prepared.alt}`}
+              aria-pressed={index === 0 ? "true" : "false"}
+            >
+              <Image
+                src={prepared.source}
+                alt=""
+                width={96}
+                height={96}
+                fit="cover"
+                loading="lazy"
+              />
+            </button>
+          );
+        })}
+      </div>
+    )
+  }
+  <p class="gallery-status" data-gallery-status aria-live="polite">
+    {images.length > 1 ? `Imagem 1 de ${images.length}` : ""}
+  </p>
+</div>
+
+<script>
+  document
+    .querySelectorAll<HTMLElement>("[data-product-gallery]")
+    .forEach((gallery) => {
+      const main = gallery.querySelector<HTMLImageElement>(
+        "[data-gallery-main]",
+      );
+      const thumbnails = Array.from(
+        gallery.querySelectorAll<HTMLButtonElement>("[data-gallery-thumbnail]"),
+      );
+      const status = gallery.querySelector<HTMLElement>(
+        "[data-gallery-status]",
+      );
+
+      if (!main || thumbnails.length < 2) return;
+
+      thumbnails.forEach((thumbnail, index) => {
+        thumbnail.addEventListener("click", () => {
+          main.src = thumbnail.dataset.src ?? main.src;
+          main.srcset = thumbnail.dataset.srcset ?? "";
+          main.alt = thumbnail.dataset.alt ?? "";
+          main.width = Number(thumbnail.dataset.width) || main.width;
+          main.height = Number(thumbnail.dataset.height) || main.height;
+
+          thumbnails.forEach((item) =>
+            item.setAttribute("aria-pressed", "false"),
+          );
+          thumbnail.setAttribute("aria-pressed", "true");
+          if (status)
+            status.textContent = `Imagem ${index + 1} de ${thumbnails.length}`;
+        });
+      });
+    });
+</script>
+
+<style>
+  .product-gallery {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .gallery-main {
+    display: grid;
+    aspect-ratio: 4 / 5;
+    place-items: center;
+    overflow: hidden;
+    border: 1px solid rgb(73 66 56 / 0.14);
+    border-radius: var(--radius-card);
+    background: var(--color-paper);
+  }
+
+  .gallery-main :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .gallery-thumbnails {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    gap: 0.55rem;
+    margin-top: 0.75rem;
+    overflow-x: auto;
+    padding: 0.25rem 0.2rem 0.65rem;
+    scrollbar-width: thin;
+  }
+
+  .gallery-thumbnails button {
+    width: 4.5rem;
+    height: 4.5rem;
+    cursor: pointer;
+    flex: 0 0 4.5rem;
+    overflow: hidden;
+    border: 2px solid transparent;
+    border-radius: 0.7rem;
+    padding: 0;
+    background: var(--color-paper);
+  }
+
+  .gallery-thumbnails button[aria-pressed="true"] {
+    border-color: var(--color-terracotta-ink);
+  }
+
+  .gallery-thumbnails :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .gallery-status {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+</style>

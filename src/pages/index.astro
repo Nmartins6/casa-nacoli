@@ -1,0 +1,758 @@
+---
+import { Image } from "astro:assets";
+import {
+  ArrowRight,
+  Building2,
+  Check,
+  MessageCircleMore,
+  Sparkles,
+} from "@lucide/astro";
+import CategoryCard from "../components/CategoryCard.astro";
+import ProductCard from "../components/ProductCard.astro";
+import ReviewCard from "../components/ReviewCard.astro";
+import WhatsAppLink from "../components/WhatsAppLink.astro";
+import { getProductImages } from "../data/assets";
+import { categories, products, reviews, siteConfig } from "../data/catalog";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { buildWhatsAppMessage } from "../utils/whatsapp";
+
+const productBySlug = (slug: string) => {
+  const product = products.find((item) => item.slug === slug);
+  if (!product) throw new Error(`Produto não encontrado para a home: ${slug}`);
+  return product;
+};
+
+const canecas = productBySlug("canecas-personalizadas");
+const camisetas = productBySlug("camisetas-personalizadas");
+const cartoes = productBySlug("cartoes-de-visita");
+const ecobag = productBySlug("ecobag-tnt-80g-personalizada");
+const quebraCabeca = productBySlug("quebra-cabeca-personalizado");
+
+const homeImages = {
+  canecas: getProductImages(canecas).at(0),
+  camisetas: getProductImages(camisetas).at(0),
+  cartoes: getProductImages(cartoes).at(0),
+  ecobag: getProductImages(ecobag).at(0),
+  quebraCabeca: getProductImages(quebraCabeca).at(0),
+};
+
+const categoryImages = [
+  homeImages.canecas,
+  homeImages.camisetas,
+  homeImages.ecobag,
+  homeImages.cartoes,
+];
+const categoryTones = ["sky", "sage", "honey", "terracotta"] as const;
+const selectedReviews = ["review-04", "review-09", "review-19"]
+  .map((id) => reviews.find((review) => review.id === id))
+  .filter((review) => review !== undefined);
+const generalMessage = buildWhatsAppMessage({
+  pageUrl: siteConfig.brand.domain,
+});
+const homeFeaturedProducts = [canecas, camisetas, ecobag, cartoes];
+---
+
+<BaseLayout>
+  <section class="hero">
+    <div class="site-container hero-grid" data-reveal-group>
+      <div class="hero-copy" data-reveal>
+        <p class="eyebrow">Papelaria criativa | presentes personalizados</p>
+        <h1>Sua ideia, feita com carinho!</h1>
+        <p class="hero-intro">Estúdio de design e gráfica artesanal.</p>
+        <div class="hero-actions">
+          <WhatsAppLink message={generalMessage} context="hero" />
+          <a class="button button-secondary" href="/produtos">
+            Ver catálogo
+            <ArrowRight size={18} aria-hidden="true" />
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="hero-gallery"
+        aria-label="Exemplos de produtos da Casa Nacoli"
+        data-reveal
+      >
+        {
+          homeImages.canecas && (
+            <Image
+              class="hero-image hero-image-main"
+              src={homeImages.canecas.src}
+              alt={homeImages.canecas.alt}
+              widths={[420, 680, 880]}
+              sizes="(min-width: 768px) 35vw, 65vw"
+              loading="eager"
+            />
+          )
+        }
+        {
+          homeImages.camisetas && (
+            <Image
+              class="hero-image hero-image-small hero-image-top"
+              src={homeImages.camisetas.src}
+              alt={homeImages.camisetas.alt}
+              widths={[240, 420]}
+              sizes="(min-width: 768px) 16vw, 34vw"
+              loading="eager"
+            />
+          )
+        }
+        {
+          homeImages.cartoes && (
+            <Image
+              class="hero-image hero-image-small hero-image-bottom"
+              src={homeImages.cartoes.src}
+              alt={homeImages.cartoes.alt}
+              widths={[240, 420]}
+              sizes="(min-width: 768px) 16vw, 34vw"
+              loading="eager"
+            />
+          )
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="value-strip" aria-label="Como a Casa Nacoli ajuda">
+    <div class="site-container value-grid">
+      <p><span>01</span> Você nos conta o que precisa.</p>
+      <p><span>02</span> A gente te ajuda com os detalhes.</p>
+      <p><span>03</span> Te passamos um orçamento.</p>
+    </div>
+  </section>
+
+  <section class="section categories-section" id="categorias">
+    <div class="site-container">
+      <div class="section-heading" data-reveal>
+        <p class="eyebrow">Um ponto de partida simples</p>
+        <h2 class="section-title">Um projeto do seu jeito</h2>
+        <p class="section-intro">
+          Escolha uma categoria para começar. Se ainda estiver em dúvida, conte
+          a ideia e a gente te ajuda.
+        </p>
+      </div>
+      <div class="category-grid" data-reveal-group>
+        {
+          categories.map((category, index) => (
+            <CategoryCard
+              category={category}
+              image={categoryImages[index]}
+              tone={categoryTones[index] ?? "sky"}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section featured-section" id="destaques">
+    <div class="site-container">
+      <div class="featured-heading" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">Para conhecer de perto</p>
+          <h2 class="section-title">Produtos em destaque</h2>
+          <p class="section-intro">Valores de referência e fotos reais.</p>
+        </div>
+        <p class="featured-note">
+          O valor final pode variar conforme arte, modelo e quantidade.
+        </p>
+      </div>
+      <div class="product-grid" data-reveal-group>
+        {
+          homeFeaturedProducts.map((product, index) => (
+            <ProductCard product={product} priority={index === 0} />
+          ))
+        }
+      </div>
+      <div class="featured-action" data-reveal>
+        <a class="button button-secondary" href="/produtos">
+          Ver todos os produtos
+          <ArrowRight size={18} aria-hidden="true" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section custom-section" id="personalizados">
+    <div class="site-container custom-grid" data-reveal-group>
+      <div class="custom-copy" data-reveal>
+        <Sparkles size={28} aria-hidden="true" />
+        <p class="eyebrow">Pedidos personalizados</p>
+        <h2 class="section-title">
+          Tem uma ideia e não sabe por onde começar?
+        </h2>
+        <p>
+          Pode ser uma foto, uma frase, uma referência ou só a ocasião. Nós te
+          ajudamos a entender o que funciona melhor para o seu pedido.
+        </p>
+        <ul>
+          <li>
+            <Check size={18} aria-hidden="true" /> Envie o que você já tem.
+          </li>
+          <li>
+            <Check size={18} aria-hidden="true" /> Tiramos suas dúvidas antes de decidir.
+          </li>
+          <li>
+            <Check size={18} aria-hidden="true" /> Confirmamos os detalhes no atendimento.
+          </li>
+        </ul>
+        <WhatsAppLink
+          label="Enviar minha ideia"
+          message={buildWhatsAppMessage({
+            details: "Quero ajuda para escolher uma opção personalizada",
+            pageUrl: `${siteConfig.brand.domain}/#personalizados`,
+          })}
+          context="personalizados"
+        />
+      </div>
+      {
+        homeImages.quebraCabeca && (
+          <div class="custom-image" data-reveal>
+            <Image
+              src={homeImages.quebraCabeca.src}
+              alt={homeImages.quebraCabeca.alt}
+              widths={[480, 760, 1000]}
+              sizes="(min-width: 768px) 45vw, 92vw"
+              loading="lazy"
+            />
+          </div>
+        )
+      }
+    </div>
+  </section>
+
+  <section class="section business-section" id="empresas">
+    <div class="site-container business-grid" data-reveal-group>
+      {
+        homeImages.ecobag && (
+          <div class="business-image" data-reveal>
+            <Image
+              src={homeImages.ecobag.src}
+              alt={homeImages.ecobag.alt}
+              widths={[480, 760, 1000]}
+              sizes="(min-width: 768px) 44vw, 92vw"
+              loading="lazy"
+            />
+          </div>
+        )
+      }
+      <div class="business-copy" data-reveal>
+        <Building2 size={30} aria-hidden="true" />
+        <p class="eyebrow">Para empresas</p>
+        <h2 class="section-title">
+          Materiais que fazem sua marca sempre presente.
+        </h2>
+        <p>
+          Uniformes, brindes, cartões, etiquetas e impressos podem ser
+          organizados em um pedido alinhado à sua necessidade e quantidade.
+        </p>
+        <p>
+          Informe o que precisa, para quando e em qual volume. O atendimento
+          ajuda a fechar as especificações antes do orçamento.
+        </p>
+        <WhatsAppLink
+          label="Solicitar orçamento"
+          message={buildWhatsAppMessage({
+            details: "Gostaria de conversar sobre um pedido para empresa",
+            pageUrl: `${siteConfig.brand.domain}/#empresas`,
+          })}
+          context="empresas"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section process-section" id="como-pedir">
+    <div class="site-container">
+      <div class="section-heading" data-reveal>
+        <p class="eyebrow">
+          Onde o processo é tão importante quanto o resultado
+        </p>
+        <h2 class="section-title">Da ideia à produção, sem complicar.</h2>
+      </div>
+      <ol class="process-list" data-reveal-group>
+        <li data-reveal>
+          <span>1</span>
+          <h3>Conte sua ideia</h3>
+          <p>Diga o produto, a ocasião ou o objetivo do pedido.</p>
+        </li>
+        <li data-reveal>
+          <span>2</span>
+          <h3>Envie os detalhes</h3>
+          <p>Compartilhe quantidade, referências, textos, fotos ou arquivo.</p>
+        </li>
+        <li data-reveal>
+          <span>3</span>
+          <h3>Alinhe o orçamento</h3>
+          <p>Modelo, arte e viabilidade são confirmados no atendimento.</p>
+        </li>
+        <li data-reveal>
+          <span>4</span>
+          <h3>Nós seguimos com a produção</h3>
+          <p>Com os detalhes combinados, o pedido pode ser produzido.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section reviews-section" id="avaliacoes">
+    <div class="site-container">
+      <div class="reviews-heading" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">Aqui sua opinião importa</p>
+          <h2 class="section-title">Avaliações reais</h2>
+          <p class="section-intro">
+            Relatos publicados pelos nossos clientes no Google.
+          </p>
+        </div>
+        <a
+          class="button button-secondary"
+          href={siteConfig.links.googleBusinessProfile}
+          target="_blank"
+          rel="noreferrer">Ver perfil no Google</a
+        >
+      </div>
+      <div class="review-grid" data-reveal-group>
+        {selectedReviews.map((review) => <ReviewCard {review} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq-section" id="duvidas">
+    <div class="site-container faq-grid">
+      <div class="section-heading">
+        <p class="eyebrow">Ficou com alguma dúvida?</p>
+        <h2 class="section-title">Algumas perguntas frequentes</h2>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>Preciso ter a arte pronta?</summary>
+          <p>
+            Não. Você pode enviar uma referência ou explicar a ideia. A arte e a
+            viabilidade técnica são confirmadas no atendimento.
+          </p>
+        </details>
+        <details>
+          <summary>Como descubro o valor do pedido?</summary>
+          <p>
+            Quando existe um valor de referência, ele aparece no produto.
+            Pedidos que variam por material, tamanho, arte ou quantidade recebem
+            orçamento.
+          </p>
+        </details>
+        <details>
+          <summary>O que devo enviar pelo WhatsApp?</summary>
+          <p>
+            Conte qual produto procura, a quantidade e os detalhes, se já
+            souber. Fotos e referências também ajudam a iniciar a conversa.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="site-container final-cta-inner" data-reveal>
+      <MessageCircleMore size={36} aria-hidden="true" />
+      <div>
+        <p class="eyebrow">Vamos conversar?</p>
+        <h2>Conte o que você quer fazer.</h2>
+        <p>A Casa Nacoli ajuda a transformar a ideia em um pedido possível.</p>
+      </div>
+      <WhatsAppLink message={generalMessage} context="cta_final" />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding-block: clamp(2.5rem, 6vw, 5.5rem);
+  }
+
+  .hero-grid {
+    display: grid;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .hero-copy h1 {
+    max-width: 12ch;
+    margin-bottom: 1.1rem;
+    font-size: clamp(2.9rem, 12vw, 5.5rem);
+  }
+
+  .hero-intro {
+    max-width: 35rem;
+    margin-bottom: 1.5rem;
+    font-size: clamp(1.08rem, 2.7vw, 1.3rem);
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .hero-gallery {
+    position: relative;
+    min-height: clamp(22rem, 110vw, 35rem);
+  }
+
+  .hero-gallery :global(.hero-image) {
+    position: absolute;
+    object-fit: cover;
+    border: 5px solid var(--color-terracotta);
+    border-radius: 1.25rem;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .hero-gallery :global(.hero-image-main) {
+    inset: 0 auto 0 0;
+    width: 68%;
+    height: 100%;
+  }
+
+  .hero-gallery :global(.hero-image-small) {
+    right: 0;
+    width: 39%;
+    height: 46%;
+  }
+
+  .hero-gallery :global(.hero-image-top) {
+    top: 2%;
+  }
+
+  .hero-gallery :global(.hero-image-bottom) {
+    bottom: 2%;
+  }
+
+  .value-strip {
+    border-block: 1px solid rgb(73 66 56 / 0.14);
+    padding-block: 1.15rem;
+    background: var(--color-paper);
+  }
+
+  .value-grid {
+    display: grid;
+    gap: 0.65rem;
+  }
+
+  .value-grid p {
+    display: flex;
+    align-items: baseline;
+    gap: 0.7rem;
+    margin: 0;
+    font-size: 0.875rem;
+    font-weight: 650;
+  }
+
+  .value-grid span {
+    color: var(--color-terracotta-ink);
+    font-size: 0.7rem;
+    font-weight: 850;
+    letter-spacing: 0.1em;
+  }
+
+  .categories-section {
+    background: var(--color-paper);
+  }
+
+  .category-grid {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .featured-section {
+    background: var(--color-cream);
+  }
+
+  .featured-heading,
+  .reviews-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .featured-heading .section-heading,
+  .reviews-heading .section-heading {
+    margin-bottom: 0;
+  }
+
+  .featured-note {
+    max-width: 18rem;
+    margin: 0;
+    border-left: 2px solid var(--color-honey);
+    padding-left: 1rem;
+    font-size: 0.8125rem;
+  }
+
+  .product-grid {
+    display: grid;
+    gap: 2.5rem 1.25rem;
+  }
+
+  .featured-action {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+
+  .custom-section {
+    padding-block: 0;
+    background: var(--color-paper);
+  }
+
+  .custom-grid,
+  .business-grid {
+    display: grid;
+    align-items: stretch;
+  }
+
+  .custom-copy,
+  .business-copy {
+    padding: clamp(3rem, 8vw, 6rem) 1rem;
+  }
+
+  .custom-copy > svg,
+  .business-copy > svg {
+    margin-bottom: 1.25rem;
+    color: var(--color-terracotta);
+  }
+
+  .custom-copy > p:not(.eyebrow),
+  .business-copy > p:not(.eyebrow) {
+    max-width: 36rem;
+  }
+
+  .custom-copy ul {
+    display: grid;
+    gap: 0.65rem;
+    margin: 1.5rem 0 2rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .custom-copy li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .custom-copy li svg {
+    flex: none;
+    margin-top: 0.2rem;
+    color: var(--color-sage);
+  }
+
+  .custom-image,
+  .business-image {
+    min-height: 25rem;
+    overflow: hidden;
+  }
+
+  .custom-image :global(img),
+  .business-image :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .business-section {
+    padding-block: 0;
+    background: color-mix(in srgb, var(--color-sky) 52%, white);
+  }
+
+  .business-copy {
+    order: -1;
+  }
+
+  .business-copy .button {
+    margin-top: 0.75rem;
+  }
+
+  .process-section {
+    background: var(--color-espresso);
+  }
+
+  .process-section .eyebrow {
+    color: var(--color-honey);
+  }
+
+  .process-section .section-title {
+    color: white;
+  }
+
+  .process-list {
+    display: grid;
+    gap: 1px;
+    margin: 0;
+    padding: 0;
+    background: rgb(255 255 255 / 0.16);
+    list-style: none;
+  }
+
+  .process-list li {
+    padding: 1.5rem;
+    color: rgb(255 255 255 / 0.8);
+    background: var(--color-espresso);
+  }
+
+  .process-list span {
+    display: inline-grid;
+    width: 2rem;
+    height: 2rem;
+    place-items: center;
+    margin-bottom: 1.1rem;
+    border: 1px solid rgb(255 255 255 / 0.35);
+    border-radius: 50%;
+    color: var(--color-honey);
+    font-size: 0.75rem;
+    font-weight: 800;
+  }
+
+  .process-list h3 {
+    margin-bottom: 0.55rem;
+    color: white;
+    font-size: 1.35rem;
+  }
+
+  .process-list p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  .reviews-section {
+    background: var(--color-paper);
+  }
+
+  .review-grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .faq-section {
+    background: var(--color-cream);
+  }
+
+  .faq-grid {
+    display: grid;
+    gap: 1rem 4rem;
+  }
+
+  .faq-list details {
+    border-top: 1px solid rgb(73 66 56 / 0.26);
+    padding-block: 1.1rem;
+  }
+
+  .faq-list details:last-child {
+    border-bottom: 1px solid rgb(73 66 56 / 0.26);
+  }
+
+  .faq-list summary {
+    cursor: pointer;
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  .faq-list p {
+    max-width: 38rem;
+    margin: 0.8rem 0 0;
+  }
+
+  .final-cta {
+    padding-block: clamp(3rem, 7vw, 5rem);
+    background: var(--color-honey);
+  }
+
+  .final-cta-inner {
+    display: grid;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .final-cta .eyebrow {
+    color: var(--color-espresso);
+  }
+
+  .final-cta h2 {
+    margin-bottom: 0.45rem;
+    font-size: clamp(2rem, 6vw, 3.25rem);
+  }
+
+  .final-cta p:last-child {
+    margin: 0;
+  }
+
+  @media (min-width: 40rem) {
+    .value-grid,
+    .review-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .product-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .category-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .process-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .hero-grid {
+      grid-template-columns: minmax(0, 0.9fr) minmax(24rem, 1.1fr);
+      gap: clamp(2rem, 5vw, 5rem);
+    }
+
+    .hero-gallery {
+      min-height: clamp(28rem, 48vw, 38rem);
+    }
+
+    .custom-grid,
+    .business-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .custom-copy,
+    .business-copy {
+      align-self: center;
+      padding-inline: clamp(2rem, 6vw, 5rem);
+    }
+
+    .business-copy {
+      order: initial;
+    }
+
+    .faq-grid {
+      grid-template-columns: 0.8fr 1.2fr;
+    }
+
+    .final-cta-inner {
+      grid-template-columns: auto 1fr auto;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .featured-heading,
+    .reviews-heading {
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    .process-list {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .product-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+</style>

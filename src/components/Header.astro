@@ -1,0 +1,181 @@
+---
+import { Image } from "astro:assets";
+import { Menu } from "@lucide/astro";
+import logo from "../assets/brand/casa-nacoli-logo.jpeg";
+import WhatsAppLink from "./WhatsAppLink.astro";
+
+const desktopLinks = [
+  { href: "/", label: "Início" },
+  { href: "/produtos", label: "Produtos" },
+  { href: "/produtos#categorias", label: "Categorias" },
+  { href: "/#empresas", label: "Para empresas" },
+  { href: "/#como-pedir", label: "Como pedir" },
+  { href: "/#contato", label: "Contato" },
+];
+
+const mobileLinks = [
+  { href: "/produtos", label: "Todos os produtos" },
+  { href: "/categorias/personalizados", label: "Personalizados" },
+  { href: "/categorias/vestuario", label: "Vestuário" },
+  { href: "/categorias/brindes-corporativos", label: "Brindes corporativos" },
+  { href: "/categorias/grafica-e-impressoes", label: "Impressões digitais" },
+  { href: "/#empresas", label: "Para empresas" },
+  { href: "/#como-pedir", label: "Como pedir" },
+  { href: "/#contato", label: "Contato" },
+];
+---
+
+<header class="site-header">
+  <div class="header-inner site-container">
+    <a class="brand-link" href="/" aria-label="Casa Nacoli — página inicial">
+      <Image
+        src={logo}
+        alt="Casa Nacoli — gráfica artesanal independente"
+        width={126}
+        quality={85}
+        loading="eager"
+      />
+    </a>
+
+    <nav class="desktop-nav" aria-label="Navegação principal">
+      {desktopLinks.map((link) => <a href={link.href}>{link.label}</a>)}
+    </nav>
+
+    <div class="desktop-action">
+      <WhatsAppLink label="Conversar" context="cabecalho" />
+    </div>
+
+    <details class="mobile-menu" data-mobile-menu>
+      <summary aria-label="Abrir navegação">
+        <Menu size={24} aria-hidden="true" />
+      </summary>
+      <nav aria-label="Navegação mobile">
+        {mobileLinks.map((link) => <a href={link.href}>{link.label}</a>)}
+        <WhatsAppLink label="Pedir pelo WhatsApp" context="menu_mobile" />
+      </nav>
+    </details>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    z-index: 30;
+    top: 0;
+    height: var(--header-height);
+    border-bottom: 1px solid rgb(73 66 56 / 0.12);
+    color: var(--color-cream);
+    background-color: var(--color-sage-ink);
+  }
+
+  .header-inner {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .brand-link {
+    display: block;
+    width: 4.6rem;
+    flex: none;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  .brand-link img {
+    width: 80%;
+    height: auto;
+  }
+
+  .desktop-nav,
+  .desktop-action {
+    display: none;
+  }
+
+  .mobile-menu {
+    margin-left: auto;
+  }
+
+  .mobile-menu summary {
+    display: flex;
+    min-width: 4.5rem;
+    min-height: 3rem;
+    cursor: pointer;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    border: 1px solid var(--color-cream);
+    border-radius: 999px;
+    font-size: 0.875rem;
+    font-weight: 750;
+    color: var(--color-cream);
+  }
+
+  .mobile-menu summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .mobile-menu nav {
+    position: fixed;
+    top: var(--header-height);
+    right: 0;
+    left: 0;
+    display: grid;
+    gap: 0.25rem;
+    border-bottom: 1px solid rgb(73 66 56 / 0.15);
+    padding: 1rem;
+    color: var(--color-espresso);
+    background: var(--color-paper);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .mobile-menu:not([open]) nav {
+    display: none;
+  }
+
+  .mobile-menu nav > a:not(.button) {
+    min-height: 3rem;
+    border-radius: 0.5rem;
+    padding: 0.7rem 0.75rem;
+    font-weight: 650;
+    text-decoration: none;
+  }
+
+  .mobile-menu nav > a:not(.button):hover {
+    background: var(--color-cream);
+  }
+
+  @media (min-width: 64rem) {
+    .brand-link {
+      width: 5.25rem;
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+
+    .desktop-nav {
+      display: flex;
+      margin-left: auto;
+      align-items: center;
+      gap: clamp(0.8rem, 2vw, 1.5rem);
+    }
+
+    .desktop-nav a {
+      border-radius: 0.25rem;
+      font-size: 0.875rem;
+      font-weight: 650;
+      text-decoration: none;
+    }
+
+    .desktop-nav a:hover {
+      text-decoration: underline;
+    }
+
+    .desktop-action {
+      display: block;
+    }
+  }
+</style>

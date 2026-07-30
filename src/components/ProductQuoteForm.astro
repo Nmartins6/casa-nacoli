@@ -1,0 +1,180 @@
+---
+import { siteConfig } from "../data/catalog";
+import type { Product } from "../types/domain";
+import { buildWhatsAppMessage, createWhatsAppUrl } from "../utils/whatsapp";
+import WhatsAppIcon from "./WhatsAppIcon.astro";
+
+interface Props {
+  product: Product;
+  pageUrl: string;
+}
+
+const { product, pageUrl } = Astro.props;
+const initialMessage = buildWhatsAppMessage({ product: product.name, pageUrl });
+const initialUrl = createWhatsAppUrl(siteConfig.links.whatsapp, initialMessage);
+---
+
+<form
+  class="quote-form"
+  data-product-quote
+  data-product={product.name}
+  data-page-url={pageUrl}
+  data-whatsapp={siteConfig.links.whatsapp}
+>
+  <div class="quote-heading">
+    <p>Prepare a conversa</p>
+    <h2>O que você já sabe sobre o pedido?</h2>
+  </div>
+
+  {
+    product.variants.length > 0 && (
+      <label>
+        <span>Opção ou modelo</span>
+        <select name="variant" data-quote-variant>
+          <option value="">Ainda não sei</option>
+          {product.variants.map((variant) => (
+            <option value={variant.name}>{variant.name}</option>
+          ))}
+        </select>
+      </label>
+    )
+  }
+
+  <label>
+    <span>Quantidade</span>
+    <input
+      type="number"
+      name="quantity"
+      min="1"
+      inputmode="numeric"
+      required
+      placeholder="Ex.: 10"
+    />
+  </label>
+
+  <label>
+    <span>Detalhes <small>(opcional)</small></span>
+    <textarea
+      name="details"
+      rows="3"
+      placeholder="Tema, texto, cores, uso ou outra informação útil"></textarea>
+  </label>
+
+  <button
+    class="button button-primary"
+    type="submit"
+    data-analytics-event="whatsapp_click"
+    data-analytics-context={`produto_${product.slug}`}
+  >
+    <WhatsAppIcon size={19} />
+    Abrir conversa com estes detalhes
+  </button>
+  <p class="quote-note">
+    A mensagem será preenchida para você revisar antes de enviar no WhatsApp.
+  </p>
+  <noscript>
+    <a href={initialUrl} target="_blank" rel="noreferrer">
+      Abrir WhatsApp sem preencher os campos
+    </a>
+  </noscript>
+</form>
+
+<script>
+  import { trackEvent } from "../scripts/analytics";
+  import { buildWhatsAppMessage, createWhatsAppUrl } from "../utils/whatsapp";
+
+  document
+    .querySelectorAll<HTMLFormElement>("[data-product-quote]")
+    .forEach((form) => {
+      const variant = form.querySelector<HTMLSelectElement>(
+        "[data-quote-variant]",
+      );
+
+      variant?.addEventListener("change", () => {
+        if (variant.value) {
+          trackEvent({ name: "variant_select", context: variant.value });
+        }
+      });
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (!form.reportValidity()) return;
+
+        const data = new FormData(form);
+        const message = buildWhatsAppMessage({
+          product: form.dataset.product,
+          variant: String(data.get("variant") ?? "") || undefined,
+          quantity: String(data.get("quantity") ?? "") || undefined,
+          details: String(data.get("details") ?? "").trim() || undefined,
+          pageUrl: form.dataset.pageUrl,
+        });
+        const url = createWhatsAppUrl(form.dataset.whatsapp ?? "", message);
+        window.open(url, "_blank", "noopener,noreferrer");
+      });
+    });
+</script>
+
+<style>
+  .quote-form {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.75rem;
+    border: 1px solid rgb(73 66 56 / 0.16);
+    border-radius: var(--radius-card);
+    padding: clamp(1.15rem, 3vw, 1.5rem);
+    background: color-mix(in srgb, var(--color-sky) 26%, white);
+  }
+
+  .quote-heading p {
+    margin-bottom: 0.25rem;
+    color: var(--color-sage-ink);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .quote-heading h2 {
+    margin: 0;
+    font-size: 1.45rem;
+  }
+
+  label {
+    display: grid;
+    gap: 0.35rem;
+    font-size: 0.875rem;
+    font-weight: 750;
+  }
+
+  label small {
+    font-weight: 500;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    min-height: 3rem;
+    border: 1px solid rgb(73 66 56 / 0.34);
+    border-radius: 0.65rem;
+    padding: 0.7rem 0.8rem;
+    color: var(--color-espresso);
+    background: white;
+  }
+
+  textarea {
+    min-height: 6rem;
+    resize: vertical;
+  }
+
+  .quote-form .button {
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .quote-note {
+    margin: -0.25rem 0 0;
+    font-size: 0.75rem;
+    text-align: center;
+  }
+</style>

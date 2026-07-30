@@ -1,0 +1,1650 @@
+[
+  {
+    "id": "canecas-personalizadas",
+    "slug": "canecas-personalizadas",
+    "name": "Canecas Personalizadas",
+    "categoryId": "personalizados",
+    "subcategoryId": "canecas",
+    "status": "active",
+    "featured": true,
+    "sortOrder": 10,
+    "summary": "Canecas para presentes, lembranças, datas especiais, empresas e eventos.",
+    "description": "Escolha o modelo e envie sua ideia. A Casa Nacoli ajuda a ajustar a arte para que o resultado fique bonito, legível e adequado ao tipo de caneca.",
+    "pricing": {
+      "kind": "variants",
+      "currency": "BRL",
+      "display": "A partir de R$ 25,00"
+    },
+    "variants": [
+      {
+        "id": "branca",
+        "name": "Caneca branca",
+        "price": 39.9
+      },
+      {
+        "id": "preta",
+        "name": "Caneca preta",
+        "price": 55.0
+      },
+      {
+        "id": "magica",
+        "name": "Caneca mágica",
+        "price": 55.0
+      },
+      {
+        "id": "alca-coracao",
+        "name": "Caneca com alça de coração",
+        "price": 59.9
+      },
+      {
+        "id": "alca-interior-colorido",
+        "name": "Caneca com alça e interior colorido",
+        "price": 55.9
+      },
+      {
+        "id": "polimero",
+        "name": "Caneca de polímero",
+        "price": 25.0
+      }
+    ],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final e a viabilidade técnica devem ser confirmadas no atendimento."
+    },
+    "keywords": [
+      "caneca personalizada",
+      "presente personalizado",
+      "caneca mágica",
+      "caneca com foto"
+    ],
+    "images": [],
+    "imageFolder": "src/assets/products/canecas-personalizadas",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Canecas personalizadas. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Canecas Personalizadas | Casa Nacoli",
+      "description": "Canecas para presentes, lembranças, datas especiais, empresas e eventos."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "placa-mdf-15x20",
+    "slug": "placa-mdf-15x20",
+    "name": "Placa de MDF 15 × 20 cm com suporte",
+    "categoryId": "personalizados",
+    "subcategoryId": "mdf",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 20,
+    "summary": "Uma peça decorativa compacta para fotos, frases, homenagens e lembranças.",
+    "description": "A placa acompanha suporte e pode receber uma composição com foto, mensagem, nome, data ou identidade visual.",
+    "pricing": {
+      "kind": "fixed",
+      "currency": "BRL",
+      "amount": 30.0,
+      "display": "R$ 30,00"
+    },
+    "variants": [],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final e a viabilidade técnica devem ser confirmadas no atendimento."
+    },
+    "keywords": [
+      "placa mdf personalizada",
+      "placa com foto"
+    ],
+    "images": [],
+    "imageFolder": "src/assets/products/placa-mdf-15x20",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Placa de MDF 15 × 20 cm com suporte. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Placa de MDF 15 × 20 cm com suporte | Casa Nacoli",
+      "description": "Uma peça decorativa compacta para fotos, frases, homenagens e lembranças."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "ima-geladeira-mdf-5cm",
+    "slug": "ima-geladeira-mdf-5cm",
+    "name": "Imã de geladeira em MDF 5 cm",
+    "categoryId": "personalizados",
+    "subcategoryId": "mdf",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 30,
+    "summary": "Lembrança pequena e prática para eventos, marcas, fotos e datas especiais.",
+    "description": "Ideal para lembrancinhas e pequenas tiragens. A arte pode ser adaptada ao formato para manter a leitura mesmo em tamanho reduzido.",
+    "pricing": {
+      "kind": "fixed",
+      "currency": "BRL",
+      "amount": 12.9,
+      "display": "R$ 12,90"
+    },
+    "variants": [],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final e a viabilidade técnica devem ser confirmadas no atendimento."
+    },
+    "keywords": [
+      "imã personalizado",
+      "lembrancinha mdf"
+    ],
+    "images": [],
+    "imageFolder": "src/assets/products/ima-geladeira-mdf-5cm",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Imã de geladeira em MDF 5 cm. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Imã de geladeira em MDF 5 cm | Casa Nacoli",
+      "description": "Lembrança pequena e prática para eventos, marcas, fotos e datas especiais."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "chaveiro-mdf-5cm",
+    "slug": "chaveiro-mdf-5cm",
+    "name": "Chaveiro em MDF 5 cm frente e verso",
+    "categoryId": "personalizados",
+    "subcategoryId": "mdf",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 40,
+    "summary": "Chaveiro personalizado dos dois lados para lembranças, identificação ou divulgação.",
+    "description": "Pode receber fotos, nomes, frases curtas, logos e composições diferentes em cada lado.",
+    "pricing": {
+      "kind": "fixed",
+      "currency": "BRL",
+      "amount": 16.9,
+      "display": "R$ 16,90"
+    },
+    "variants": [],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final e a viabilidade técnica devem ser confirmadas no atendimento."
+    },
+    "keywords": [
+      "chaveiro personalizado",
+      "chaveiro mdf"
+    ],
+    "images": [],
+    "imageFolder": "src/assets/products/chaveiro-mdf-5cm",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Chaveiro em MDF 5 cm frente e verso. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Chaveiro em MDF 5 cm frente e verso | Casa Nacoli",
+      "description": "Chaveiro personalizado dos dois lados para lembranças, identificação ou divulgação."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "porta-chaves-mdf",
+    "slug": "porta-chaves-mdf",
+    "name": "Porta-chaves personalizado em MDF",
+    "categoryId": "personalizados",
+    "subcategoryId": "mdf",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 50,
+    "summary": "Peça útil e decorativa para casa, presente ou lembrança.",
+    "description": "Personalizado com nomes, frases, fotos ou tema escolhido, respeitando o espaço disponível e a melhor leitura da arte.",
+    "pricing": {
+      "kind": "fixed",
+      "currency": "BRL",
+      "amount": 35.0,
+      "display": "R$ 35,00"
+    },
+    "variants": [],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final e a viabilidade técnica devem ser confirmadas no atendimento."
+    },
+    "keywords": [
+      "porta chaves personalizado",
+      "mdf personalizado"
+    ],
+    "images": [],
+    "imageFolder": "src/assets/products/porta-chaves-mdf",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Porta-chaves personalizado em MDF. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Porta-chaves personalizado em MDF | Casa Nacoli",
+      "description": "Peça útil e decorativa para casa, presente ou lembrança."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "kit-imas-mdf-10",
+    "slug": "kit-imas-mdf-10",
+    "name": "Kit com 10 imãs de MDF 5 cm",
+    "categoryId": "personalizados",
+    "subcategoryId": "mdf",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 60,
+    "summary": "Kit econômico para lembrancinhas, eventos, divulgação ou presentes.",
+    "description": "As dez unidades seguem a mesma arte, salvo combinação diferente feita no atendimento.",
+    "pricing": {
+      "kind": "fixed",
+      "currency": "BRL",
+      "amount": 59.0,
+      "display": "R$ 59,00 o kit"
+    },
+    "variants": [
+      {
+        "id": "kit-10",
+        "name": "Kit com 10 unidades",
+        "price": 59.0,
+        "quantity": 10
+      }
+    ],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final e a viabilidade técnica devem ser confirmadas no atendimento."
+    },
+    "keywords": [
+      "kit imã personalizado",
+      "lembrancinhas"
+    ],
+    "images": [],
+    "imageFolder": "src/assets/products/kit-imas-mdf-10",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Kit com 10 imãs de MDF 5 cm. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Kit com 10 imãs de MDF 5 cm | Casa Nacoli",
+      "description": "Kit econômico para lembrancinhas, eventos, divulgação ou presentes."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "kit-chaveiros-mdf",
+    "slug": "kit-chaveiros-mdf",
+    "name": "Kits de chaveiros em MDF 5 cm",
+    "categoryId": "personalizados",
+    "subcategoryId": "mdf",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 70,
+    "summary": "Kits para eventos, turmas, empresas e lembranças em maior quantidade.",
+    "description": "Escolha entre o kit com impressão frente e verso ou a opção de cinquenta unidades. A arte e a repetição dos modelos são confirmadas antes da produção.",
+    "pricing": {
+      "kind": "variants",
+      "currency": "BRL",
+      "display": "A partir de R$ 89,00"
+    },
+    "variants": [
+      {
+        "id": "kit-10-frente-verso",
+        "name": "10 unidades, frente e verso",
+        "price": 89.0,
+        "quantity": 10
+      },
+      {
+        "id": "kit-50",
+        "name": "50 unidades",
+        "price": 245.0,
+        "quantity": 50,
+        "priceScope": "lote"
+      }
+    ],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final e a viabilidade técnica devem ser confirmadas no atendimento."
+    },
+    "keywords": [
+      "kit chaveiro personalizado",
+      "chaveiro mdf atacado"
+    ],
+    "images": [],
+    "imageFolder": "src/assets/products/kit-chaveiros-mdf",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Kits de chaveiros em MDF 5 cm. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Kits de chaveiros em MDF 5 cm | Casa Nacoli",
+      "description": "Kits para eventos, turmas, empresas e lembranças em maior quantidade."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "azulejo-personalizado-15x15",
+    "slug": "azulejo-personalizado-15x15",
+    "name": "Azulejo personalizado 15 × 15 cm com suporte",
+    "categoryId": "personalizados",
+    "subcategoryId": "outros-personalizados",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 80,
+    "summary": "Uma lembrança decorativa para fotos, mensagens, homenagens e datas importantes.",
+    "description": "Acompanha suporte e recebe arte personalizada conforme o tema do pedido.",
+    "pricing": {
+      "kind": "fixed",
+      "currency": "BRL",
+      "amount": 35.0,
+      "display": "R$ 35,00"
+    },
+    "variants": [],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final e a viabilidade técnica devem ser confirmadas no atendimento."
+    },
+    "keywords": [
+      "azulejo personalizado",
+      "azulejo com foto"
+    ],
+    "images": [],
+    "imageFolder": "src/assets/products/azulejo-personalizado-15x15",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Azulejo personalizado 15 × 15 cm com suporte. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Azulejo personalizado 15 × 15 cm com suporte | Casa Nacoli",
+      "description": "Uma lembrança decorativa para fotos, mensagens, homenagens e datas importantes."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "quebra-cabeca-personalizado",
+    "slug": "quebra-cabeca-personalizado",
+    "name": "Quebra-cabeça personalizado",
+    "categoryId": "personalizados",
+    "subcategoryId": "outros-personalizados",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 90,
+    "summary": "Um presente divertido e afetivo com foto, ilustração ou mensagem.",
+    "description": "A arte é ajustada ao formato do quebra-cabeça para preservar os elementos mais importantes da imagem.",
+    "pricing": {
+      "kind": "fixed",
+      "currency": "BRL",
+      "amount": 29.9,
+      "display": "R$ 29,90"
+    },
+    "variants": [],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final e a viabilidade técnica devem ser confirmadas no atendimento."
+    },
+    "keywords": [
+      "quebra-cabeça personalizado",
+      "presente com foto"
+    ],
+    "images": [],
+    "imageFolder": "src/assets/products/quebra-cabeca-personalizado",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Quebra-cabeça personalizado. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Quebra-cabeça personalizado | Casa Nacoli",
+      "description": "Um presente divertido e afetivo com foto, ilustração ou mensagem."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "camisetas-personalizadas",
+    "slug": "camisetas-personalizadas",
+    "name": "Camisetas personalizadas",
+    "categoryId": "vestuario",
+    "subcategoryId": "camisetas",
+    "status": "active",
+    "featured": true,
+    "sortOrder": 110,
+    "summary": "Camisetas para uso individual, equipes, eventos, uniformes e ações promocionais.",
+    "description": "A escolha entre sublimação e DTF depende do tecido, da cor da peça, da arte e do resultado esperado. A Casa Nacoli orienta a opção mais adequada no atendimento.",
+    "pricing": {
+      "kind": "variants",
+      "currency": "BRL",
+      "display": "A partir de R$ 45,00"
+    },
+    "variants": [
+      {
+        "id": "sublimada-frente",
+        "name": "Sublimada na frente",
+        "price": 45.0
+      },
+      {
+        "id": "sublimada-frente-verso",
+        "name": "Sublimada frente e verso",
+        "price": 50.0
+      },
+      {
+        "id": "dtf-frente",
+        "name": "DTF na frente",
+        "price": 70.0
+      },
+      {
+        "id": "dtf-frente-verso",
+        "name": "DTF frente e verso",
+        "price": 85.9
+      }
+    ],
+    "volumeDiscountRules": [
+      {
+        "minQuantity": 1,
+        "maxQuantity": 4,
+        "label": "Preço unitário padrão",
+        "discountPercent": 0
+      },
+      {
+        "minQuantity": 5,
+        "maxQuantity": 10,
+        "label": "Desconto por quantidade",
+        "discountPercent": null,
+        "requiresQuote": true
+      },
+      {
+        "minQuantity": 11,
+        "maxQuantity": 25,
+        "label": "Desconto maior por quantidade",
+        "discountPercent": null,
+        "requiresQuote": true
+      },
+      {
+        "minQuantity": 26,
+        "maxQuantity": null,
+        "label": "Melhor condição para produção em volume",
+        "discountPercent": null,
+        "requiresQuote": true
+      }
+    ],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final e a viabilidade técnica devem ser confirmadas no atendimento."
+    },
+    "keywords": [
+      "camiseta personalizada",
+      "camiseta dtf",
+      "camiseta sublimada",
+      "uniforme personalizado"
+    ],
+    "images": [],
+    "imageFolder": "src/assets/products/camisetas-personalizadas",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Camisetas personalizadas. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Camisetas personalizadas | Casa Nacoli",
+      "description": "Camisetas para uso individual, equipes, eventos, uniformes e ações promocionais."
+    },
+    "notes": [
+      "Não inventar percentuais de desconto. Exibir faixas e direcionar o cálculo final ao WhatsApp."
+    ],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "moletons-personalizados",
+    "slug": "moletons-personalizados",
+    "name": "Moletons personalizados",
+    "categoryId": "vestuario",
+    "subcategoryId": "moletons",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 120,
+    "summary": "Moletons personalizados para equipes, marcas, turmas, eventos e uso individual.",
+    "description": "Os valores dependem do modelo da peça, quantidade, tecido, tamanhos, área de impressão e técnica indicada.",
+    "pricing": {
+      "kind": "quote",
+      "currency": "BRL",
+      "display": "Consultar"
+    },
+    "variants": [
+      {
+        "id": "sem-bolso-sem-capuz",
+        "name": "Sem bolso e sem capuz",
+        "price": null,
+        "requiresQuote": true
+      },
+      {
+        "id": "com-bolso-sem-capuz",
+        "name": "Com bolso e sem capuz",
+        "price": null,
+        "requiresQuote": true
+      },
+      {
+        "id": "canguru",
+        "name": "Completo, modelo canguru",
+        "price": null,
+        "requiresQuote": true
+      }
+    ],
+    "volumeDiscountRules": [
+      {
+        "minQuantity": 1,
+        "maxQuantity": 4,
+        "label": "Preço unitário padrão",
+        "discountPercent": 0
+      },
+      {
+        "minQuantity": 5,
+        "maxQuantity": 10,
+        "label": "Desconto por quantidade",
+        "discountPercent": null,
+        "requiresQuote": true
+      },
+      {
+        "minQuantity": 11,
+        "maxQuantity": 25,
+        "label": "Desconto maior por quantidade",
+        "discountPercent": null,
+        "requiresQuote": true
+      },
+      {
+        "minQuantity": 26,
+        "maxQuantity": null,
+        "label": "Melhor condição para produção em volume",
+        "discountPercent": null,
+        "requiresQuote": true
+      }
+    ],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final e a viabilidade técnica devem ser confirmadas no atendimento."
+    },
+    "keywords": [
+      "moletom personalizado",
+      "uniforme de inverno"
+    ],
+    "images": [],
+    "imageFolder": "src/assets/products/moletons-personalizados",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Moletons personalizados. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Moletons personalizados | Casa Nacoli",
+      "description": "Moletons personalizados para equipes, marcas, turmas, eventos e uso individual."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "bone-dtf-personalizado",
+    "slug": "bone-dtf-personalizado",
+    "name": "Boné personalizado em DTF",
+    "categoryId": "vestuario",
+    "subcategoryId": "bones",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 130,
+    "summary": "Boné personalizado para uso individual, equipes, empresas e eventos.",
+    "description": "A arte é aplicada em DTF e deve respeitar a área útil do boné para manter acabamento e leitura.",
+    "pricing": {
+      "kind": "tiered",
+      "currency": "BRL",
+      "display": "A partir de R$ 35,00 por unidade"
+    },
+    "variants": [
+      {
+        "id": "1-unidade",
+        "name": "1 unidade",
+        "price": 45.0,
+        "minQuantity": 1,
+        "maxQuantity": 9,
+        "unit": "unidade"
+      },
+      {
+        "id": "10-ou-mais",
+        "name": "A partir de 10 unidades",
+        "price": 35.0,
+        "minQuantity": 10,
+        "maxQuantity": null,
+        "unit": "unidade"
+      }
+    ],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final e a viabilidade técnica devem ser confirmadas no atendimento."
+    },
+    "keywords": [
+      "boné personalizado",
+      "boné dtf"
+    ],
+    "images": [],
+    "imageFolder": "src/assets/products/bone-dtf-personalizado",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Boné personalizado em DTF. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Boné personalizado em DTF | Casa Nacoli",
+      "description": "Boné personalizado para uso individual, equipes, empresas e eventos."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "bone-sublimado-personalizado",
+    "slug": "bone-sublimado-personalizado",
+    "name": "Boné sublimado personalizado",
+    "categoryId": "vestuario",
+    "subcategoryId": "bones",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 140,
+    "summary": "Boné sublimado para pedidos individuais ou em quantidade.",
+    "description": "O valor depende do modelo, quantidade, arte e disponibilidade. O orçamento é feito pelo atendimento.",
+    "pricing": {
+      "kind": "quote",
+      "currency": "BRL",
+      "display": "Consultar"
+    },
+    "variants": [
+      {
+        "id": "1-unidade",
+        "name": "1 unidade",
+        "price": null,
+        "requiresQuote": true
+      },
+      {
+        "id": "10-ou-mais",
+        "name": "A partir de 10 unidades",
+        "price": null,
+        "requiresQuote": true
+      }
+    ],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final e a viabilidade técnica devem ser confirmadas no atendimento."
+    },
+    "keywords": [
+      "boné sublimado",
+      "boné personalizado"
+    ],
+    "images": [],
+    "imageFolder": "src/assets/products/bone-sublimado-personalizado",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Boné sublimado personalizado. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Boné sublimado personalizado | Casa Nacoli",
+      "description": "Boné sublimado para pedidos individuais ou em quantidade."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "meia-personalizada",
+    "slug": "meia-personalizada",
+    "name": "Meia personalizada",
+    "categoryId": "vestuario",
+    "subcategoryId": "meias",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 150,
+    "summary": "Meia personalizada para presente, uniforme, time, grupo ou evento.",
+    "description": "A viabilidade da arte depende do modelo da meia e da área disponível para personalização.",
+    "pricing": {
+      "kind": "fixed",
+      "currency": "BRL",
+      "amount": 30.0,
+      "display": "R$ 30,00"
+    },
+    "variants": [],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final e a viabilidade técnica devem ser confirmadas no atendimento."
+    },
+    "keywords": [
+      "meia personalizada"
+    ],
+    "images": [],
+    "imageFolder": "src/assets/products/meia-personalizada",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Meia personalizada. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Meia personalizada | Casa Nacoli",
+      "description": "Meia personalizada para presente, uniforme, time, grupo ou evento."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "cueca-personalizada",
+    "slug": "cueca-personalizada",
+    "name": "Cueca personalizada",
+    "categoryId": "vestuario",
+    "subcategoryId": "cuecas",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 160,
+    "summary": "Peça personalizada para presente, brincadeira ou ocasião especial.",
+    "description": "A arte é ajustada à área útil da peça, com confirmação prévia do modelo e do tamanho.",
+    "pricing": {
+      "kind": "fixed",
+      "currency": "BRL",
+      "amount": 35.0,
+      "display": "R$ 35,00"
+    },
+    "variants": [],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final e a viabilidade técnica devem ser confirmadas no atendimento."
+    },
+    "keywords": [
+      "cueca personalizada",
+      "presente divertido"
+    ],
+    "images": [],
+    "imageFolder": "src/assets/products/cueca-personalizada",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Cueca personalizada. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Cueca personalizada | Casa Nacoli",
+      "description": "Peça personalizada para presente, brincadeira ou ocasião especial."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "ecobag-tnt-80g-personalizada",
+    "slug": "ecobag-tnt-80g-personalizada",
+    "name": "Ecobag de TNT 80g Personalizada",
+    "categoryId": "brindes-corporativos",
+    "subcategoryId": "ecobags",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 170,
+    "summary": "Ecobag leve e personalizada para eventos, ações promocionais, kits e entregas.",
+    "description": "O valor unitário informado serve como referência para uma unidade. Quantidades maiores recebem orçamento específico.",
+    "pricing": {
+      "kind": "starting_at",
+      "currency": "BRL",
+      "amount": 14.9,
+      "display": "A partir de R$ 14,90"
+    },
+    "variants": [],
+    "volumeDiscountRules": [
+      {
+        "minQuantity": 2,
+        "maxQuantity": null,
+        "label": "Valor sob consulta para maiores quantidades",
+        "requiresQuote": true
+      }
+    ],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final e a viabilidade técnica devem ser confirmadas no atendimento."
+    },
+    "keywords": [
+      "ecobag personalizada",
+      "brinde corporativo"
+    ],
+    "images": [],
+    "imageFolder": "src/assets/products/ecobag-tnt-80g-personalizada",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Ecobag de TNT 80 g personalizada. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Ecobag de TNT 80g Personalizada | Casa Nacoli",
+      "description": "Ecobag leve e personalizada para eventos, ações promocionais, kits e entregas."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "lixo-car-personalizado",
+    "slug": "lixo-car-personalizado",
+    "name": "Lixo car personalizado",
+    "categoryId": "brindes-corporativos",
+    "subcategoryId": "utilitarios",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 180,
+    "summary": "Brinde automotivo personalizado para empresas, eventos, campanhas e kits.",
+    "description": "Disponível em sublimação ou serigrafia, com pedido mínimo de cinquenta unidades.",
+    "pricing": {
+      "kind": "variants",
+      "currency": "BRL",
+      "display": "Pedido mínimo de 50 unidades"
+    },
+    "variants": [
+      {
+        "id": "sublimado",
+        "name": "Sublimado, a partir de 50 unidades",
+        "price": 87.5,
+        "minQuantity": 50,
+        "priceScope": "confirmar"
+      },
+      {
+        "id": "serigrafado",
+        "name": "Serigrafado, a partir de 50 unidades",
+        "price": 95.0,
+        "minQuantity": 50,
+        "priceScope": "confirmar"
+      }
+    ],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final e a viabilidade técnica devem ser confirmadas no atendimento."
+    },
+    "keywords": [
+      "lixo car personalizado",
+      "brinde automotivo"
+    ],
+    "images": [],
+    "imageFolder": "src/assets/products/lixo-car-personalizado",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Lixo car personalizado. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Lixo car personalizado | Casa Nacoli",
+      "description": "Brinde automotivo personalizado para empresas, eventos, campanhas e kits."
+    },
+    "notes": [
+      "Confirmar com a Casa Nacoli se R$ 87,50 e R$ 95,00 são valores unitários ou do lote mínimo antes de publicar o preço."
+    ],
+    "needsPriceConfirmation": true
+  },
+  {
+    "id": "cartoes-de-visita",
+    "slug": "cartoes-de-visita",
+    "name": "Cartões de visita",
+    "categoryId": "grafica",
+    "subcategoryId": "cartoes",
+    "status": "active",
+    "featured": true,
+    "sortOrder": 190,
+    "summary": "Cartões para apresentar sua marca, contato e serviço com clareza.",
+    "description": "Escolha a quantidade e a impressão em uma ou duas faces. O arquivo deve seguir as margens e o padrão de corte definidos na preparação.",
+    "pricing": {
+      "kind": "variants",
+      "currency": "BRL",
+      "display": "A partir de R$ 75,00"
+    },
+    "variants": [
+      {
+        "id": "100-frente",
+        "name": "100 unidades, frente",
+        "price": 75.0,
+        "quantity": 100
+      },
+      {
+        "id": "100-frente-verso",
+        "name": "100 unidades, frente e verso",
+        "price": 85.0,
+        "quantity": 100
+      },
+      {
+        "id": "1000-frente",
+        "name": "1.000 unidades, frente",
+        "price": 130.0,
+        "quantity": 1000
+      },
+      {
+        "id": "1000-frente-verso",
+        "name": "1.000 unidades, frente e verso",
+        "price": 150.0,
+        "quantity": 1000
+      }
+    ],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "Confirmar formato, papel, acabamento, sangria e qualidade do arquivo antes da produção."
+    },
+    "keywords": [
+      "cartão de visita",
+      "impressão cartão de visita"
+    ],
+    "images": [],
+    "imageFolder": "src/assets/products/cartoes-de-visita",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Cartões de visita. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Cartões de visita | Casa Nacoli",
+      "description": "Cartões para apresentar sua marca, contato e serviço com clareza."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "panfletos",
+    "slug": "panfletos",
+    "name": "Panfletos",
+    "categoryId": "grafica",
+    "subcategoryId": "panfletos",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 200,
+    "summary": "Panfletos para divulgação de serviços, promoções, eventos e campanhas.",
+    "description": "As opções variam por tamanho e impressão em uma ou duas faces. O valor final depende do papel, prazo e especificações do pedido.",
+    "pricing": {
+      "kind": "quote",
+      "currency": "BRL",
+      "display": "Consultar"
+    },
+    "variants": [
+      {
+        "id": "1000-10x14-frente",
+        "name": "1.000 unidades, 10 × 14 cm, frente",
+        "requiresQuote": true
+      },
+      {
+        "id": "1000-10x14-frente-verso",
+        "name": "1.000 unidades, 10 × 14 cm, frente e verso",
+        "requiresQuote": true
+      },
+      {
+        "id": "1000-14x20-frente",
+        "name": "1.000 unidades, 14 × 20 cm, frente",
+        "requiresQuote": true
+      },
+      {
+        "id": "1000-14x20-frente-verso",
+        "name": "1.000 unidades, 14 × 20 cm, frente e verso",
+        "requiresQuote": true
+      }
+    ],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final e a viabilidade técnica devem ser confirmadas no atendimento."
+    },
+    "keywords": [
+      "panfleto",
+      "impressão de panfleto"
+    ],
+    "images": [],
+    "imageFolder": "src/assets/products/panfletos",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Panfletos. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Panfletos | Casa Nacoli",
+      "description": "Panfletos para divulgação de serviços, promoções, eventos e campanhas."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "encadernacao",
+    "slug": "encadernacao",
+    "name": "Encadernação",
+    "categoryId": "grafica",
+    "subcategoryId": "acabamentos",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 210,
+    "summary": "Encadernação para trabalhos, apostilas, materiais de estudo e documentos.",
+    "description": "O valor varia conforme a quantidade de folhas. Outros detalhes, como capa e formato, devem ser confirmados no atendimento.",
+    "pricing": {
+      "kind": "tiered",
+      "currency": "BRL",
+      "display": "A partir de R$ 10,00"
+    },
+    "variants": [
+      {
+        "id": "ate-100",
+        "name": "Até 100 folhas",
+        "price": 10.0,
+        "maxSheets": 100
+      },
+      {
+        "id": "101-200",
+        "name": "De 101 a 200 folhas",
+        "price": 13.0,
+        "minSheets": 101,
+        "maxSheets": 200
+      },
+      {
+        "id": "mais-200",
+        "name": "Mais de 200 folhas",
+        "price": 16.0,
+        "minSheets": 201
+      }
+    ],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": false,
+      "customerCanSendArtwork": false,
+      "designSupport": false,
+      "notes": "Confirmar formato, capa e espessura antes da execução."
+    },
+    "keywords": [
+      "encadernação",
+      "encadernar apostila"
+    ],
+    "images": [],
+    "imageFolder": "src/assets/products/encadernacao",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Encadernação. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Encadernação | Casa Nacoli",
+      "description": "Encadernação para trabalhos, apostilas, materiais de estudo e documentos."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "plastificacao",
+    "slug": "plastificacao",
+    "name": "Plastificação",
+    "categoryId": "grafica",
+    "subcategoryId": "acabamentos",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 220,
+    "summary": "Proteção para documentos, cardápios, avisos, cartões e materiais de uso frequente.",
+    "description": "Escolha o tamanho e o tipo de acabamento normal ou rígido.",
+    "pricing": {
+      "kind": "variants",
+      "currency": "BRL",
+      "display": "A partir de R$ 4,00"
+    },
+    "variants": [
+      {
+        "id": "a6-normal",
+        "name": "A6 normal",
+        "price": 4.0
+      },
+      {
+        "id": "a6-rigido",
+        "name": "A6 rígido",
+        "price": 5.0
+      },
+      {
+        "id": "a5-normal",
+        "name": "A5 normal",
+        "price": 6.0
+      },
+      {
+        "id": "a5-rigido",
+        "name": "A5 rígido",
+        "price": 7.5
+      },
+      {
+        "id": "a4-normal",
+        "name": "A4 normal",
+        "price": 9.0
+      },
+      {
+        "id": "a4-rigido",
+        "name": "A4 rígido",
+        "price": 12.0
+      }
+    ],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": false,
+      "customerCanSendArtwork": false,
+      "designSupport": false,
+      "notes": "Confirmar se o material e a espessura são adequados para plastificação."
+    },
+    "keywords": [
+      "plastificação a4",
+      "plastificação documento"
+    ],
+    "images": [],
+    "imageFolder": "src/assets/products/plastificacao",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Plastificação. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Plastificação | Casa Nacoli",
+      "description": "Proteção para documentos, cardápios, avisos, cartões e materiais de uso frequente."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "impressoes-em-papel-e-adesivo",
+    "slug": "impressoes-em-papel-e-adesivo",
+    "name": "Impressões em papel e adesivo",
+    "categoryId": "grafica",
+    "subcategoryId": "impressoes",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 230,
+    "summary": "Impressões sob medida em diferentes materiais, com opção de corte e laminação.",
+    "description": "O orçamento considera material, quantidade, tamanho, cobertura de tinta, tipo de corte, acabamento e prazo.",
+    "pricing": {
+      "kind": "matrix_quote",
+      "currency": "BRL",
+      "display": "Consultar"
+    },
+    "variants": [
+      {
+        "id": "adesivo-glossy-135g",
+        "name": "Adesivo glossy 135 g",
+        "quantityBands": [
+          {
+            "id": "1-20",
+            "label": "1 a 20 unidades",
+            "minQuantity": 1,
+            "maxQuantity": 20,
+            "requiresQuote": true
+          },
+          {
+            "id": "21-50",
+            "label": "21 a 50 unidades",
+            "minQuantity": 21,
+            "maxQuantity": 50,
+            "requiresQuote": true
+          },
+          {
+            "id": "51-100",
+            "label": "51 a 100 unidades",
+            "minQuantity": 51,
+            "maxQuantity": 100,
+            "requiresQuote": true
+          },
+          {
+            "id": "101-plus",
+            "label": "Mais de 100 unidades",
+            "minQuantity": 101,
+            "maxQuantity": null,
+            "requiresQuote": true
+          }
+        ],
+        "services": [
+          "Somente impressão",
+          "Impressão e corte",
+          "Impressão, corte e laminação"
+        ]
+      },
+      {
+        "id": "adesivo-glossy-180g",
+        "name": "Adesivo glossy 180 g",
+        "quantityBands": [
+          {
+            "id": "1-20",
+            "label": "1 a 20 unidades",
+            "minQuantity": 1,
+            "maxQuantity": 20,
+            "requiresQuote": true
+          },
+          {
+            "id": "21-50",
+            "label": "21 a 50 unidades",
+            "minQuantity": 21,
+            "maxQuantity": 50,
+            "requiresQuote": true
+          },
+          {
+            "id": "51-100",
+            "label": "51 a 100 unidades",
+            "minQuantity": 51,
+            "maxQuantity": 100,
+            "requiresQuote": true
+          },
+          {
+            "id": "101-plus",
+            "label": "Mais de 100 unidades",
+            "minQuantity": 101,
+            "maxQuantity": null,
+            "requiresQuote": true
+          }
+        ],
+        "services": [
+          "Somente impressão",
+          "Impressão e corte",
+          "Impressão, corte e laminação"
+        ]
+      },
+      {
+        "id": "sulfite-180g",
+        "name": "Sulfite 180 g",
+        "quantityBands": [
+          {
+            "id": "1-20",
+            "label": "1 a 20 unidades",
+            "minQuantity": 1,
+            "maxQuantity": 20,
+            "requiresQuote": true
+          },
+          {
+            "id": "21-50",
+            "label": "21 a 50 unidades",
+            "minQuantity": 21,
+            "maxQuantity": 50,
+            "requiresQuote": true
+          },
+          {
+            "id": "51-100",
+            "label": "51 a 100 unidades",
+            "minQuantity": 51,
+            "maxQuantity": 100,
+            "requiresQuote": true
+          },
+          {
+            "id": "101-plus",
+            "label": "Mais de 100 unidades",
+            "minQuantity": 101,
+            "maxQuantity": null,
+            "requiresQuote": true
+          }
+        ],
+        "services": [
+          "Somente impressão",
+          "Impressão e corte",
+          "Impressão, corte e laminação"
+        ]
+      },
+      {
+        "id": "sulfite-240g",
+        "name": "Sulfite 240 g",
+        "quantityBands": [
+          {
+            "id": "1-20",
+            "label": "1 a 20 unidades",
+            "minQuantity": 1,
+            "maxQuantity": 20,
+            "requiresQuote": true
+          },
+          {
+            "id": "21-50",
+            "label": "21 a 50 unidades",
+            "minQuantity": 21,
+            "maxQuantity": 50,
+            "requiresQuote": true
+          },
+          {
+            "id": "51-100",
+            "label": "51 a 100 unidades",
+            "minQuantity": 51,
+            "maxQuantity": 100,
+            "requiresQuote": true
+          },
+          {
+            "id": "101-plus",
+            "label": "Mais de 100 unidades",
+            "minQuantity": 101,
+            "maxQuantity": null,
+            "requiresQuote": true
+          }
+        ],
+        "services": [
+          "Somente impressão",
+          "Impressão e corte",
+          "Impressão, corte e laminação"
+        ]
+      },
+      {
+        "id": "kraft-180g",
+        "name": "Kraft 180 g",
+        "quantityBands": [
+          {
+            "id": "1-20",
+            "label": "1 a 20 unidades",
+            "minQuantity": 1,
+            "maxQuantity": 20,
+            "requiresQuote": true
+          },
+          {
+            "id": "21-50",
+            "label": "21 a 50 unidades",
+            "minQuantity": 21,
+            "maxQuantity": 50,
+            "requiresQuote": true
+          },
+          {
+            "id": "51-100",
+            "label": "51 a 100 unidades",
+            "minQuantity": 51,
+            "maxQuantity": 100,
+            "requiresQuote": true
+          },
+          {
+            "id": "101-plus",
+            "label": "Mais de 100 unidades",
+            "minQuantity": 101,
+            "maxQuantity": null,
+            "requiresQuote": true
+          }
+        ],
+        "services": [
+          "Somente impressão",
+          "Impressão e corte",
+          "Impressão, corte e laminação"
+        ]
+      }
+    ],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "Solicitar medidas, quantidade, material, tipo de corte, laminação e arquivo antes do orçamento."
+    },
+    "keywords": [
+      "impressão adesivo glossy",
+      "impressão papel kraft",
+      "impressão personalizada"
+    ],
+    "images": [],
+    "imageFolder": "src/assets/products/impressoes-em-papel-e-adesivo",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Impressões em papel e adesivo. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Impressões em papel e adesivo | Casa Nacoli",
+      "description": "Impressões sob medida em diferentes materiais, com opção de corte e laminação."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "adesivo-vinil-personalizado",
+    "slug": "adesivo-vinil-personalizado",
+    "name": "Adesivo vinil personalizado",
+    "categoryId": "grafica",
+    "subcategoryId": "adesivos",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 240,
+    "summary": "Adesivo resistente para identificação, decoração, embalagens, vitrines e divulgação.",
+    "description": "O valor depende da medida, recorte, acabamento, quantidade e aplicação prevista. Informe onde o adesivo será usado para receber a orientação adequada.",
+    "pricing": {
+      "kind": "quote",
+      "currency": "BRL",
+      "display": "Consultar"
+    },
+    "variants": [],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final e a viabilidade técnica devem ser confirmadas no atendimento."
+    },
+    "keywords": [
+      "adesivo vinil",
+      "adesivo personalizado",
+      "adesivo recortado"
+    ],
+    "images": [],
+    "imageFolder": "src/assets/products/adesivo-vinil-personalizado",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Adesivo vinil personalizado. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Adesivo vinil personalizado | Casa Nacoli",
+      "description": "Adesivo resistente para identificação, decoração, embalagens, vitrines e divulgação."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "dtf-em-rolo",
+    "slug": "dtf-em-rolo",
+    "name": "DTF em rolo",
+    "categoryId": "grafica",
+    "subcategoryId": "dtf",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 250,
+    "summary": "Impressão DTF em rolo para quem já possui prensa e faz a própria aplicação.",
+    "description": "O orçamento considera largura, metragem, aproveitamento da arte, quantidade de cores, fundo branco e preparação do arquivo.",
+    "pricing": {
+      "kind": "quote",
+      "currency": "BRL",
+      "display": "Consultar"
+    },
+    "variants": [],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "Confirmar largura do rolo, metragem e arquivo pronto para impressão."
+    },
+    "keywords": [
+      "dtf em rolo",
+      "impressão dtf"
+    ],
+    "images": [],
+    "imageFolder": "src/assets/products/dtf-em-rolo",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre DTF em rolo. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "DTF em rolo | Casa Nacoli",
+      "description": "Impressão DTF em rolo para quem já possui prensa e faz a própria aplicação."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "dtf-por-arte",
+    "slug": "dtf-por-arte",
+    "name": "DTF por arte",
+    "categoryId": "grafica",
+    "subcategoryId": "dtf",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 260,
+    "summary": "Impressão DTF de artes avulsas para aplicação em peças têxteis.",
+    "description": "O valor depende das dimensões, quantidade, aproveitamento da folha ou rolo e qualidade do arquivo.",
+    "pricing": {
+      "kind": "quote",
+      "currency": "BRL",
+      "display": "Consultar"
+    },
+    "variants": [],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "Solicitar medida final de cada arte e quantidade."
+    },
+    "keywords": [
+      "dtf por arte",
+      "transfer dtf"
+    ],
+    "images": [],
+    "imageFolder": "src/assets/products/dtf-por-arte",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre DTF por arte. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "DTF por arte | Casa Nacoli",
+      "description": "Impressão DTF de artes avulsas para aplicação em peças têxteis."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "tags-personalizadas",
+    "slug": "tags-personalizadas",
+    "name": "Tags personalizadas",
+    "categoryId": "grafica",
+    "subcategoryId": "tags-etiquetas",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 270,
+    "summary": "Tags para roupas, presentes, embalagens, lembranças e produtos artesanais.",
+    "description": "Podem receber logo, informações do produto, mensagem, preço, instruções ou identidade visual. O orçamento depende de papel, medida, formato, furo, impressão e quantidade.",
+    "pricing": {
+      "kind": "quote",
+      "currency": "BRL",
+      "display": "Consultar"
+    },
+    "variants": [],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final e a viabilidade técnica devem ser confirmadas no atendimento."
+    },
+    "keywords": [
+      "tag personalizada",
+      "tag para roupa",
+      "tag para embalagem"
+    ],
+    "images": [],
+    "imageFolder": "src/assets/products/tags-personalizadas",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Tags personalizadas. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Tags personalizadas | Casa Nacoli",
+      "description": "Tags para roupas, presentes, embalagens, lembranças e produtos artesanais."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "etiquetas-personalizadas",
+    "slug": "etiquetas-personalizadas",
+    "name": "Etiquetas personalizadas",
+    "categoryId": "grafica",
+    "subcategoryId": "tags-etiquetas",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 280,
+    "summary": "Etiquetas para organização, embalagem, identificação, marca e informações de produto.",
+    "description": "O orçamento depende do material, tamanho, formato, acabamento, corte e quantidade.",
+    "pricing": {
+      "kind": "quote",
+      "currency": "BRL",
+      "display": "Consultar"
+    },
+    "variants": [],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final e a viabilidade técnica devem ser confirmadas no atendimento."
+    },
+    "keywords": [
+      "etiqueta personalizada",
+      "etiqueta adesiva",
+      "etiqueta para produto"
+    ],
+    "images": [],
+    "imageFolder": "src/assets/products/etiquetas-personalizadas",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Etiquetas personalizadas. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Etiquetas personalizadas | Casa Nacoli",
+      "description": "Etiquetas para organização, embalagem, identificação, marca e informações de produto."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  }
+]
