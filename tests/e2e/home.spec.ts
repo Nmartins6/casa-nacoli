@@ -12,7 +12,7 @@ test("apresenta o conteúdo essencial e links válidos", async ({ page }) => {
   await expect(
     page.getByRole("heading", {
       level: 1,
-      name: "Sua ideia, feita com carinho!",
+      name: "Sua ideia feita com carinho!",
     }),
   ).toBeVisible();
   await expect(page.locator("#categorias article")).toHaveCount(4);
@@ -53,7 +53,18 @@ test("menu mobile funciona por teclado", async ({ page }, testInfo) => {
 test("FAQ indica visualmente os estados fechado e aberto", async ({ page }) => {
   await page.goto("/");
 
-  const question = page.locator(".faq-list details").first();
+  const questions = page.locator(".faq-list details");
+  await expect(questions).toHaveCount(6);
+  await expect(questions.locator("summary")).toHaveText([
+    "Posso escolher a arte?",
+    "Quanto tempo leva para produzir?",
+    "Posso montar uma cesta personalizada?",
+    "Como finalizo o pedido?",
+    "Vocês entregam ou é retirada?",
+    "Posso pedir pelo WhatsApp?",
+  ]);
+
+  const question = questions.first();
   const summary = question.locator("summary");
   const indicator = () =>
     summary.evaluate((element) =>

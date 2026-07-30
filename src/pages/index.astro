@@ -50,6 +50,28 @@ const generalMessage = buildWhatsAppMessage({
   pageUrl: siteConfig.brand.domain,
 });
 const homeFeaturedProducts = [canecas, camisetas, ecobag, cartoes];
+const faqs = [
+  [
+    "Posso escolher a arte?",
+    "Sim! Você pode enviar foto, frase, nome, data ou referência. A gente confirma todos os detalhes antes da produção.",
+  ],
+  [
+    "Quanto tempo leva para produzir?",
+    "O prazo depende do produto, da quantidade e da agenda da campanha. O tempo certinho é confirmado pelo WhatsApp.",
+  ],
+  [
+    "Posso montar uma cesta personalizada?",
+    "Pode sim! Você seleciona os itens no site e também pode incluir algo que não apareceu na nossa lista diretamente lá no nosso WhatsApp.",
+  ],
+  [
+    "Vocês entregam ou é retirada?",
+    "As opções de entrega ou retirada são combinadas diretamente no atendimento.",
+  ],
+  [
+    "Posso pedir pelo WhatsApp?",
+    "Sim. O WhatsApp é o canal principal para confirmar arte, valores, prazo e forma de entrega.",
+  ],
+];
 ---
 
 <BaseLayout>
@@ -57,7 +79,7 @@ const homeFeaturedProducts = [canecas, camisetas, ecobag, cartoes];
     <div class="site-container hero-grid" data-reveal-group>
       <div class="hero-copy" data-reveal>
         <p class="eyebrow">Papelaria criativa | presentes personalizados</p>
-        <h1>Sua ideia, feita com carinho!</h1>
+        <h1>Sua ideia feita com carinho!</h1>
         <p class="hero-intro">Estúdio de design e gráfica artesanal.</p>
         <div class="hero-actions">
           <WhatsAppLink message={generalMessage} context="hero" />
@@ -325,28 +347,14 @@ const homeFeaturedProducts = [canecas, camisetas, ecobag, cartoes];
         <h2 class="section-title">Algumas perguntas frequentes</h2>
       </div>
       <div class="faq-list">
-        <details>
-          <summary>Preciso ter a arte pronta?</summary>
-          <p>
-            Não. Você pode enviar uma referência ou explicar a ideia. A arte e a
-            viabilidade técnica são confirmadas no atendimento.
-          </p>
-        </details>
-        <details>
-          <summary>Como descubro o valor do pedido?</summary>
-          <p>
-            Quando existe um valor de referência, ele aparece no produto.
-            Pedidos que variam por material, tamanho, arte ou quantidade recebem
-            orçamento.
-          </p>
-        </details>
-        <details>
-          <summary>O que devo enviar pelo WhatsApp?</summary>
-          <p>
-            Conte qual produto procura, a quantidade e os detalhes, se já
-            souber. Fotos e referências também ajudam a iniciar a conversa.
-          </p>
-        </details>
+        {
+          faqs.map(([question, answer]) => (
+            <details>
+              <summary>{question}</summary>
+              <p>{answer}</p>
+            </details>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -357,7 +365,9 @@ const homeFeaturedProducts = [canecas, camisetas, ecobag, cartoes];
       <div>
         <p class="eyebrow">Vamos conversar?</p>
         <h2>Conte o que você quer fazer.</h2>
-        <p>A Casa Nacoli ajuda a transformar a ideia em um pedido possível.</p>
+        <p>
+          Nós te ajudamos a transformar a ideia em um pedido do jeito seu jeito.
+        </p>
       </div>
       <WhatsAppLink message={generalMessage} context="cta_final" />
     </div>
