@@ -82,6 +82,24 @@ test("categoria mantém hierarquia, produtos e acesso ao filtro", async ({
   await expect(
     page.getByRole("link", { name: "Buscar no catálogo" }),
   ).toHaveAttribute("href", "/produtos?categoria=grafica");
+
+  const searchButton = page.getByRole("link", {
+    name: "Buscar no catálogo",
+  });
+  const subcategories = page.locator(".subcategory-list");
+  const [buttonBox, subcategoriesBox] = await Promise.all([
+    searchButton.boundingBox(),
+    subcategories.boundingBox(),
+  ]);
+
+  expect(buttonBox).not.toBeNull();
+  expect(subcategoriesBox).not.toBeNull();
+  if (!buttonBox || !subcategoriesBox) {
+    throw new Error("Botão de busca ou lista de subcategorias não renderizado");
+  }
+  expect(subcategoriesBox.y).toBeGreaterThanOrEqual(
+    buttonBox.y + buttonBox.height,
+  );
 });
 
 test("galeria, variantes e dados estruturados refletem o produto", async ({
