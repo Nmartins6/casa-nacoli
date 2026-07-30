@@ -7,12 +7,13 @@ Inventário realizado em 20 de julho de 2026. Os originais permanecem intactos e
 | Arquivo recebido | Formato | Dimensões | Observação |
 | --- | --- | --- | --- |
 | `incoming-assets/brand/logo.jpeg` | JPEG | 1600 × 1316 px | Logo completo sobre fundo claro, com símbolo, nome e assinatura |
+| `incoming-assets/brand/logo-sem-fundo.png` | PNG | 2124 × 1748 px | Logo completo com transparência, sem alteração da arte |
 
 - Não foi recebida versão vetorial.
-- Não foi recebida versão transparente, escura ou símbolo isolado.
-- O arquivo foi copiado sem alteração para `src/assets/brand/casa-nacoli-logo.jpeg`.
-- O mesmo original serve temporariamente como favicon e base da imagem Open Graph, sem redesenho.
-- O logo deve permanecer em superfícies claras para preservar sua leitura.
+- Não foi recebida versão escura ou símbolo isolado.
+- A versão transparente foi copiada sem alteração para `src/assets/brand/casa-nacoli-logo.png` e é a fonte usada no cabeçalho.
+- `public/favicon.png` e `public/images/og/casa-nacoli.png` são derivados da versão transparente, redimensionados sem recorte ou redesenho.
+- A imagem Open Graph usa a superfície `cream` para preservar a leitura do logo em compartilhamentos.
 
 ## Fotos de produtos recebidas
 

@@ -57,7 +57,7 @@
     "defaultTitle": "Casa Nacoli | Gráfica artesanal independente",
     "titleTemplate": "%s | Casa Nacoli",
     "defaultDescription": "Produtos personalizados, vestuário, brindes corporativos e serviços gráficos com atendimento próximo e cuidado em cada detalhe.",
-    "defaultOgImage": "/images/og/casa-nacoli.jpg"
+    "defaultOgImage": "/images/og/casa-nacoli.png"
   },
   "analytics": {
     "provider": "none",
