@@ -76,7 +76,7 @@ export const productSchema = z.object({
   }),
   keywords: z.array(z.string().min(2)),
   images: z.array(productImageSchema),
-  imageFolder: z.string(),
+  imageFolder: z.string().regex(/^src\/assets\/products\/[a-z0-9-]+$/),
   placeholderImage: z.string(),
   cta: z.object({
     label: z.string().min(3),

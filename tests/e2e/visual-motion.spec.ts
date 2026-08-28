@@ -87,7 +87,7 @@ test("cards preservam preço, orçamento e placeholder do catálogo", async ({
     "Consultar",
   );
   await expect(
-    getCardByName(page, "Placa de MDF com suporte").getByAltText(
+    getCardByName(page, "Plastificação").getByAltText(
       "Foto do produto ainda não disponível",
     ),
   ).toBeVisible();
@@ -195,7 +195,7 @@ test("conteúdo essencial permanece acessível sem JavaScript", async ({
       name: "Encontre o ponto de partida para o seu pedido.",
     }),
   ).toBeVisible();
-  await expect(page.locator("[data-product-card]")).toHaveCount(26);
+  await expect(page.locator("[data-product-card]")).toHaveCount(46);
   await expect(page.locator("[data-product-card]").last()).toBeVisible();
   await expect(
     page.getByRole("link", {

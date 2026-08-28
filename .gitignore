@@ -8,3 +8,7 @@ test-results/
 coverage/
 .DS_Store
 *.log
+*:Zone.Identifier
+src/assets/products antigo/
+src/assets/products/impressoes/impressoes_diversas(nao adcionar ainda)/
+src/assets/products/lembrancinhas_diversas(nao adcionar ainda)/

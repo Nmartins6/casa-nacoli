@@ -3,6 +3,7 @@ import { expect, test } from "@playwright/test";
 import { readFileSync } from "node:fs";
 
 interface SeedEntry {
+  categoryId?: string;
   name: string;
   slug: string;
 }
@@ -23,8 +24,12 @@ test("lista, pesquisa, filtra e limpa o catálogo", async ({ page }) => {
       name: "Encontre o ponto de partida para o seu pedido.",
     }),
   ).toBeVisible();
-  await expect(page.locator("[data-catalog-item]")).toHaveCount(26);
-  await expect(page.locator("[data-result-count]")).toHaveText("26");
+  await expect(page.locator("[data-catalog-item]")).toHaveCount(
+    products.length,
+  );
+  await expect(page.locator("[data-result-count]")).toHaveText(
+    String(products.length),
+  );
 
   const search = page.getByLabel("Buscar no catálogo");
   await search.fill("caneca mágica");
@@ -34,14 +39,23 @@ test("lista, pesquisa, filtra e limpa o catálogo", async ({ page }) => {
 
   await search.fill("");
   await page.getByLabel("Brindes Corporativos", { exact: true }).check();
-  await expect(page.locator("[data-result-count]")).toHaveText("2");
-  await expect(page.locator("[data-catalog-item]:visible")).toHaveCount(2);
+  const corporateGiftCount = products.filter(
+    ({ categoryId }) => categoryId === "brindes-corporativos",
+  ).length;
+  await expect(page.locator("[data-result-count]")).toHaveText(
+    String(corporateGiftCount),
+  );
+  await expect(page.locator("[data-catalog-item]:visible")).toHaveCount(
+    corporateGiftCount,
+  );
   await expect(page).toHaveURL(/categoria=brindes-corporativos/);
 
   await search.fill("produto inexistente");
   await expect(page.locator("[data-empty-state]")).toBeVisible();
   await page.getByRole("button", { name: "Ver todos os produtos" }).click();
-  await expect(page.locator("[data-result-count]")).toHaveText("26");
+  await expect(page.locator("[data-result-count]")).toHaveText(
+    String(products.length),
+  );
   await expect(search).toBeFocused();
 });
 
@@ -73,7 +87,9 @@ test("categoria mantém hierarquia, produtos e acesso ao filtro", async ({
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
     "Impressões Digitais",
   );
-  await expect(page.locator(".category-products .product-card")).toHaveCount(8);
+  await expect(page.locator(".category-products .product-card")).toHaveCount(
+    products.filter(({ categoryId }) => categoryId === "grafica").length,
+  );
   await expect(
     page.getByRole("navigation", { name: "Navegação estrutural" }),
   ).toContainText("InícioProdutosImpressões Digitais");
@@ -133,21 +149,21 @@ test("galeria, variantes e dados estruturados refletem o produto", async ({
   expect(productSchema).toHaveProperty("offers.@type", "AggregateOffer");
 });
 
-test("usa placeholder quando não há foto e omite miniaturas com foto única", async ({
+test("usa as galerias importadas e mantém placeholder somente sem foto confirmada", async ({
   page,
 }) => {
   await page.goto("/produtos/caneca-polimero-personalizada");
   await expect(page.locator("[data-gallery-main]")).toBeVisible();
-  await expect(page.locator("[data-gallery-thumbnail]")).toHaveCount(3);
+  await expect(page.locator("[data-gallery-thumbnail]")).toHaveCount(6);
 
   await page.goto("/produtos/placa-mdf-15x20");
-  await expect(
-    page.getByAltText("Foto de Placa de MDF com suporte ainda não disponível"),
-  ).toBeVisible();
-  await expect(page.locator("[data-gallery-thumbnail]")).toHaveCount(0);
-
-  await page.goto("/produtos/azulejo-personalizado-15x15");
   await expect(page.locator("[data-gallery-main]")).toBeVisible();
+  await expect(page.locator("[data-gallery-thumbnail]")).toHaveCount(8);
+
+  await page.goto("/produtos/plastificacao");
+  await expect(
+    page.getByAltText("Foto de Plastificação ainda não disponível"),
+  ).toBeVisible();
   await expect(page.locator("[data-gallery-thumbnail]")).toHaveCount(0);
 });
 

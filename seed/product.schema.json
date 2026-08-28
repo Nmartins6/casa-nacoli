@@ -14,6 +14,7 @@
     "description",
     "pricing",
     "images",
+    "imageFolder",
     "cta",
     "seo"
   ],
@@ -127,6 +128,10 @@
           }
         }
       }
+    },
+    "imageFolder": {
+      "type": "string",
+      "pattern": "^src/assets/products/[a-z0-9-]+$"
     },
     "keywords": {
       "type": "array",

@@ -2,7 +2,7 @@
 
 ## Entrada
 
-Antes da primeira organização:
+Antes da primeira organização, use uma pasta de entrada ou uma cópia de segurança separada do diretório carregado pelo site:
 
 - logos em `incoming-assets/brand/`;
 - fotos em `incoming-assets/products/`.
@@ -21,7 +21,7 @@ Ordem de decisão:
 1. nome do arquivo contém o slug ou nome do produto;
 2. conteúdo visual identifica claramente o produto;
 3. contexto de pastas indica a categoria;
-4. se houver dúvida, deixar em `incoming-assets/unmatched/` e registrar a pendência.
+4. se houver dúvida, manter fora do carregamento do catálogo e registrar a pendência.
 
 Não associar uma foto apenas por semelhança vaga.
 
@@ -29,11 +29,13 @@ Não associar uma foto apenas por semelhança vaga.
 
 Formato:
 
-`<slug>-<descricao-curta>-<sequencia>.<ext>`
+`<ordem>-<descricao-curta>.<ext>`
 
 Exemplo:
 
-`canecas-personalizadas-caneca-magica-01.webp`
+`00-capa.webp` e `01-exemplo.webp`
+
+A imagem sem sufixo numérico recebida para cada conjunto deve ser tratada como capa e renomeada para `00-capa.webp`. O campo `imageFolder` do produto aponta para a pasta confirmada e permite compartilhamento somente entre produtos equivalentes.
 
 ## Tratamento
 

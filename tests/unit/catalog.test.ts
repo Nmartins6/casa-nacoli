@@ -14,6 +14,7 @@ import {
   reviews,
   validateCatalogReferences,
 } from "../../src/data/catalog";
+import { getProductImages, hasProductImage } from "../../src/data/assets";
 import {
   buildBreadcrumbStructuredData,
   buildProductStructuredData,
@@ -22,7 +23,7 @@ import {
 describe("catálogo", () => {
   it("carrega e relaciona todo o seed sem erros", () => {
     expect(categories).toHaveLength(4);
-    expect(products).toHaveLength(26);
+    expect(products).toHaveLength(46);
     expect(reviews).toHaveLength(29);
     expect(validateCatalogReferences(categories, products)).toEqual([]);
   });
@@ -51,7 +52,7 @@ describe("catálogo", () => {
 
     expect(category?.id).toBe("grafica");
     expect(product?.categoryId).toBe("grafica");
-    expect(getProductsByCategory("grafica")).toHaveLength(8);
+    expect(getProductsByCategory("grafica")).toHaveLength(16);
     expect(getRelatedProducts(product!, 3)).toHaveLength(3);
   });
 
@@ -73,7 +74,7 @@ describe("catálogo", () => {
     ).toEqual(["plastificacao"]);
     expect(
       filterProducts(products, { categoryId: "brindes-corporativos" }),
-    ).toHaveLength(2);
+    ).toHaveLength(7);
   });
 
   it("agrupa os modelos solicitados e remove os produtos DTF avulsos", () => {
@@ -89,6 +90,8 @@ describe("catálogo", () => {
       "alca-coracao",
       "colorida",
       "xicara",
+      "100ml",
+      "180ml",
     ]);
     expect(polymerMug?.pricing.amount).toBe(25);
     expect(mdfPlaque?.variants.map(({ id }) => id)).toEqual([
@@ -101,6 +104,21 @@ describe("catálogo", () => {
     ]);
     expect(getProductBySlug("dtf-em-rolo")).toBeUndefined();
     expect(getProductBySlug("dtf-por-arte")).toBeUndefined();
+  });
+
+  it("resolve as fotos pela pasta configurada e preserva a capa primeiro", () => {
+    const ceramicMug = getProductBySlug("canecas-personalizadas")!;
+    const kitKeyrings = getProductBySlug("kit-chaveiros-mdf")!;
+    const productsWithoutConfirmedPhoto = products
+      .filter((product) => !hasProductImage(product))
+      .map(({ slug }) => slug);
+
+    expect(getProductImages(ceramicMug)).toHaveLength(41);
+    expect(getProductImages(ceramicMug)[0]?.alt).toBe(
+      "Foto principal de Caneca de cerâmica personalizada",
+    );
+    expect(getProductImages(kitKeyrings)).toHaveLength(9);
+    expect(productsWithoutConfirmedPhoto).toEqual(["plastificacao"]);
   });
 
   it("retorna estado vazio para uma busca sem correspondência", () => {
