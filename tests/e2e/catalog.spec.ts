@@ -23,8 +23,8 @@ test("lista, pesquisa, filtra e limpa o catálogo", async ({ page }) => {
       name: "Encontre o ponto de partida para o seu pedido.",
     }),
   ).toBeVisible();
-  await expect(page.locator("[data-catalog-item]")).toHaveCount(27);
-  await expect(page.locator("[data-result-count]")).toHaveText("27");
+  await expect(page.locator("[data-catalog-item]")).toHaveCount(26);
+  await expect(page.locator("[data-result-count]")).toHaveText("26");
 
   const search = page.getByLabel("Buscar no catálogo");
   await search.fill("caneca mágica");
@@ -41,7 +41,7 @@ test("lista, pesquisa, filtra e limpa o catálogo", async ({ page }) => {
   await search.fill("produto inexistente");
   await expect(page.locator("[data-empty-state]")).toBeVisible();
   await page.getByRole("button", { name: "Ver todos os produtos" }).click();
-  await expect(page.locator("[data-result-count]")).toHaveText("27");
+  await expect(page.locator("[data-result-count]")).toHaveText("26");
   await expect(search).toBeFocused();
 });
 
@@ -73,9 +73,7 @@ test("categoria mantém hierarquia, produtos e acesso ao filtro", async ({
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
     "Impressões Digitais",
   );
-  await expect(page.locator(".category-products .product-card")).toHaveCount(
-    10,
-  );
+  await expect(page.locator(".category-products .product-card")).toHaveCount(8);
   await expect(
     page.getByRole("navigation", { name: "Navegação estrutural" }),
   ).toContainText("InícioProdutosImpressões Digitais");
@@ -108,14 +106,17 @@ test("galeria, variantes e dados estruturados refletem o produto", async ({
   await page.goto("/produtos/canecas-personalizadas");
 
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
-    "Canecas Personalizadas",
+    "Caneca de cerâmica personalizada",
   );
   const mainImage = page.locator("[data-gallery-main]");
   const firstAlt = await mainImage.getAttribute("alt");
   await page.getByRole("button", { name: /Mostrar imagem 2 de/ }).click();
   await expect(mainImage).not.toHaveAttribute("alt", firstAlt ?? "");
-  await expect(page.getByRole("row", { name: /Caneca mágica/ })).toContainText(
+  await expect(page.getByRole("row", { name: /Mágica/ })).toContainText(
     "R$ 55,00",
+  );
+  await expect(page.getByRole("row", { name: /Xícara/ })).toContainText(
+    "Consultar",
   );
 
   const schemas = await page
@@ -126,7 +127,7 @@ test("galeria, variantes e dados estruturados refletem o produto", async ({
     .find((value) => value["@type"] === "Product");
   expect(productSchema).toMatchObject({
     "@type": "Product",
-    name: "Canecas Personalizadas",
+    name: "Caneca de cerâmica personalizada",
     category: "Personalizados",
   });
   expect(productSchema).toHaveProperty("offers.@type", "AggregateOffer");
@@ -135,11 +136,13 @@ test("galeria, variantes e dados estruturados refletem o produto", async ({
 test("usa placeholder quando não há foto e omite miniaturas com foto única", async ({
   page,
 }) => {
+  await page.goto("/produtos/caneca-polimero-personalizada");
+  await expect(page.locator("[data-gallery-main]")).toBeVisible();
+  await expect(page.locator("[data-gallery-thumbnail]")).toHaveCount(3);
+
   await page.goto("/produtos/placa-mdf-15x20");
   await expect(
-    page.getByAltText(
-      "Foto de Placa de MDF 15 × 20 cm com suporte ainda não disponível",
-    ),
+    page.getByAltText("Foto de Placa de MDF com suporte ainda não disponível"),
   ).toBeVisible();
   await expect(page.locator("[data-gallery-thumbnail]")).toHaveCount(0);
 
@@ -228,7 +231,7 @@ test("rotas do catálogo não criam overflow horizontal", async ({
     "/produtos",
     "/categorias/grafica-e-impressoes",
     "/produtos/canecas-personalizadas",
-    "/produtos/dtf-por-arte",
+    "/produtos/caneca-polimero-personalizada",
   ]) {
     await page.goto(path);
     const sizes = await page.evaluate(() => {
@@ -255,6 +258,18 @@ test("rotas do catálogo não criam overflow horizontal", async ({
       sizes.document,
       `${path}: ${JSON.stringify(sizes.offenders)}`,
     ).toBeLessThanOrEqual(sizes.viewport);
+  }
+});
+
+test("redireciona as páginas removidas de DTF para impressões", async ({
+  page,
+}) => {
+  for (const path of ["/produtos/dtf-em-rolo", "/produtos/dtf-por-arte"]) {
+    await page.goto(path);
+    await expect(page).toHaveURL(/\/categorias\/grafica-e-impressoes\/?$/);
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText(
+      "Impressões Digitais",
+    );
   }
 });
 

@@ -87,6 +87,6 @@ As categorias devem aparecer cedo, sem um banner alto empurrando a navegação p
 
 ## Taxonomia
 
-Os cards devem representar um produto conceitual, e não cada variação. Exemplo: “Canecas personalizadas” é um card; branca, preta e mágica são variantes na página.
+Os cards devem representar um produto conceitual, e não cada variação. Exemplo: “Caneca de cerâmica personalizada” é um card; branca, preta e mágica são variantes na página. Canecas de outro material, como polímero, permanecem em um produto próprio.
 
 Isso reduz repetição, melhora a leitura e facilita a comparação.

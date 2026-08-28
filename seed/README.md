@@ -1,7 +1,7 @@
 # Seed data
 
 - `4` categorias principais.
-- `27` produtos agrupados por conceito.
+- `26` produtos agrupados por conceito.
 - `29` avaliações.
 - `site-config.json` contém placeholders que precisam ser confirmados.
 - `product.schema.json` descreve o formato base.

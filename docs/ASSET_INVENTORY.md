@@ -66,7 +66,8 @@ Foram importadas 40 fotos cuja associação ao produto do seed foi confirmada po
 
 | Produto | Destino | Fotos |
 | --- | --- | ---: |
-| Canecas personalizadas | `src/assets/products/canecas-personalizadas/` | 19 |
+| Caneca de cerâmica personalizada | `src/assets/products/canecas-personalizadas/` | 16 |
+| Caneca de polímero personalizada | `src/assets/products/caneca-polimero-personalizada/` | 3 |
 | Camisetas personalizadas | `src/assets/products/camisetas-personalizadas/` | 3 |
 | Cartões de visita | `src/assets/products/cartoes-de-visita/` | 2 |
 | Chaveiro em MDF 5 cm | `src/assets/products/chaveiro-mdf-5cm/` | 1 |
@@ -80,14 +81,12 @@ Os arquivos receberam nomes normalizados no padrão `<slug>-exemplo-<sequência>
 
 ## Produtos sem imagem confirmada
 
-Dezoito produtos usam o placeholder oficial porque não há associação segura nos arquivos recebidos:
+Dezesseis produtos usam o placeholder oficial porque não há associação segura nos arquivos recebidos:
 
 - Adesivo vinil personalizado;
 - Boné personalizado em DTF;
 - Boné sublimado personalizado;
 - Cueca personalizada;
-- DTF em rolo;
-- DTF por arte;
 - Encadernação;
 - Etiquetas personalizadas;
 - Imã de geladeira em MDF 5 cm;
@@ -97,7 +96,7 @@ Dezoito produtos usam o placeholder oficial porque não há associação segura 
 - Meia personalizada;
 - Moletons personalizados;
 - Panfletos;
-- Placa de MDF 15 × 20 cm com suporte;
+- Placa de MDF com suporte;
 - Plastificação;
 - Tags personalizadas.
 

@@ -1,6 +1,6 @@
 # Casa Nacoli
 
-Site institucional e catálogo da Casa Nacoli. O projeto entrega uma home responsiva, catálogo pesquisável, páginas das quatro categorias e páginas individuais geradas estaticamente para os 27 produtos validados.
+Site institucional e catálogo da Casa Nacoli. O projeto entrega uma home responsiva, catálogo pesquisável, páginas das quatro categorias e páginas individuais geradas estaticamente para os 26 produtos validados.
 
 ## Stack
 
@@ -83,6 +83,8 @@ Os arquivos em `seed/` são a fonte de verdade comercial. Componentes não cont�
 5. Execute `pnpm validate:seed`, `pnpm test` e `pnpm build`.
 
 O carregador em `src/data/assets.ts` encontra arquivos pela pasta do slug. As rotas dinâmicas usam os seeds para gerar as páginas, então categorias, produtos e fotos podem ser adicionados sem criar componentes específicos. O procedimento completo está em [`docs/CATALOG_MAINTENANCE.md`](docs/CATALOG_MAINTENANCE.md).
+
+Produtos retirados do catálogo devem receber um redirect em `astro.config.ts`. As páginas antigas de DTF em rolo e DTF por arte apontam para a categoria de impressões.
 
 ## Configuração comercial
 

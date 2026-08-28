@@ -2,49 +2,50 @@
   {
     "id": "canecas-personalizadas",
     "slug": "canecas-personalizadas",
-    "name": "Canecas Personalizadas",
+    "name": "Caneca de cerâmica personalizada",
     "categoryId": "personalizados",
     "subcategoryId": "canecas",
     "status": "active",
     "featured": true,
     "sortOrder": 10,
-    "summary": "Canecas para presentes, lembranças, datas especiais, empresas e eventos.",
-    "description": "Escolha o modelo e envie sua ideia. Nós ajudamos a ajustar a arte para que o resultado fique bonito, legível e adequado ao tipo de caneca.",
+    "summary": "Caneca de cerâmica para presentes, lembranças, datas especiais, empresas e eventos.",
+    "description": "Escolha a cor ou o modelo e envie sua ideia. Nós ajudamos a ajustar a arte para que o resultado fique bonito, legível e adequado à caneca.",
     "pricing": {
       "kind": "variants",
       "currency": "BRL",
-      "display": "A partir de R$ 25,00"
+      "display": "A partir de R$ 39,90"
     },
     "variants": [
       {
         "id": "branca",
-        "name": "Caneca branca",
+        "name": "Branca",
         "price": 39.9
       },
       {
         "id": "preta",
-        "name": "Caneca preta",
+        "name": "Preta",
         "price": 55.0
       },
       {
         "id": "magica",
-        "name": "Caneca mágica",
+        "name": "Mágica",
         "price": 55.0
       },
       {
         "id": "alca-coracao",
-        "name": "Caneca com alça de coração",
+        "name": "Alça de coração",
         "price": 59.9
       },
       {
-        "id": "alca-interior-colorido",
-        "name": "Caneca com alça e interior colorido",
+        "id": "colorida",
+        "name": "Colorida",
         "price": 55.9
       },
       {
-        "id": "polimero",
-        "name": "Caneca de polímero",
-        "price": 25.0
+        "id": "xicara",
+        "name": "Xícara",
+        "price": null,
+        "requiresQuote": true
       }
     ],
     "volumeDiscountRules": [],
@@ -56,40 +57,42 @@
     },
     "keywords": [
       "caneca personalizada",
+      "caneca de cerâmica",
       "presente personalizado",
       "caneca mágica",
-      "caneca com foto"
+      "caneca com foto",
+      "xícara personalizada"
     ],
     "images": [],
     "imageFolder": "src/assets/products/canecas-personalizadas",
     "placeholderImage": "/images/placeholders/product-placeholder.svg",
     "cta": {
       "label": "Pedir pelo WhatsApp",
-      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Canecas personalizadas. Quantidade: {quantidade}. Detalhes: {detalhes}"
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Caneca de cerâmica personalizada. Quantidade: {quantidade}. Detalhes: {detalhes}"
     },
     "seo": {
-      "title": "Canecas Personalizadas | Casa Nacoli",
-      "description": "Canecas para presentes, lembranças, datas especiais, empresas e eventos."
+      "title": "Caneca de cerâmica personalizada | Casa Nacoli",
+      "description": "Caneca de cerâmica personalizada em modelos branco, preto, mágico, colorido, com alça de coração ou xícara."
     },
     "notes": [],
     "needsPriceConfirmation": false
   },
   {
-    "id": "placa-mdf-15x20",
-    "slug": "placa-mdf-15x20",
-    "name": "Placa de MDF 15 × 20 cm com suporte",
+    "id": "caneca-polimero-personalizada",
+    "slug": "caneca-polimero-personalizada",
+    "name": "Caneca de polímero personalizada",
     "categoryId": "personalizados",
-    "subcategoryId": "mdf",
+    "subcategoryId": "canecas",
     "status": "active",
     "featured": false,
-    "sortOrder": 20,
-    "summary": "Uma peça decorativa compacta para fotos, frases, homenagens e lembranças.",
-    "description": "A placa acompanha suporte e pode receber uma composição com foto, mensagem, nome, data ou identidade visual.",
+    "sortOrder": 15,
+    "summary": "Caneca de polímero personalizada para presentes, lembranças, empresas e eventos.",
+    "description": "Envie sua ideia para personalizar a caneca de polímero. A arte final e os detalhes do pedido são confirmados no atendimento.",
     "pricing": {
       "kind": "fixed",
       "currency": "BRL",
-      "amount": 30.0,
-      "display": "R$ 30,00"
+      "amount": 25.0,
+      "display": "R$ 25,00"
     },
     "variants": [],
     "volumeDiscountRules": [],
@@ -100,19 +103,76 @@
       "notes": "A arte final e a viabilidade técnica devem ser confirmadas no atendimento."
     },
     "keywords": [
+      "caneca de polímero",
+      "caneca personalizada",
+      "caneca com foto"
+    ],
+    "images": [],
+    "imageFolder": "src/assets/products/caneca-polimero-personalizada",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Caneca de polímero personalizada. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Caneca de polímero personalizada | Casa Nacoli",
+      "description": "Caneca de polímero personalizada para presentes, lembranças, empresas e eventos."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "placa-mdf-15x20",
+    "slug": "placa-mdf-15x20",
+    "name": "Placa de MDF com suporte",
+    "categoryId": "personalizados",
+    "subcategoryId": "mdf",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 20,
+    "summary": "Placa decorativa com suporte em dois tamanhos para fotos, frases, homenagens e lembranças.",
+    "description": "A placa acompanha suporte e pode receber uma composição com foto, mensagem, nome, data ou identidade visual. Escolha entre 15 × 20 cm e 20 × 30 cm.",
+    "pricing": {
+      "kind": "variants",
+      "currency": "BRL",
+      "display": "A partir de R$ 30,00"
+    },
+    "variants": [
+      {
+        "id": "15x20-com-suporte",
+        "name": "15 × 20 cm com suporte",
+        "price": 30.0
+      },
+      {
+        "id": "20x30-com-suporte",
+        "name": "20 × 30 cm com suporte",
+        "price": null,
+        "requiresQuote": true
+      }
+    ],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final e a viabilidade técnica devem ser confirmadas no atendimento."
+    },
+    "keywords": [
       "placa mdf personalizada",
-      "placa com foto"
+      "placa com foto",
+      "placa mdf 15x20",
+      "placa mdf 20x30"
     ],
     "images": [],
     "imageFolder": "src/assets/products/placa-mdf-15x20",
     "placeholderImage": "/images/placeholders/product-placeholder.svg",
     "cta": {
       "label": "Pedir pelo WhatsApp",
-      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Placa de MDF 15 × 20 cm com suporte. Quantidade: {quantidade}. Detalhes: {detalhes}"
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Placa de MDF com suporte. Quantidade: {quantidade}. Detalhes: {detalhes}"
     },
     "seo": {
-      "title": "Placa de MDF 15 × 20 cm com suporte | Casa Nacoli",
-      "description": "Uma peça decorativa compacta para fotos, frases, homenagens e lembranças."
+      "title": "Placa de MDF com suporte | Casa Nacoli",
+      "description": "Placa de MDF personalizada com suporte nos tamanhos 15 × 20 cm e 20 × 30 cm."
     },
     "notes": [],
     "needsPriceConfirmation": false
@@ -163,21 +223,32 @@
   {
     "id": "chaveiro-mdf-5cm",
     "slug": "chaveiro-mdf-5cm",
-    "name": "Chaveiro em MDF 5 cm frente e verso",
+    "name": "Chaveiro em MDF",
     "categoryId": "personalizados",
     "subcategoryId": "mdf",
     "status": "active",
     "featured": false,
     "sortOrder": 40,
-    "summary": "Chaveiro personalizado dos dois lados para lembranças, identificação ou divulgação.",
-    "description": "Pode receber fotos, nomes, frases curtas, logos e composições diferentes em cada lado.",
+    "summary": "Chaveiro personalizado para lembranças, identificação ou divulgação.",
+    "description": "Pode receber fotos, nomes, frases curtas ou logos. Escolha a personalização somente na frente ou na frente e no verso.",
     "pricing": {
-      "kind": "fixed",
+      "kind": "variants",
       "currency": "BRL",
-      "amount": 16.9,
-      "display": "R$ 16,90"
+      "display": "Consultar"
     },
-    "variants": [],
+    "variants": [
+      {
+        "id": "frente",
+        "name": "Frente",
+        "price": null,
+        "requiresQuote": true
+      },
+      {
+        "id": "frente-verso",
+        "name": "Frente e verso",
+        "price": 16.9
+      }
+    ],
     "volumeDiscountRules": [],
     "personalization": {
       "available": true,
@@ -194,11 +265,11 @@
     "placeholderImage": "/images/placeholders/product-placeholder.svg",
     "cta": {
       "label": "Pedir pelo WhatsApp",
-      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Chaveiro em MDF 5 cm frente e verso. Quantidade: {quantidade}. Detalhes: {detalhes}"
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Chaveiro em MDF. Quantidade: {quantidade}. Detalhes: {detalhes}"
     },
     "seo": {
-      "title": "Chaveiro em MDF 5 cm frente e verso | Casa Nacoli",
-      "description": "Chaveiro personalizado dos dois lados para lembranças, identificação ou divulgação."
+      "title": "Chaveiro em MDF personalizado | Casa Nacoli",
+      "description": "Chaveiro em MDF personalizado na frente ou na frente e no verso."
     },
     "notes": [],
     "needsPriceConfirmation": false
@@ -1473,90 +1544,6 @@
     "seo": {
       "title": "Adesivo vinil personalizado | Casa Nacoli",
       "description": "Adesivo resistente para identificação, decoração, embalagens, vitrines e divulgação."
-    },
-    "notes": [],
-    "needsPriceConfirmation": false
-  },
-  {
-    "id": "dtf-em-rolo",
-    "slug": "dtf-em-rolo",
-    "name": "DTF em rolo",
-    "categoryId": "grafica",
-    "subcategoryId": "dtf",
-    "status": "active",
-    "featured": false,
-    "sortOrder": 250,
-    "summary": "Impressão DTF em rolo para quem já possui prensa e faz a própria aplicação.",
-    "description": "O orçamento considera largura, metragem, aproveitamento da arte, quantidade de cores, fundo branco e preparação do arquivo.",
-    "pricing": {
-      "kind": "quote",
-      "currency": "BRL",
-      "display": "Consultar"
-    },
-    "variants": [],
-    "volumeDiscountRules": [],
-    "personalization": {
-      "available": true,
-      "customerCanSendArtwork": true,
-      "designSupport": true,
-      "notes": "Confirmar largura do rolo, metragem e arquivo pronto para impressão."
-    },
-    "keywords": [
-      "dtf em rolo",
-      "impressão dtf"
-    ],
-    "images": [],
-    "imageFolder": "src/assets/products/dtf-em-rolo",
-    "placeholderImage": "/images/placeholders/product-placeholder.svg",
-    "cta": {
-      "label": "Pedir pelo WhatsApp",
-      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre DTF em rolo. Quantidade: {quantidade}. Detalhes: {detalhes}"
-    },
-    "seo": {
-      "title": "DTF em rolo | Casa Nacoli",
-      "description": "Impressão DTF em rolo para quem já possui prensa e faz a própria aplicação."
-    },
-    "notes": [],
-    "needsPriceConfirmation": false
-  },
-  {
-    "id": "dtf-por-arte",
-    "slug": "dtf-por-arte",
-    "name": "DTF por arte",
-    "categoryId": "grafica",
-    "subcategoryId": "dtf",
-    "status": "active",
-    "featured": false,
-    "sortOrder": 260,
-    "summary": "Impressão DTF de artes avulsas para aplicação em peças têxteis.",
-    "description": "O valor depende das dimensões, quantidade, aproveitamento da folha ou rolo e qualidade do arquivo.",
-    "pricing": {
-      "kind": "quote",
-      "currency": "BRL",
-      "display": "Consultar"
-    },
-    "variants": [],
-    "volumeDiscountRules": [],
-    "personalization": {
-      "available": true,
-      "customerCanSendArtwork": true,
-      "designSupport": true,
-      "notes": "Solicitar medida final de cada arte e quantidade."
-    },
-    "keywords": [
-      "dtf por arte",
-      "transfer dtf"
-    ],
-    "images": [],
-    "imageFolder": "src/assets/products/dtf-por-arte",
-    "placeholderImage": "/images/placeholders/product-placeholder.svg",
-    "cta": {
-      "label": "Pedir pelo WhatsApp",
-      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre DTF por arte. Quantidade: {quantidade}. Detalhes: {detalhes}"
-    },
-    "seo": {
-      "title": "DTF por arte | Casa Nacoli",
-      "description": "Impressão DTF de artes avulsas para aplicação em peças têxteis."
     },
     "notes": [],
     "needsPriceConfirmation": false
