@@ -6,7 +6,8 @@ Inventário revisado em 28 de agosto de 2026 após a substituição da pasta de 
 
 | Arquivo | Formato | Dimensões | Uso |
 | --- | --- | --- | --- |
-| `src/assets/brand/casa-nacoli-logo.png` | PNG | 2124 × 1748 px | Logo principal no cabeçalho |
+| `src/assets/brand/Logo PNG-10.png` | PNG | 2124 × 1749 px | Logo claro principal no cabeçalho |
+| `src/assets/brand/casa-nacoli-logo.png` | PNG | 2124 × 1748 px | Versão colorida preservada |
 | `public/favicon.png` | PNG | Derivado do logo | Ícone do site |
 | `public/images/og/casa-nacoli.png` | PNG | Derivado do logo | Compartilhamento social padrão |
 
