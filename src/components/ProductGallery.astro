@@ -135,6 +135,7 @@ const firstImage = preparedImages.at(0);
   }
 
   .gallery-main {
+    position: relative;
     display: grid;
     aspect-ratio: 4 / 5;
     place-items: center;
@@ -145,6 +146,8 @@ const firstImage = preparedImages.at(0);
   }
 
   .gallery-main :global(img) {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: contain;

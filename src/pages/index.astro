@@ -558,12 +558,15 @@ const faqs = [
 
   .custom-image,
   .business-image {
+    position: relative;
     min-height: 25rem;
     overflow: hidden;
   }
 
   .custom-image :global(img),
   .business-image :global(img) {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;

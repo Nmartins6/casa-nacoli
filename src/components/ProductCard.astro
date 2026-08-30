@@ -75,6 +75,7 @@ const categoryHref = category ? `/categorias/${category.slug}` : "/produtos";
   }
 
   .product-image {
+    position: relative;
     display: block;
     flex: none;
     aspect-ratio: 4 / 5;
@@ -84,6 +85,8 @@ const categoryHref = category ? `/categorias/${category.slug}` : "/produtos";
   }
 
   .product-image :global(img) {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
