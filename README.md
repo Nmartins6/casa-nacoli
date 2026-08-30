@@ -1,6 +1,6 @@
 # Casa Nacoli
 
-Site institucional e catálogo da Casa Nacoli. O projeto entrega uma home responsiva, catálogo pesquisável, páginas das quatro categorias e páginas individuais geradas estaticamente para os 27 produtos validados.
+Site institucional e catálogo da Casa Nacoli. O projeto entrega uma home responsiva, catálogo pesquisável, páginas das quatro categorias e páginas individuais geradas estaticamente para os 46 produtos validados.
 
 ## Stack
 
@@ -78,11 +78,13 @@ Os arquivos em `seed/` são a fonte de verdade comercial. Componentes não cont�
 
 1. Edite `seed/products.json`, preservando IDs e slugs existentes.
 2. Use uma categoria e subcategoria presentes em `seed/categories.json`.
-3. Para fotos, crie `src/assets/products/<slug>/` e use nomes descritivos iniciados pelo slug.
-4. Valide os textos alternativos gerados e a ordem alfabética das imagens.
+3. Para fotos, crie `src/assets/products/<slug>/`, nomeie a principal como `00-capa.webp` e ordene as demais com prefixos numéricos.
+4. Mantenha `imageFolder` apontando para a pasta confirmada e valide os textos alternativos e a ordem das imagens.
 5. Execute `pnpm validate:seed`, `pnpm test` e `pnpm build`.
 
-O carregador em `src/data/assets.ts` encontra arquivos pela pasta do slug. As rotas dinâmicas usam os seeds para gerar as páginas, então categorias, produtos e fotos podem ser adicionados sem criar componentes específicos. O procedimento completo está em [`docs/CATALOG_MAINTENANCE.md`](docs/CATALOG_MAINTENANCE.md).
+O carregador em `src/data/assets.ts` encontra arquivos pela pasta indicada em `imageFolder`. As rotas dinâmicas usam os seeds para gerar as páginas, então categorias, produtos e fotos podem ser adicionados sem criar componentes específicos. O procedimento completo está em [`docs/CATALOG_MAINTENANCE.md`](docs/CATALOG_MAINTENANCE.md).
+
+Produtos retirados do catálogo devem receber um redirect em `astro.config.ts`. As páginas antigas de DTF em rolo e DTF por arte apontam para a categoria de impressões.
 
 ## Configuração comercial
 
@@ -94,7 +96,7 @@ Também continuam pendentes prazos de produção, retirada/entrega, regiões ate
 
 ## Assets
 
-O inventário completo está em [`docs/ASSET_INVENTORY.md`](docs/ASSET_INVENTORY.md). Originais permanecem em `incoming-assets/`; somente associações confirmadas foram copiadas para `src/assets/`.
+O inventário completo está em [`docs/ASSET_INVENTORY.md`](docs/ASSET_INVENTORY.md). A cópia anterior permanece em `src/assets/products antigo/`; somente associações confirmadas entram no carregamento do catálogo.
 
 O placeholder oficial está em `public/images/placeholders/product-placeholder.svg` e deve ser usado quando não houver foto real.
 

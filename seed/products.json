@@ -2,49 +2,62 @@
   {
     "id": "canecas-personalizadas",
     "slug": "canecas-personalizadas",
-    "name": "Canecas Personalizadas",
+    "name": "Caneca de cerâmica personalizada",
     "categoryId": "personalizados",
     "subcategoryId": "canecas",
     "status": "active",
     "featured": true,
     "sortOrder": 10,
-    "summary": "Canecas para presentes, lembranças, datas especiais, empresas e eventos.",
-    "description": "Escolha o modelo e envie sua ideia. Nós ajudamos a ajustar a arte para que o resultado fique bonito, legível e adequado ao tipo de caneca.",
+    "summary": "Caneca de cerâmica para presentes, lembranças, datas especiais, empresas e eventos.",
+    "description": "Escolha a cor ou o modelo e envie sua ideia. Nós ajudamos a ajustar a arte para que o resultado fique bonito, legível e adequado à caneca.",
     "pricing": {
       "kind": "variants",
       "currency": "BRL",
-      "display": "A partir de R$ 25,00"
+      "display": "A partir de R$ 39,90"
     },
     "variants": [
       {
         "id": "branca",
-        "name": "Caneca branca",
+        "name": "Branca",
         "price": 39.9
       },
       {
         "id": "preta",
-        "name": "Caneca preta",
+        "name": "Preta",
         "price": 55.0
       },
       {
         "id": "magica",
-        "name": "Caneca mágica",
+        "name": "Mágica",
         "price": 55.0
       },
       {
         "id": "alca-coracao",
-        "name": "Caneca com alça de coração",
+        "name": "Alça de coração",
         "price": 59.9
       },
       {
-        "id": "alca-interior-colorido",
-        "name": "Caneca com alça e interior colorido",
+        "id": "colorida",
+        "name": "Colorida",
         "price": 55.9
       },
       {
-        "id": "polimero",
-        "name": "Caneca de polímero",
-        "price": 25.0
+        "id": "xicara",
+        "name": "Xícara",
+        "price": null,
+        "requiresQuote": true
+      },
+      {
+        "id": "100ml",
+        "name": "100 ml",
+        "price": null,
+        "requiresQuote": true
+      },
+      {
+        "id": "180ml",
+        "name": "180 ml",
+        "price": null,
+        "requiresQuote": true
       }
     ],
     "volumeDiscountRules": [],
@@ -56,40 +69,42 @@
     },
     "keywords": [
       "caneca personalizada",
+      "caneca de cerâmica",
       "presente personalizado",
       "caneca mágica",
-      "caneca com foto"
+      "caneca com foto",
+      "xícara personalizada"
     ],
     "images": [],
     "imageFolder": "src/assets/products/canecas-personalizadas",
     "placeholderImage": "/images/placeholders/product-placeholder.svg",
     "cta": {
       "label": "Pedir pelo WhatsApp",
-      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Canecas personalizadas. Quantidade: {quantidade}. Detalhes: {detalhes}"
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Caneca de cerâmica personalizada. Quantidade: {quantidade}. Detalhes: {detalhes}"
     },
     "seo": {
-      "title": "Canecas Personalizadas | Casa Nacoli",
-      "description": "Canecas para presentes, lembranças, datas especiais, empresas e eventos."
+      "title": "Caneca de cerâmica personalizada | Casa Nacoli",
+      "description": "Caneca de cerâmica personalizada em modelos branco, preto, mágico, colorido, com alça de coração, xícara e capacidades de 100 ml ou 180 ml."
     },
     "notes": [],
     "needsPriceConfirmation": false
   },
   {
-    "id": "placa-mdf-15x20",
-    "slug": "placa-mdf-15x20",
-    "name": "Placa de MDF 15 × 20 cm com suporte",
+    "id": "caneca-polimero-personalizada",
+    "slug": "caneca-polimero-personalizada",
+    "name": "Caneca de polímero personalizada",
     "categoryId": "personalizados",
-    "subcategoryId": "mdf",
+    "subcategoryId": "canecas",
     "status": "active",
     "featured": false,
-    "sortOrder": 20,
-    "summary": "Uma peça decorativa compacta para fotos, frases, homenagens e lembranças.",
-    "description": "A placa acompanha suporte e pode receber uma composição com foto, mensagem, nome, data ou identidade visual.",
+    "sortOrder": 15,
+    "summary": "Caneca de polímero personalizada para presentes, lembranças, empresas e eventos.",
+    "description": "Envie sua ideia para personalizar a caneca de polímero. A arte final e os detalhes do pedido são confirmados no atendimento.",
     "pricing": {
       "kind": "fixed",
       "currency": "BRL",
-      "amount": 30.0,
-      "display": "R$ 30,00"
+      "amount": 25.0,
+      "display": "R$ 25,00"
     },
     "variants": [],
     "volumeDiscountRules": [],
@@ -100,19 +115,76 @@
       "notes": "A arte final e a viabilidade técnica devem ser confirmadas no atendimento."
     },
     "keywords": [
+      "caneca de polímero",
+      "caneca personalizada",
+      "caneca com foto"
+    ],
+    "images": [],
+    "imageFolder": "src/assets/products/caneca-polimero-personalizada",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Caneca de polímero personalizada. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Caneca de polímero personalizada | Casa Nacoli",
+      "description": "Caneca de polímero personalizada para presentes, lembranças, empresas e eventos."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "placa-mdf-15x20",
+    "slug": "placa-mdf-15x20",
+    "name": "Placa de MDF com suporte",
+    "categoryId": "personalizados",
+    "subcategoryId": "mdf",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 20,
+    "summary": "Placa decorativa com suporte em dois tamanhos para fotos, frases, homenagens e lembranças.",
+    "description": "A placa acompanha suporte e pode receber uma composição com foto, mensagem, nome, data ou identidade visual. Escolha entre 15 × 20 cm e 20 × 30 cm.",
+    "pricing": {
+      "kind": "variants",
+      "currency": "BRL",
+      "display": "A partir de R$ 30,00"
+    },
+    "variants": [
+      {
+        "id": "15x20-com-suporte",
+        "name": "15 × 20 cm com suporte",
+        "price": 30.0
+      },
+      {
+        "id": "20x30-com-suporte",
+        "name": "20 × 30 cm com suporte",
+        "price": null,
+        "requiresQuote": true
+      }
+    ],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final e a viabilidade técnica devem ser confirmadas no atendimento."
+    },
+    "keywords": [
       "placa mdf personalizada",
-      "placa com foto"
+      "placa com foto",
+      "placa mdf 15x20",
+      "placa mdf 20x30"
     ],
     "images": [],
     "imageFolder": "src/assets/products/placa-mdf-15x20",
     "placeholderImage": "/images/placeholders/product-placeholder.svg",
     "cta": {
       "label": "Pedir pelo WhatsApp",
-      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Placa de MDF 15 × 20 cm com suporte. Quantidade: {quantidade}. Detalhes: {detalhes}"
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Placa de MDF com suporte. Quantidade: {quantidade}. Detalhes: {detalhes}"
     },
     "seo": {
-      "title": "Placa de MDF 15 × 20 cm com suporte | Casa Nacoli",
-      "description": "Uma peça decorativa compacta para fotos, frases, homenagens e lembranças."
+      "title": "Placa de MDF com suporte | Casa Nacoli",
+      "description": "Placa de MDF personalizada com suporte nos tamanhos 15 × 20 cm e 20 × 30 cm."
     },
     "notes": [],
     "needsPriceConfirmation": false
@@ -163,21 +235,32 @@
   {
     "id": "chaveiro-mdf-5cm",
     "slug": "chaveiro-mdf-5cm",
-    "name": "Chaveiro em MDF 5 cm frente e verso",
+    "name": "Chaveiro em MDF",
     "categoryId": "personalizados",
     "subcategoryId": "mdf",
     "status": "active",
     "featured": false,
     "sortOrder": 40,
-    "summary": "Chaveiro personalizado dos dois lados para lembranças, identificação ou divulgação.",
-    "description": "Pode receber fotos, nomes, frases curtas, logos e composições diferentes em cada lado.",
+    "summary": "Chaveiro personalizado para lembranças, identificação ou divulgação.",
+    "description": "Pode receber fotos, nomes, frases curtas ou logos. Escolha a personalização somente na frente ou na frente e no verso.",
     "pricing": {
-      "kind": "fixed",
+      "kind": "variants",
       "currency": "BRL",
-      "amount": 16.9,
-      "display": "R$ 16,90"
+      "display": "Consultar"
     },
-    "variants": [],
+    "variants": [
+      {
+        "id": "frente",
+        "name": "Frente",
+        "price": null,
+        "requiresQuote": true
+      },
+      {
+        "id": "frente-verso",
+        "name": "Frente e verso",
+        "price": 16.9
+      }
+    ],
     "volumeDiscountRules": [],
     "personalization": {
       "available": true,
@@ -194,11 +277,11 @@
     "placeholderImage": "/images/placeholders/product-placeholder.svg",
     "cta": {
       "label": "Pedir pelo WhatsApp",
-      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Chaveiro em MDF 5 cm frente e verso. Quantidade: {quantidade}. Detalhes: {detalhes}"
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Chaveiro em MDF. Quantidade: {quantidade}. Detalhes: {detalhes}"
     },
     "seo": {
-      "title": "Chaveiro em MDF 5 cm frente e verso | Casa Nacoli",
-      "description": "Chaveiro personalizado dos dois lados para lembranças, identificação ou divulgação."
+      "title": "Chaveiro em MDF personalizado | Casa Nacoli",
+      "description": "Chaveiro em MDF personalizado na frente ou na frente e no verso."
     },
     "notes": [],
     "needsPriceConfirmation": false
@@ -283,7 +366,7 @@
       "lembrancinhas"
     ],
     "images": [],
-    "imageFolder": "src/assets/products/kit-imas-mdf-10",
+    "imageFolder": "src/assets/products/ima-geladeira-mdf-5cm",
     "placeholderImage": "/images/placeholders/product-placeholder.svg",
     "cta": {
       "label": "Pedir pelo WhatsApp",
@@ -339,7 +422,7 @@
       "chaveiro mdf atacado"
     ],
     "images": [],
-    "imageFolder": "src/assets/products/kit-chaveiros-mdf",
+    "imageFolder": "src/assets/products/chaveiro-mdf-5cm",
     "placeholderImage": "/images/placeholders/product-placeholder.svg",
     "cta": {
       "label": "Pedir pelo WhatsApp",
@@ -723,7 +806,7 @@
       "boné personalizado"
     ],
     "images": [],
-    "imageFolder": "src/assets/products/bone-sublimado-personalizado",
+    "imageFolder": "src/assets/products/bone-dtf-personalizado",
     "placeholderImage": "/images/placeholders/product-placeholder.svg",
     "cta": {
       "label": "Pedir pelo WhatsApp",
@@ -1109,7 +1192,7 @@
       "encadernar apostila"
     ],
     "images": [],
-    "imageFolder": "src/assets/products/encadernacao",
+    "imageFolder": "src/assets/products/cadernos-personalizados",
     "placeholderImage": "/images/placeholders/product-placeholder.svg",
     "cta": {
       "label": "Pedir pelo WhatsApp",
@@ -1421,7 +1504,7 @@
       "impressão personalizada"
     ],
     "images": [],
-    "imageFolder": "src/assets/products/impressoes-em-papel-e-adesivo",
+    "imageFolder": "src/assets/products/etiquetas-personalizadas",
     "placeholderImage": "/images/placeholders/product-placeholder.svg",
     "cta": {
       "label": "Pedir pelo WhatsApp",
@@ -1464,7 +1547,7 @@
       "adesivo recortado"
     ],
     "images": [],
-    "imageFolder": "src/assets/products/adesivo-vinil-personalizado",
+    "imageFolder": "src/assets/products/etiquetas-personalizadas",
     "placeholderImage": "/images/placeholders/product-placeholder.svg",
     "cta": {
       "label": "Pedir pelo WhatsApp",
@@ -1473,90 +1556,6 @@
     "seo": {
       "title": "Adesivo vinil personalizado | Casa Nacoli",
       "description": "Adesivo resistente para identificação, decoração, embalagens, vitrines e divulgação."
-    },
-    "notes": [],
-    "needsPriceConfirmation": false
-  },
-  {
-    "id": "dtf-em-rolo",
-    "slug": "dtf-em-rolo",
-    "name": "DTF em rolo",
-    "categoryId": "grafica",
-    "subcategoryId": "dtf",
-    "status": "active",
-    "featured": false,
-    "sortOrder": 250,
-    "summary": "Impressão DTF em rolo para quem já possui prensa e faz a própria aplicação.",
-    "description": "O orçamento considera largura, metragem, aproveitamento da arte, quantidade de cores, fundo branco e preparação do arquivo.",
-    "pricing": {
-      "kind": "quote",
-      "currency": "BRL",
-      "display": "Consultar"
-    },
-    "variants": [],
-    "volumeDiscountRules": [],
-    "personalization": {
-      "available": true,
-      "customerCanSendArtwork": true,
-      "designSupport": true,
-      "notes": "Confirmar largura do rolo, metragem e arquivo pronto para impressão."
-    },
-    "keywords": [
-      "dtf em rolo",
-      "impressão dtf"
-    ],
-    "images": [],
-    "imageFolder": "src/assets/products/dtf-em-rolo",
-    "placeholderImage": "/images/placeholders/product-placeholder.svg",
-    "cta": {
-      "label": "Pedir pelo WhatsApp",
-      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre DTF em rolo. Quantidade: {quantidade}. Detalhes: {detalhes}"
-    },
-    "seo": {
-      "title": "DTF em rolo | Casa Nacoli",
-      "description": "Impressão DTF em rolo para quem já possui prensa e faz a própria aplicação."
-    },
-    "notes": [],
-    "needsPriceConfirmation": false
-  },
-  {
-    "id": "dtf-por-arte",
-    "slug": "dtf-por-arte",
-    "name": "DTF por arte",
-    "categoryId": "grafica",
-    "subcategoryId": "dtf",
-    "status": "active",
-    "featured": false,
-    "sortOrder": 260,
-    "summary": "Impressão DTF de artes avulsas para aplicação em peças têxteis.",
-    "description": "O valor depende das dimensões, quantidade, aproveitamento da folha ou rolo e qualidade do arquivo.",
-    "pricing": {
-      "kind": "quote",
-      "currency": "BRL",
-      "display": "Consultar"
-    },
-    "variants": [],
-    "volumeDiscountRules": [],
-    "personalization": {
-      "available": true,
-      "customerCanSendArtwork": true,
-      "designSupport": true,
-      "notes": "Solicitar medida final de cada arte e quantidade."
-    },
-    "keywords": [
-      "dtf por arte",
-      "transfer dtf"
-    ],
-    "images": [],
-    "imageFolder": "src/assets/products/dtf-por-arte",
-    "placeholderImage": "/images/placeholders/product-placeholder.svg",
-    "cta": {
-      "label": "Pedir pelo WhatsApp",
-      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre DTF por arte. Quantidade: {quantidade}. Detalhes: {detalhes}"
-    },
-    "seo": {
-      "title": "DTF por arte | Casa Nacoli",
-      "description": "Impressão DTF de artes avulsas para aplicação em peças têxteis."
     },
     "notes": [],
     "needsPriceConfirmation": false
@@ -1643,6 +1642,786 @@
     "seo": {
       "title": "Etiquetas personalizadas | Casa Nacoli",
       "description": "Etiquetas para organização, embalagem, identificação, marca e informações de produto."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "bottons-personalizados",
+    "slug": "bottons-personalizados",
+    "name": "Bottons personalizados",
+    "categoryId": "personalizados",
+    "subcategoryId": "outros-personalizados",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 91,
+    "summary": "Bottons personalizados para lembranças, eventos, equipes e divulgação.",
+    "description": "Envie a arte, foto, nome ou mensagem que deseja aplicar. Formato, quantidade e acabamento são confirmados no atendimento.",
+    "pricing": {
+      "kind": "quote",
+      "currency": "BRL",
+      "display": "Consultar"
+    },
+    "variants": [],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final e a viabilidade técnica devem ser confirmadas no atendimento."
+    },
+    "keywords": ["botton personalizado", "botton com foto", "lembrancinha personalizada"],
+    "images": [],
+    "imageFolder": "src/assets/products/bottons-personalizados",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Bottons personalizados. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Bottons personalizados | Casa Nacoli",
+      "description": "Bottons personalizados para lembranças, eventos, equipes e divulgação."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "blocos-personalizados",
+    "slug": "blocos-personalizados",
+    "name": "Blocos personalizados",
+    "categoryId": "personalizados",
+    "subcategoryId": "outros-personalizados",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 92,
+    "summary": "Blocos personalizados para anotações, lembranças, presentes e uso profissional.",
+    "description": "A capa pode receber nome, mensagem, ilustração ou identidade visual. Os detalhes do bloco são definidos no atendimento.",
+    "pricing": {
+      "kind": "quote",
+      "currency": "BRL",
+      "display": "Consultar"
+    },
+    "variants": [],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final e a viabilidade técnica devem ser confirmadas no atendimento."
+    },
+    "keywords": ["bloco personalizado", "bloco de anotações", "papelaria personalizada"],
+    "images": [],
+    "imageFolder": "src/assets/products/blocos-personalizados",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Blocos personalizados. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Blocos personalizados | Casa Nacoli",
+      "description": "Blocos personalizados para anotações, lembranças, presentes e uso profissional."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "cadernos-personalizados",
+    "slug": "cadernos-personalizados",
+    "name": "Cadernos personalizados",
+    "categoryId": "personalizados",
+    "subcategoryId": "outros-personalizados",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 93,
+    "summary": "Cadernos personalizados para presentes, estudos, organização e uso profissional.",
+    "description": "A capa pode receber nome, foto, ilustração ou identidade visual. Formato e demais detalhes são confirmados no atendimento.",
+    "pricing": {
+      "kind": "quote",
+      "currency": "BRL",
+      "display": "Consultar"
+    },
+    "variants": [],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final e a viabilidade técnica devem ser confirmadas no atendimento."
+    },
+    "keywords": ["caderno personalizado", "caderno com nome", "papelaria personalizada"],
+    "images": [],
+    "imageFolder": "src/assets/products/cadernos-personalizados",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Cadernos personalizados. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Cadernos personalizados | Casa Nacoli",
+      "description": "Cadernos personalizados para presentes, estudos, organização e uso profissional."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "cestas-personalizadas",
+    "slug": "cestas-personalizadas",
+    "name": "Cestas personalizadas",
+    "categoryId": "personalizados",
+    "subcategoryId": "outros-personalizados",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 94,
+    "summary": "Cestas montadas para presentes e ocasiões especiais com itens personalizados.",
+    "description": "Conte a ocasião e a ideia do presente. A composição, os itens disponíveis e os detalhes de personalização são combinados no atendimento.",
+    "pricing": {
+      "kind": "quote",
+      "currency": "BRL",
+      "display": "Consultar"
+    },
+    "variants": [],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A composição e os itens disponíveis devem ser confirmados no atendimento."
+    },
+    "keywords": ["cesta personalizada", "cesta para presente", "presente personalizado"],
+    "images": [],
+    "imageFolder": "src/assets/products/cestas-personalizadas",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Cestas personalizadas. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Cestas personalizadas | Casa Nacoli",
+      "description": "Cestas montadas para presentes e ocasiões especiais com itens personalizados."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "kits-personalizados",
+    "slug": "kits-personalizados",
+    "name": "Kits personalizados",
+    "categoryId": "personalizados",
+    "subcategoryId": "outros-personalizados",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 95,
+    "summary": "Kits com itens personalizados para presentes, homenagens e ações especiais.",
+    "description": "Envie a ocasião, a quantidade e a ideia do kit. A composição e a personalização de cada item são definidas no atendimento.",
+    "pricing": {
+      "kind": "quote",
+      "currency": "BRL",
+      "display": "Consultar"
+    },
+    "variants": [],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A composição e os itens disponíveis devem ser confirmados no atendimento."
+    },
+    "keywords": ["kit personalizado", "kit para presente", "presente personalizado"],
+    "images": [],
+    "imageFolder": "src/assets/products/kits-personalizados",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Kits personalizados. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Kits personalizados | Casa Nacoli",
+      "description": "Kits com itens personalizados para presentes, homenagens e ações especiais."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "foto-ima-personalizada",
+    "slug": "foto-ima-personalizada",
+    "name": "Foto ímã personalizada",
+    "categoryId": "personalizados",
+    "subcategoryId": "outros-personalizados",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 96,
+    "summary": "Fotos com ímã para lembranças, presentes, datas especiais e decoração.",
+    "description": "Envie as fotos e as informações que deseja incluir. Formato, composição e quantidade são confirmados no atendimento.",
+    "pricing": {
+      "kind": "quote",
+      "currency": "BRL",
+      "display": "Consultar"
+    },
+    "variants": [],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A qualidade das fotos e a composição final devem ser confirmadas no atendimento."
+    },
+    "keywords": ["foto ímã", "foto imã personalizada", "ímã com foto"],
+    "images": [],
+    "imageFolder": "src/assets/products/foto-ima-personalizada",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Foto ímã personalizada. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Foto ímã personalizada | Casa Nacoli",
+      "description": "Fotos com ímã para lembranças, presentes, datas especiais e decoração."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "topo-de-bolo-personalizado",
+    "slug": "topo-de-bolo-personalizado",
+    "name": "Topo de bolo personalizado",
+    "categoryId": "personalizados",
+    "subcategoryId": "outros-personalizados",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 97,
+    "summary": "Topo de bolo personalizado para aniversários, comemorações e outras celebrações.",
+    "description": "Envie o tema, nome, idade e referências desejadas. A composição e os elementos do topo são ajustados no atendimento.",
+    "pricing": {
+      "kind": "quote",
+      "currency": "BRL",
+      "display": "Consultar"
+    },
+    "variants": [],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final e os elementos do topo devem ser confirmados no atendimento."
+    },
+    "keywords": ["topo de bolo personalizado", "topper de bolo", "decoração de festa"],
+    "images": [],
+    "imageFolder": "src/assets/products/topo-de-bolo-personalizado",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Topo de bolo personalizado. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Topo de bolo personalizado | Casa Nacoli",
+      "description": "Topo de bolo personalizado para aniversários, comemorações e outras celebrações."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "magnetos-personalizados",
+    "slug": "magnetos-personalizados",
+    "name": "Magnetos personalizados",
+    "categoryId": "brindes-corporativos",
+    "subcategoryId": "utilitarios",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 181,
+    "summary": "Magnetos personalizados para divulgar contatos, serviços, marcas e campanhas.",
+    "description": "Envie a identidade visual e as informações necessárias. Formato, medida, acabamento e quantidade são confirmados no atendimento.",
+    "pricing": {
+      "kind": "quote",
+      "currency": "BRL",
+      "display": "Consultar"
+    },
+    "variants": [],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final e a viabilidade técnica devem ser confirmadas no atendimento."
+    },
+    "keywords": ["magneto personalizado", "ímã para empresa", "brinde magnético"],
+    "images": [],
+    "imageFolder": "src/assets/products/magnetos-personalizados",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Magnetos personalizados. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Magnetos personalizados | Casa Nacoli",
+      "description": "Magnetos personalizados para divulgar contatos, serviços, marcas e campanhas."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "mousepad-personalizado",
+    "slug": "mousepad-personalizado",
+    "name": "Mousepad personalizado",
+    "categoryId": "brindes-corporativos",
+    "subcategoryId": "utilitarios",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 182,
+    "summary": "Mousepad personalizado para uso diário, presentes, equipes e divulgação de marcas.",
+    "description": "Pode receber foto, ilustração, mensagem ou identidade visual. Os detalhes da arte e do pedido são confirmados no atendimento.",
+    "pricing": {
+      "kind": "quote",
+      "currency": "BRL",
+      "display": "Consultar"
+    },
+    "variants": [],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final e a viabilidade técnica devem ser confirmadas no atendimento."
+    },
+    "keywords": ["mousepad personalizado", "mouse pad com foto", "brinde personalizado"],
+    "images": [],
+    "imageFolder": "src/assets/products/mousepad-personalizado",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Mousepad personalizado. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Mousepad personalizado | Casa Nacoli",
+      "description": "Mousepad personalizado para uso diário, presentes, equipes e divulgação de marcas."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "porta-copos-personalizado",
+    "slug": "porta-copos-personalizado",
+    "name": "Porta-copos personalizado",
+    "categoryId": "brindes-corporativos",
+    "subcategoryId": "utilitarios",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 183,
+    "summary": "Porta-copos personalizados para presentes, eventos, empresas e estabelecimentos.",
+    "description": "A personalização pode usar foto, logo, ilustração ou mensagem. Formato, quantidade e acabamento são definidos no atendimento.",
+    "pricing": {
+      "kind": "quote",
+      "currency": "BRL",
+      "display": "Consultar"
+    },
+    "variants": [],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final e a viabilidade técnica devem ser confirmadas no atendimento."
+    },
+    "keywords": ["porta-copos personalizado", "descanso de copo personalizado", "brinde personalizado"],
+    "images": [],
+    "imageFolder": "src/assets/products/porta-copos-personalizado",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Porta-copos personalizado. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Porta-copos personalizado | Casa Nacoli",
+      "description": "Porta-copos personalizados para presentes, eventos, empresas e estabelecimentos."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "sacolas-papel-personalizadas",
+    "slug": "sacolas-papel-personalizadas",
+    "name": "Sacolas de papel personalizadas",
+    "categoryId": "brindes-corporativos",
+    "subcategoryId": "utilitarios",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 184,
+    "summary": "Sacolas de papel personalizadas para presentes, eventos, lojas e ações de marca.",
+    "description": "Envie a identidade visual ou a ideia da personalização. Medida, acabamento e quantidade são confirmados no atendimento.",
+    "pricing": {
+      "kind": "quote",
+      "currency": "BRL",
+      "display": "Consultar"
+    },
+    "variants": [],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final e a viabilidade técnica devem ser confirmadas no atendimento."
+    },
+    "keywords": ["sacola de papel personalizada", "sacola para loja", "embalagem personalizada"],
+    "images": [],
+    "imageFolder": "src/assets/products/sacolas-papel-personalizadas",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Sacolas de papel personalizadas. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Sacolas de papel personalizadas | Casa Nacoli",
+      "description": "Sacolas de papel personalizadas para presentes, eventos, lojas e ações de marca."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "squeeze-personalizado",
+    "slug": "squeeze-personalizado",
+    "name": "Squeeze personalizado",
+    "categoryId": "brindes-corporativos",
+    "subcategoryId": "utilitarios",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 185,
+    "summary": "Squeeze personalizado para presentes, equipes, eventos e ações promocionais.",
+    "description": "Envie a arte, nome, mensagem ou identidade visual. Modelo, disponibilidade e quantidade são confirmados no atendimento.",
+    "pricing": {
+      "kind": "quote",
+      "currency": "BRL",
+      "display": "Consultar"
+    },
+    "variants": [],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "O modelo disponível e a viabilidade da arte devem ser confirmados no atendimento."
+    },
+    "keywords": ["squeeze personalizado", "garrafa personalizada", "brinde personalizado"],
+    "images": [],
+    "imageFolder": "src/assets/products/squeeze-personalizado",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Squeeze personalizado. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Squeeze personalizado | Casa Nacoli",
+      "description": "Squeeze personalizado para presentes, equipes, eventos e ações promocionais."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "display-de-mesa-personalizado",
+    "slug": "display-de-mesa-personalizado",
+    "name": "Display de mesa personalizado",
+    "categoryId": "grafica",
+    "subcategoryId": "impressoes",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 245,
+    "summary": "Display de mesa personalizado para eventos, recepções, cardápios e sinalização.",
+    "description": "Envie o conteúdo e a identidade visual desejada. Formato, medida, estrutura e acabamento são definidos no atendimento.",
+    "pricing": {
+      "kind": "quote",
+      "currency": "BRL",
+      "display": "Consultar"
+    },
+    "variants": [],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final e a estrutura do display devem ser confirmadas no atendimento."
+    },
+    "keywords": ["display de mesa", "display personalizado", "sinalização de mesa"],
+    "images": [],
+    "imageFolder": "src/assets/products/display-de-mesa-personalizado",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Display de mesa personalizado. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Display de mesa personalizado | Casa Nacoli",
+      "description": "Display de mesa personalizado para eventos, recepções, cardápios e sinalização."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "calendario-geladeira-personalizado",
+    "slug": "calendario-geladeira-personalizado",
+    "name": "Calendário de geladeira personalizado",
+    "categoryId": "grafica",
+    "subcategoryId": "impressoes",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 250,
+    "summary": "Calendário de geladeira personalizado com foto, marca ou informações de contato.",
+    "description": "Envie as imagens e informações que deseja destacar. Formato, composição e quantidade são definidos no atendimento.",
+    "pricing": {
+      "kind": "quote",
+      "currency": "BRL",
+      "display": "Consultar"
+    },
+    "variants": [],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final e as informações do calendário devem ser confirmadas no atendimento."
+    },
+    "keywords": ["calendário de geladeira", "calendário personalizado", "calendário com ímã"],
+    "images": [],
+    "imageFolder": "src/assets/products/calendario-geladeira-personalizado",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Calendário de geladeira personalizado. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Calendário de geladeira personalizado | Casa Nacoli",
+      "description": "Calendário de geladeira personalizado com foto, marca ou informações de contato."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "calendario-parede-personalizado",
+    "slug": "calendario-parede-personalizado",
+    "name": "Calendário de parede personalizado",
+    "categoryId": "grafica",
+    "subcategoryId": "impressoes",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 255,
+    "summary": "Calendário de parede personalizado para famílias, empresas, equipes e presentes.",
+    "description": "Envie as fotos, a identidade visual e as informações desejadas. Formato e quantidade são confirmados no atendimento.",
+    "pricing": {
+      "kind": "quote",
+      "currency": "BRL",
+      "display": "Consultar"
+    },
+    "variants": [],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final e as informações do calendário devem ser confirmadas no atendimento."
+    },
+    "keywords": ["calendário de parede", "calendário personalizado", "calendário com foto"],
+    "images": [],
+    "imageFolder": "src/assets/products/calendario-parede-personalizado",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Calendário de parede personalizado. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Calendário de parede personalizado | Casa Nacoli",
+      "description": "Calendário de parede personalizado para famílias, empresas, equipes e presentes."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "fotos-polaroid-personalizadas",
+    "slug": "fotos-polaroid-personalizadas",
+    "name": "Fotos estilo Polaroid personalizadas",
+    "categoryId": "grafica",
+    "subcategoryId": "impressoes",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 260,
+    "summary": "Fotos no estilo Polaroid para guardar lembranças, decorar e presentear.",
+    "description": "Envie as fotos que deseja imprimir. Quantidade, formato e eventuais textos são combinados no atendimento.",
+    "pricing": {
+      "kind": "quote",
+      "currency": "BRL",
+      "display": "Consultar"
+    },
+    "variants": [],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A qualidade das fotos e o formato final devem ser confirmados no atendimento."
+    },
+    "keywords": ["foto polaroid", "foto estilo polaroid", "impressão de fotos"],
+    "images": [],
+    "imageFolder": "src/assets/products/fotos-polaroid-personalizadas",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Fotos estilo Polaroid personalizadas. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Fotos estilo Polaroid personalizadas | Casa Nacoli",
+      "description": "Fotos no estilo Polaroid para guardar lembranças, decorar e presentear."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "ventarolas-personalizadas",
+    "slug": "ventarolas-personalizadas",
+    "name": "Ventarolas personalizadas",
+    "categoryId": "grafica",
+    "subcategoryId": "impressoes",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 265,
+    "summary": "Ventarolas personalizadas para cerimônias, eventos, celebrações e ações promocionais.",
+    "description": "Envie o conteúdo, a identidade visual e a quantidade desejada. Formato e acabamento são definidos no atendimento.",
+    "pricing": {
+      "kind": "quote",
+      "currency": "BRL",
+      "display": "Consultar"
+    },
+    "variants": [],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final e a viabilidade técnica devem ser confirmadas no atendimento."
+    },
+    "keywords": ["ventarola personalizada", "leque de papel", "ventarola para evento"],
+    "images": [],
+    "imageFolder": "src/assets/products/ventarolas-personalizadas",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Ventarolas personalizadas. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Ventarolas personalizadas | Casa Nacoli",
+      "description": "Ventarolas personalizadas para cerimônias, eventos, celebrações e ações promocionais."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "lapelas-personalizadas",
+    "slug": "lapelas-personalizadas",
+    "name": "Lapelas personalizadas",
+    "categoryId": "grafica",
+    "subcategoryId": "tags-etiquetas",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 275,
+    "summary": "Lapelas personalizadas para apresentar, identificar e finalizar embalagens de produtos.",
+    "description": "Envie a marca e as informações que precisam aparecer. Medida, formato, impressão e quantidade são confirmados no atendimento.",
+    "pricing": {
+      "kind": "quote",
+      "currency": "BRL",
+      "display": "Consultar"
+    },
+    "variants": [],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final e a viabilidade técnica devem ser confirmadas no atendimento."
+    },
+    "keywords": ["lapela personalizada", "lapela para embalagem", "embalagem personalizada"],
+    "images": [],
+    "imageFolder": "src/assets/products/lapelas-personalizadas",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Lapelas personalizadas. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Lapelas personalizadas | Casa Nacoli",
+      "description": "Lapelas personalizadas para apresentar, identificar e finalizar embalagens de produtos."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "etiquetas-escolares-personalizadas",
+    "slug": "etiquetas-escolares-personalizadas",
+    "name": "Etiquetas escolares personalizadas",
+    "categoryId": "grafica",
+    "subcategoryId": "tags-etiquetas",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 285,
+    "summary": "Etiquetas personalizadas para identificar materiais e organizar a rotina escolar.",
+    "description": "Envie o nome, o tema e as informações desejadas. Tamanhos, formatos e quantidade são confirmados no atendimento.",
+    "pricing": {
+      "kind": "quote",
+      "currency": "BRL",
+      "display": "Consultar"
+    },
+    "variants": [],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final e os formatos das etiquetas devem ser confirmados no atendimento."
+    },
+    "keywords": ["etiqueta escolar", "etiqueta com nome", "material escolar personalizado"],
+    "images": [],
+    "imageFolder": "src/assets/products/etiquetas-escolares-personalizadas",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Etiquetas escolares personalizadas. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Etiquetas escolares personalizadas | Casa Nacoli",
+      "description": "Etiquetas personalizadas para identificar materiais e organizar a rotina escolar."
+    },
+    "notes": [],
+    "needsPriceConfirmation": false
+  },
+  {
+    "id": "rotulos-personalizados",
+    "slug": "rotulos-personalizados",
+    "name": "Rótulos personalizados",
+    "categoryId": "grafica",
+    "subcategoryId": "tags-etiquetas",
+    "status": "active",
+    "featured": false,
+    "sortOrder": 290,
+    "summary": "Rótulos personalizados para identificar produtos, embalagens, presentes e lembranças.",
+    "description": "Envie o conteúdo, a marca e as medidas da aplicação. Material, formato, acabamento e quantidade são definidos no atendimento.",
+    "pricing": {
+      "kind": "quote",
+      "currency": "BRL",
+      "display": "Consultar"
+    },
+    "variants": [],
+    "volumeDiscountRules": [],
+    "personalization": {
+      "available": true,
+      "customerCanSendArtwork": true,
+      "designSupport": true,
+      "notes": "A arte final, o material e a aplicação devem ser confirmados no atendimento."
+    },
+    "keywords": ["rótulo personalizado", "rótulo para embalagem", "adesivo para produto"],
+    "images": [],
+    "imageFolder": "src/assets/products/rotulos-personalizados",
+    "placeholderImage": "/images/placeholders/product-placeholder.svg",
+    "cta": {
+      "label": "Pedir pelo WhatsApp",
+      "messageTemplate": "Olá! Vim pelo site da Casa Nacoli e gostaria de saber mais sobre Rótulos personalizados. Quantidade: {quantidade}. Detalhes: {detalhes}"
+    },
+    "seo": {
+      "title": "Rótulos personalizados | Casa Nacoli",
+      "description": "Rótulos personalizados para identificar produtos, embalagens, presentes e lembranças."
     },
     "notes": [],
     "needsPriceConfirmation": false

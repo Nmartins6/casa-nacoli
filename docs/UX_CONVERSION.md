@@ -33,7 +33,7 @@ A mensagem deve incluir:
 
 Exemplo:
 
-> Olá! Vim pelo site da Casa Nacoli e gostaria de um orçamento para Canecas personalizadas. Modelo: caneca mágica. Quantidade: 2. Detalhes: gostaria de usar duas fotos. Página: …
+> Olá! Vim pelo site da Casa Nacoli e gostaria de um orçamento para Caneca de cerâmica personalizada. Modelo: mágica. Quantidade: 2. Detalhes: gostaria de usar duas fotos. Página: …
 
 ## Formulário antes do WhatsApp
 

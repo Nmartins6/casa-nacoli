@@ -3,6 +3,7 @@ import { expect, test } from "@playwright/test";
 import { readFileSync } from "node:fs";
 
 interface SeedEntry {
+  categoryId?: string;
   name: string;
   slug: string;
 }
@@ -23,8 +24,12 @@ test("lista, pesquisa, filtra e limpa o catálogo", async ({ page }) => {
       name: "Encontre o ponto de partida para o seu pedido.",
     }),
   ).toBeVisible();
-  await expect(page.locator("[data-catalog-item]")).toHaveCount(27);
-  await expect(page.locator("[data-result-count]")).toHaveText("27");
+  await expect(page.locator("[data-catalog-item]")).toHaveCount(
+    products.length,
+  );
+  await expect(page.locator("[data-result-count]")).toHaveText(
+    String(products.length),
+  );
 
   const search = page.getByLabel("Buscar no catálogo");
   await search.fill("caneca mágica");
@@ -34,14 +39,23 @@ test("lista, pesquisa, filtra e limpa o catálogo", async ({ page }) => {
 
   await search.fill("");
   await page.getByLabel("Brindes Corporativos", { exact: true }).check();
-  await expect(page.locator("[data-result-count]")).toHaveText("2");
-  await expect(page.locator("[data-catalog-item]:visible")).toHaveCount(2);
+  const corporateGiftCount = products.filter(
+    ({ categoryId }) => categoryId === "brindes-corporativos",
+  ).length;
+  await expect(page.locator("[data-result-count]")).toHaveText(
+    String(corporateGiftCount),
+  );
+  await expect(page.locator("[data-catalog-item]:visible")).toHaveCount(
+    corporateGiftCount,
+  );
   await expect(page).toHaveURL(/categoria=brindes-corporativos/);
 
   await search.fill("produto inexistente");
   await expect(page.locator("[data-empty-state]")).toBeVisible();
   await page.getByRole("button", { name: "Ver todos os produtos" }).click();
-  await expect(page.locator("[data-result-count]")).toHaveText("27");
+  await expect(page.locator("[data-result-count]")).toHaveText(
+    String(products.length),
+  );
   await expect(search).toBeFocused();
 });
 
@@ -74,7 +88,7 @@ test("categoria mantém hierarquia, produtos e acesso ao filtro", async ({
     "Impressões Digitais",
   );
   await expect(page.locator(".category-products .product-card")).toHaveCount(
-    10,
+    products.filter(({ categoryId }) => categoryId === "grafica").length,
   );
   await expect(
     page.getByRole("navigation", { name: "Navegação estrutural" }),
@@ -108,14 +122,17 @@ test("galeria, variantes e dados estruturados refletem o produto", async ({
   await page.goto("/produtos/canecas-personalizadas");
 
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
-    "Canecas Personalizadas",
+    "Caneca de cerâmica personalizada",
   );
   const mainImage = page.locator("[data-gallery-main]");
   const firstAlt = await mainImage.getAttribute("alt");
   await page.getByRole("button", { name: /Mostrar imagem 2 de/ }).click();
   await expect(mainImage).not.toHaveAttribute("alt", firstAlt ?? "");
-  await expect(page.getByRole("row", { name: /Caneca mágica/ })).toContainText(
+  await expect(page.getByRole("row", { name: /Mágica/ })).toContainText(
     "R$ 55,00",
+  );
+  await expect(page.getByRole("row", { name: /Xícara/ })).toContainText(
+    "Consultar",
   );
 
   const schemas = await page
@@ -126,25 +143,27 @@ test("galeria, variantes e dados estruturados refletem o produto", async ({
     .find((value) => value["@type"] === "Product");
   expect(productSchema).toMatchObject({
     "@type": "Product",
-    name: "Canecas Personalizadas",
+    name: "Caneca de cerâmica personalizada",
     category: "Personalizados",
   });
   expect(productSchema).toHaveProperty("offers.@type", "AggregateOffer");
 });
 
-test("usa placeholder quando não há foto e omite miniaturas com foto única", async ({
+test("usa as galerias importadas e mantém placeholder somente sem foto confirmada", async ({
   page,
 }) => {
-  await page.goto("/produtos/placa-mdf-15x20");
-  await expect(
-    page.getByAltText(
-      "Foto de Placa de MDF 15 × 20 cm com suporte ainda não disponível",
-    ),
-  ).toBeVisible();
-  await expect(page.locator("[data-gallery-thumbnail]")).toHaveCount(0);
-
-  await page.goto("/produtos/azulejo-personalizado-15x15");
+  await page.goto("/produtos/caneca-polimero-personalizada");
   await expect(page.locator("[data-gallery-main]")).toBeVisible();
+  await expect(page.locator("[data-gallery-thumbnail]")).toHaveCount(6);
+
+  await page.goto("/produtos/placa-mdf-15x20");
+  await expect(page.locator("[data-gallery-main]")).toBeVisible();
+  await expect(page.locator("[data-gallery-thumbnail]")).toHaveCount(8);
+
+  await page.goto("/produtos/plastificacao");
+  await expect(
+    page.getByAltText("Foto de Plastificação ainda não disponível"),
+  ).toBeVisible();
   await expect(page.locator("[data-gallery-thumbnail]")).toHaveCount(0);
 });
 
@@ -228,7 +247,7 @@ test("rotas do catálogo não criam overflow horizontal", async ({
     "/produtos",
     "/categorias/grafica-e-impressoes",
     "/produtos/canecas-personalizadas",
-    "/produtos/dtf-por-arte",
+    "/produtos/caneca-polimero-personalizada",
   ]) {
     await page.goto(path);
     const sizes = await page.evaluate(() => {
@@ -255,6 +274,18 @@ test("rotas do catálogo não criam overflow horizontal", async ({
       sizes.document,
       `${path}: ${JSON.stringify(sizes.offenders)}`,
     ).toBeLessThanOrEqual(sizes.viewport);
+  }
+});
+
+test("redireciona as páginas removidas de DTF para impressões", async ({
+  page,
+}) => {
+  for (const path of ["/produtos/dtf-em-rolo", "/produtos/dtf-por-arte"]) {
+    await page.goto(path);
+    await expect(page).toHaveURL(/\/categorias\/grafica-e-impressoes\/?$/);
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText(
+      "Impressões Digitais",
+    );
   }
 });
 

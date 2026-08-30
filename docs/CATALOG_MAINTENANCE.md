@@ -35,10 +35,11 @@ Produtos com `status: "active"` entram automaticamente no catálogo, na categori
 
 1. Confirme visual e comercialmente que a foto pertence ao produto.
 2. Crie `src/assets/products/<slug>/`, usando exatamente o slug do seed.
-3. Nomeie os arquivos como `<slug>-exemplo-01.webp`, `<slug>-exemplo-02.webp` e assim por diante.
-4. Preserve os originais em `incoming-assets/` e não importe duplicatas binárias.
-5. Use a ordem numérica desejada: o carregador ordena os nomes em português e a primeira foto se torna a principal e a imagem Open Graph.
-6. Execute `pnpm build` para confirmar otimização, dimensões e `srcset`; depois revise recorte, ordem e texto alternativo.
+3. Nomeie a foto principal como `00-capa.webp` e as demais com prefixos numéricos, como `01-exemplo.webp`.
+4. Preencha `imageFolder` com o caminho confirmado. Ele pode apontar para outro slug somente quando dois produtos realmente compartilham o mesmo conjunto de fotos.
+5. Preserve a cópia de segurança recebida e não importe duplicatas binárias.
+6. Use a ordem numérica desejada: o carregador ordena os nomes e a primeira foto se torna a principal e a imagem Open Graph.
+7. Execute `pnpm build` para confirmar otimização, dimensões e `srcset`; depois revise recorte, ordem e texto alternativo.
 
 Com uma foto, a página não cria miniaturas artificiais. Com várias, a galeria permite troca por botão e teclado. Sem uma pasta associada, o placeholder oficial é usado automaticamente.
 

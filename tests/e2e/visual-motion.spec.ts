@@ -12,12 +12,12 @@ test("card reúne conteúdo, link principal e foco percebido", async ({
   await page.setViewportSize({ width: 1366, height: 768 });
   await page.goto("/produtos");
 
-  const card = getCardByName(page, "Canecas Personalizadas");
+  const card = getCardByName(page, "Caneca de cerâmica personalizada");
   const imageLink = card.getByRole("link", {
-    name: "Ver Canecas Personalizadas",
+    name: "Ver Caneca de cerâmica personalizada",
   });
   const titleLink = card.getByRole("link", {
-    name: "Canecas Personalizadas",
+    name: "Caneca de cerâmica personalizada",
     exact: true,
   });
 
@@ -31,7 +31,7 @@ test("card reúne conteúdo, link principal e foco percebido", async ({
     "/produtos/canecas-personalizadas",
   );
   await expect(card.locator(".product-summary")).toBeVisible();
-  await expect(card.locator(".price-value")).toHaveText("A partir de R$ 25,00");
+  await expect(card.locator(".price-value")).toHaveText("A partir de R$ 39,90");
   await expect(
     card.getByRole("link", { name: /Ver detalhes de/ }),
   ).toBeVisible();
@@ -80,14 +80,14 @@ test("cards preservam preço, orçamento e placeholder do catálogo", async ({
 }) => {
   await page.goto("/produtos");
 
-  await expect(getCardByName(page, "Canecas Personalizadas")).toContainText(
-    "A partir de R$ 25,00",
-  );
+  await expect(
+    getCardByName(page, "Caneca de cerâmica personalizada"),
+  ).toContainText("A partir de R$ 39,90");
   await expect(getCardByName(page, "Moletons personalizados")).toContainText(
     "Consultar",
   );
   await expect(
-    getCardByName(page, "Placa de MDF 15 × 20 cm com suporte").getByAltText(
+    getCardByName(page, "Plastificação").getByAltText(
       "Foto do produto ainda não disponível",
     ),
   ).toBeVisible();
@@ -195,11 +195,11 @@ test("conteúdo essencial permanece acessível sem JavaScript", async ({
       name: "Encontre o ponto de partida para o seu pedido.",
     }),
   ).toBeVisible();
-  await expect(page.locator("[data-product-card]")).toHaveCount(27);
+  await expect(page.locator("[data-product-card]")).toHaveCount(46);
   await expect(page.locator("[data-product-card]").last()).toBeVisible();
   await expect(
     page.getByRole("link", {
-      name: "Canecas Personalizadas",
+      name: "Caneca de cerâmica personalizada",
       exact: true,
     }),
   ).toHaveAttribute("href", "/produtos/canecas-personalizadas");
