@@ -210,19 +210,7 @@ p {
 }
 
 [data-reveal].is-revealed {
-  animation: reveal-in var(--motion-duration-reveal) var(--motion-ease-reveal)
-    both;
-  animation-delay: calc(var(--reveal-order, 0) * var(--motion-stagger-step));
-}
-
-@keyframes reveal-in {
-  from {
-    translate: 0 var(--motion-reveal-distance);
-  }
-
-  to {
-    translate: none;
-  }
+  animation: none;
 }
 
 .skip-link {
