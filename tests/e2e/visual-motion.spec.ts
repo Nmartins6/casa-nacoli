@@ -93,7 +93,7 @@ test("cards preservam preço, orçamento e placeholder do catálogo", async ({
   ).toBeVisible();
 });
 
-test("entrada acontece ao rolar sem erro nem deslocamento de layout", async ({
+test("scroll mantém conteúdo estável sem erro nem deslocamento de layout", async ({
   page,
 }) => {
   const consoleErrors: string[] = [];
@@ -124,16 +124,9 @@ test("entrada acontece ao rolar sem erro nem deslocamento de layout", async ({
   const review = page.locator("#avaliacoes [data-reveal]").first();
   await expect(review).not.toBeInViewport();
   await review.scrollIntoViewIfNeeded();
-  await expect
-    .poll(() => review.evaluate((element) => element.getAnimations().length))
-    .toBeGreaterThan(0);
-  await review.evaluate(async (element) => {
-    await Promise.all(
-      element.getAnimations().map((animation) => animation.finished),
-    );
-  });
 
   const finalState = await review.evaluate((element) => ({
+    animation: getComputedStyle(element).animationName,
     opacity: getComputedStyle(element).opacity,
     translate: getComputedStyle(element).translate,
   }));
@@ -142,6 +135,7 @@ test("entrada acontece ao rolar sem erro nem deslocamento de layout", async ({
       (window as typeof window & { __casaNacoliCls: number }).__casaNacoliCls,
   );
 
+  expect(finalState.animation).toBe("none");
   expect(finalState.opacity).toBe("1");
   expect(["none", "0px"]).toContain(finalState.translate);
   expect(cls).toBeLessThanOrEqual(0.01);
